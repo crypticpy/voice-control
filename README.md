@@ -12,10 +12,10 @@ Training materials for Austin Public Health's Voice-Driven AI Development Workfl
 
 | Deck | Description |
 |------|-------------|
-| [Claude Code Setup Guide](redesign/dist/Claude_Code_Setup_Guide.pptx) | 12-slide guide to Claude Code configuration |
-| [Cursor Azure Setup Guide](redesign/dist/Cursor_Azure_Setup_Guide.pptx) | 10-slide guide to Cursor with Azure OpenAI |
-| [VS Code AI Ecosystem Guide](redesign/dist/VSCode_AI_Ecosystem_Guide.pptx) | 12-slide overview of VS Code AI extensions |
-| [Voice-First Project Workflow](redesign/dist/Voice_First_Project_Workflow.pptx) | 13-slide bonus: 10-phase project structure |
+| [Claude Code Setup Guide](dist/Claude_Code_Setup_Guide.pptx) | 12-slide guide to Claude Code configuration |
+| [Cursor Azure Setup Guide](dist/Cursor_Azure_Setup_Guide.pptx) | 10-slide guide to Cursor with Azure OpenAI |
+| [VS Code AI Ecosystem Guide](dist/VSCode_AI_Ecosystem_Guide.pptx) | 12-slide overview of VS Code AI extensions |
+| [Voice-First Project Workflow](dist/Voice_First_Project_Workflow.pptx) | 13-slide bonus: 10-phase project structure |
 
 ---
 
@@ -27,33 +27,32 @@ These hands-on exercises will help you build your voice-driven workflow. **Pleas
 
 | Resource | Description |
 |----------|-------------|
-| [Model Cheat Sheet](redesign/dist/supplements/01_Model_Cheat_Sheet.pdf) | Voice model comparison — local vs. cloud, when to use each |
-| [Mode Cheat Sheet](redesign/dist/supplements/02_Mode_Cheat_Sheet.pdf) | SuperWhisper mode quick reference — all settings explained |
+| [Model Cheat Sheet](dist/supplements/01_Model_Cheat_Sheet.pdf) | Voice model comparison — local vs. cloud, when to use each |
+| [Mode Cheat Sheet](dist/supplements/02_Mode_Cheat_Sheet.pdf) | SuperWhisper mode quick reference — all settings explained |
 
 ### Hands-On Exercises
 
 | Exercise | What You'll Build |
 |----------|-------------------|
-| [Exercise 1: Local Email Mode](redesign/dist/supplements/03_Exercise_Local_Email_Mode.pdf) | Create a PHI-safe email dictation mode using local models |
-| [Exercise 2: Cloud Email Mode](redesign/dist/supplements/04_Exercise_Cloud_Email_Mode.pdf) | Build a cloud-powered email mode with Wispr Flow formatting |
-| [Exercise 3: Prompt Enrichment](redesign/dist/supplements/05_Exercise_Prompt_Enrichment.pdf) | Structure prompts for AI tools — get better outputs |
-| [Exercise 4: Teams Chat Mode](redesign/dist/supplements/06_Exercise_Teams_Chat_Mode.pdf) | Optimize voice input for workplace messaging |
-| [Exercise 5: Custom Vocabulary](redesign/dist/supplements/07_Exercise_Custom_Vocabulary.pdf) | Tune recognition for your domain-specific terms |
-| [Exercise 6: Agentic Handoff](redesign/dist/supplements/08_Exercise_Agentic_Handoff.pdf) | Create structured task specs for AI coding agents |
+| [Exercise 1: Local Email Mode](dist/supplements/03_Exercise_Local_Email_Mode.pdf) | Create a PHI-safe email dictation mode using local models |
+| [Exercise 2: Cloud Email Mode](dist/supplements/04_Exercise_Cloud_Email_Mode.pdf) | Build a cloud-powered email mode with Wispr Flow formatting |
+| [Exercise 3: Prompt Enrichment](dist/supplements/05_Exercise_Prompt_Enrichment.pdf) | Structure prompts for AI tools — get better outputs |
+| [Exercise 4: Teams Chat Mode](dist/supplements/06_Exercise_Teams_Chat_Mode.pdf) | Optimize voice input for workplace messaging |
+| [Exercise 5: Custom Vocabulary](dist/supplements/07_Exercise_Custom_Vocabulary.pdf) | Tune recognition for your domain-specific terms |
+| [Exercise 6: Agentic Handoff](dist/supplements/08_Exercise_Agentic_Handoff.pdf) | Create structured task specs for AI coding agents |
 
 ---
 
 ## Quick Start
 
 ```bash
-cd redesign
 npm install
 npm run build:workflow    # Build the 13-slide workflow deck
 npm run build:core        # Build the 36-slide core presentation
 npm run build:full        # Build the 82-slide extended deck
 ```
 
-Generated PowerPoint files appear in `redesign/dist/`.
+Generated PowerPoint files appear in `dist/`.
 
 ---
 
@@ -113,22 +112,31 @@ This is a 3-part training series teaching voice-driven development workflows for
 
 ```
 voice-control/
-├── README.md                 # This file
-├── CHANGELOG.md              # Version history
-├── LICENSE                   # MIT License
-├── redesign/                 # Build system and source files
-│   ├── src/
-│   │   ├── slides/           # Session 1 slides (82 HTML files)
-│   │   ├── slides-workflow/  # Bonus workflow deck (13 HTML files)
-│   │   └── supplements/      # Workshop exercise handouts
-│   ├── lib/                  # HTML to PowerPoint conversion library
-│   ├── scripts/              # Build scripts
-│   ├── design-system/        # Design tokens and theme files
-│   ├── docs/                 # Planning and research docs
-│   ├── dist/                 # Generated PowerPoint files
-│   └── package.json          # Node.js dependencies
-├── unpacked/                 # Reference: unpacked PPTX structure
-└── *.pptx                    # Legacy/reference presentations
+├── README.md                    # This file
+├── CHANGELOG.md                 # Version history
+├── LICENSE                      # MIT License
+├── package.json                 # Node.js dependencies
+│
+├── Voice_AI_Workflows_Part1_Final.pptx   # Main presentation
+├── Voice-Driven AI Toolkit Research.pdf  # Research reference
+├── Voice_Tools_Training_Public_Health.docx
+│
+├── src/                         # HTML slide sources
+│   ├── slides/                  # Session 1 slides (82 files)
+│   ├── slides-workflow/         # Workflow deck (13 files)
+│   ├── slides-claude-code/      # Claude Code deck (12 files)
+│   ├── slides-cursor/           # Cursor deck (10 files)
+│   ├── slides-vscode/           # VS Code deck (12 files)
+│   └── supplements/             # Exercise HTML files
+│
+├── scripts/                     # Build scripts
+├── lib/                         # HTML to PowerPoint library
+├── design-system/               # Design tokens and themes
+├── docs/                        # Planning documentation
+│
+└── dist/                        # Generated output
+    ├── *.pptx                   # Supplemental decks
+    └── supplements/*.pdf        # Exercise PDFs
 ```
 
 ---
