@@ -4,6 +4,21 @@ Training materials for Austin Public Health's Voice-Driven AI Development Workfl
 
 ---
 
+## Session 1 Presentation (January 2025)
+
+**[Voice_AI_Workflows_Part1_Final.pptx](Voice_AI_Workflows_Part1_Final.pptx)** — Main presentation deck for today's class
+
+### Supplemental Decks
+
+| Deck | Description |
+|------|-------------|
+| [Claude Code Setup Guide](redesign/dist/Claude_Code_Setup_Guide.pptx) | 12-slide guide to Claude Code configuration |
+| [Cursor Azure Setup Guide](redesign/dist/Cursor_Azure_Setup_Guide.pptx) | 10-slide guide to Cursor with Azure OpenAI |
+| [VS Code AI Ecosystem Guide](redesign/dist/VSCode_AI_Ecosystem_Guide.pptx) | 12-slide overview of VS Code AI extensions |
+| [Voice-First Project Workflow](redesign/dist/Voice_First_Project_Workflow.pptx) | 13-slide bonus: 10-phase project structure |
+
+---
+
 ## Quick Start
 
 ```bash
