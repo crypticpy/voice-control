@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 9 - Iterative Review Cycle</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+      --color-cyan: #0891b2;
+      --color-cyan-bg: #cffafe;
+      --color-cyan-text: #155e75;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 32px;">
+    <div style="background: var(--color-cyan); padding: 6px 12px; width: fit-content; margin-bottom: 12px;">
+      <p style="color: var(--theme-surface-white); font-size: 9px; font-weight: 700; margin: 0; letter-spacing: 1px;">PHASE 9 OF 10</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 12px 0; line-height: 1.2;">Iterative<br/>Review Cycle</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 16px 0;"></div>
+
+    <div style="background: rgba(8,145,178,0.15); border-left: 3px solid var(--color-cyan); padding: 14px; margin-bottom: 16px;">
+      <p style="color: #67e8f9; font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">THE OBJECTIVE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 11px; margin: 0; line-height: 1.5;">Review, refine, repeat. Verbal feedback guides the agent through multiple polish cycles.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 14px; margin-bottom: 16px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 8px 0;">REVIEW PRIORITY</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.6;">
+        1. Functionality first<br/>
+        2. User experience<br/>
+        3. Visual polish<br/>
+        4. Edge cases
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 12px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; text-align: center;">Multiple iterations are normal</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 28px 32px;">
+    <p style="color: var(--theme-primary); font-size: 13px; font-weight: 700; margin: 0 0 14px 0;">THE REVIEW LOOP</p>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px; margin-bottom: 12px;">
+      <div class="row" style="gap: 8px; align-items: stretch;">
+        <div style="flex: 1; text-align: center; padding: 10px; background: var(--color-cyan-bg);">
+          <p style="color: var(--color-cyan); font-size: 16px; font-weight: 700; margin: 0;">Test</p>
+          <p style="color: var(--color-cyan-text); font-size: 8px; margin: 4px 0 0 0;">Run it, click through it, break it</p>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="color: var(--theme-text-tertiary); font-size: 16px;">→</span>
+        </div>
+        <div style="flex: 1; text-align: center; padding: 10px; background: var(--color-warning-bg);">
+          <p style="color: var(--color-warning); font-size: 16px; font-weight: 700; margin: 0;">Speak</p>
+          <p style="color: var(--color-warning-text); font-size: 8px; margin: 4px 0 0 0;">Verbal feedback on what needs fixing</p>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="color: var(--theme-text-tertiary); font-size: 16px;">→</span>
+        </div>
+        <div style="flex: 1; text-align: center; padding: 10px; background: var(--color-success-bg);">
+          <p style="color: var(--color-success); font-size: 16px; font-weight: 700; margin: 0;">Iterate</p>
+          <p style="color: var(--color-success-text); font-size: 8px; margin: 4px 0 0 0;">Agent implements, you test again</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 9px; margin: 0 0 6px 0;">EXAMPLE VOICE FEEDBACK</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.5;">"The login form works but the error messages are too harsh. Soften the language to match our narrative guidelines. Also, the submit button needs more padding — it feels cramped."</p>
+    </div>
+
+    <div class="row" style="gap: 10px; margin-bottom: 12px;">
+      <div style="flex: 1; background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 12px;">
+        <p style="color: var(--color-info-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">BE SPECIFIC</p>
+        <p style="color: var(--color-info-text); font-size: 8px; margin: 0; line-height: 1.4;">"The button is too small" → "Add 8px padding to the submit button"</p>
+      </div>
+      <div style="flex: 1; background: var(--color-warning-bg); border-left: 3px solid var(--color-warning); padding: 12px;">
+        <p style="color: var(--color-warning-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">REFERENCE DOCS</p>
+        <p style="color: var(--color-warning-text); font-size: 8px; margin: 0; line-height: 1.4;">"Match the design system" → Agent checks design-system.md</p>
+      </div>
+    </div>
+
+    <div style="background: var(--color-danger-bg); border-left: 3px solid var(--color-danger); padding: 12px;">
+      <p style="color: var(--color-danger-text); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">KNOW WHEN TO STOP</p>
+      <p style="color: var(--color-danger-text); font-size: 9px; margin: 0; line-height: 1.4;">Diminishing returns are real. Ship when it's good enough. Perfect is the enemy of deployed.</p>
+    </div>
+  </div>
+</body>
+</html>

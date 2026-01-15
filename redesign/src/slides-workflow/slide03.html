@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 1 - GitHub Repo</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 32px;">
+    <div style="background: var(--color-success); padding: 6px 12px; width: fit-content; margin-bottom: 12px;">
+      <p style="color: var(--theme-text-inverse); font-size: 9px; font-weight: 700; margin: 0; letter-spacing: 1px;">PHASE 1 OF 10</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 12px 0; line-height: 1.2;">Create a<br/>GitHub Repo</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 16px 0;"></div>
+
+    <div style="background: rgba(201,162,39,0.15); border-left: 3px solid var(--theme-accent); padding: 14px; margin-bottom: 16px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">THE PRINCIPLE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 11px; margin: 0; line-height: 1.5;">Everything lives in Git. Always. This is non-negotiable for voice-first development.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 14px; margin-bottom: 16px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">WHY FIRST?</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.5;">
+        Agent commits frequently<br/>
+        Creates natural checkpoints<br/>
+        Enables rollback on mistakes<br/>
+        Documents project evolution
+      </p>
+    </div>
+
+    <div style="background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 10px; margin-top: auto;">
+      <p style="color: var(--color-info-text); font-size: 9px; margin: 0;"><strong>Session 2:</strong> We'll cover repo setup templates and best practices in detail.</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 28px 32px;">
+    <p style="color: var(--theme-primary); font-size: 13px; font-weight: 700; margin: 0 0 16px 0;">VOICE COMMANDS TO START</p>
+
+    <div style="background: var(--theme-primary); padding: 16px; font-family: monospace; margin-bottom: 16px;">
+      <p style="color: var(--theme-accent); font-size: 9px; margin: 0 0 8px 0;">"Create a new repo for this project"</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 9px; margin: 0 0 12px 0; padding-left: 12px;">gh repo create project-name --public --clone</p>
+      <p style="color: var(--theme-accent); font-size: 9px; margin: 0 0 8px 0;">"Initialize with a basic structure"</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 9px; margin: 0; padding-left: 12px;">Creates README, .gitignore, src/, docs/</p>
+    </div>
+
+    <div class="row" style="gap: 12px; margin-bottom: 16px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">COMMIT FREQUENCY</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">Tell your agent: "Commit after each significant change." Small, frequent commits beat monolithic ones.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">BRANCH STRATEGY</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">Start simple: work on main for solo projects. Add branches when collaborating or experimenting.</p>
+      </div>
+    </div>
+
+    <div style="background: var(--color-success-bg); border-left: 4px solid var(--color-success); padding: 14px; margin-bottom: 12px;">
+      <p style="color: var(--color-success-text); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">BEST PRACTICE</p>
+      <p style="color: var(--color-success-text); font-size: 9px; margin: 0; line-height: 1.5;">Have the agent commit after: new files created, features completed, bugs fixed, documentation added. Each commit is a restore point.</p>
+    </div>
+
+    <div style="background: var(--color-warning-bg); border-left: 4px solid var(--color-warning); padding: 14px;">
+      <p style="color: var(--color-warning-text); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">NEW TO GIT?</p>
+      <p style="color: var(--color-warning-text); font-size: 9px; margin: 0; line-height: 1.5;">Don't worry if you don't have templates set up yet. We'll cover repo structure, CLAUDE.md files, and agent-friendly project layouts in Session 2.</p>
+    </div>
+  </div>
+</body>
+</html>

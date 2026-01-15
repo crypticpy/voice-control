@@ -7,15 +7,24 @@
     "build": "./scripts/build.sh",
     "build:core": "./scripts/build.sh --core-only",
     "build:full": "./scripts/build.sh --full-only",
+    "build:workflow": "node scripts/convert-workflow.js",
     "build:pdfs": "./scripts/build.sh --pdfs-only",
     "clean": "./scripts/build.sh --clean"
   },
-  "keywords": ["voice", "ai", "development", "superwhisper", "presentation", "training"],
+  "keywords": [
+    "voice",
+    "ai",
+    "development",
+    "superwhisper",
+    "presentation",
+    "training"
+  ],
   "author": "Austin Public Health",
   "license": "MIT",
   "dependencies": {
     "playwright": "^1.57.0",
-    "pptxgenjs": "^3.12.0"
+    "pptxgenjs": "^3.12.0",
+    "sharp": "^0.34.5"
   },
   "engines": {
     "node": ">=18.0.0"
