@@ -19,6 +19,30 @@ Training materials for Austin Public Health's Voice-Driven AI Development Workfl
 
 ---
 
+## Worksheets & Exercises (Complete Before Session 2)
+
+These hands-on exercises will help you build your voice-driven workflow. **Please complete before the next session.**
+
+### Reference Cheat Sheets
+
+| Resource | Description |
+|----------|-------------|
+| [Model Cheat Sheet](redesign/dist/supplements/01_Model_Cheat_Sheet.pdf) | Voice model comparison — local vs. cloud, when to use each |
+| [Mode Cheat Sheet](redesign/dist/supplements/02_Mode_Cheat_Sheet.pdf) | SuperWhisper mode quick reference — all settings explained |
+
+### Hands-On Exercises
+
+| Exercise | What You'll Build |
+|----------|-------------------|
+| [Exercise 1: Local Email Mode](redesign/dist/supplements/03_Exercise_Local_Email_Mode.pdf) | Create a PHI-safe email dictation mode using local models |
+| [Exercise 2: Cloud Email Mode](redesign/dist/supplements/04_Exercise_Cloud_Email_Mode.pdf) | Build a cloud-powered email mode with Wispr Flow formatting |
+| [Exercise 3: Prompt Enrichment](redesign/dist/supplements/05_Exercise_Prompt_Enrichment.pdf) | Structure prompts for AI tools — get better outputs |
+| [Exercise 4: Teams Chat Mode](redesign/dist/supplements/06_Exercise_Teams_Chat_Mode.pdf) | Optimize voice input for workplace messaging |
+| [Exercise 5: Custom Vocabulary](redesign/dist/supplements/07_Exercise_Custom_Vocabulary.pdf) | Tune recognition for your domain-specific terms |
+| [Exercise 6: Agentic Handoff](redesign/dist/supplements/08_Exercise_Agentic_Handoff.pdf) | Create structured task specs for AI coding agents |
+
+---
+
 ## Quick Start
 
 ```bash
@@ -106,21 +130,6 @@ voice-control/
 ├── unpacked/                 # Reference: unpacked PPTX structure
 └── *.pptx                    # Legacy/reference presentations
 ```
-
----
-
-## Workshop Supplements
-
-Hands-on exercises available in `redesign/src/supplements/`:
-
-1. **Model Cheat Sheet** — Voice model comparison (local vs. cloud)
-2. **Mode Cheat Sheet** — SuperWhisper mode quick reference
-3. **Local Email Mode** — PHI-safe email dictation exercise
-4. **Cloud Email Mode** — Wispr Flow formatting exercise
-5. **Prompt Enrichment** — Structuring prompts for AI tools
-6. **Teams Chat Mode** — Workplace messaging optimization
-7. **Custom Vocabulary** — Recognition tuning for your domain
-8. **Agentic Handoff** — Structured task specs for AI agents
 
 ---
 
