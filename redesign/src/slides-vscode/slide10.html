@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension Comparison Matrix</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-vscode: #007acc;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-vscode); padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">COMPARISON</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Extension<br/>Comparison</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(0,122,204,0.15); border-left: 3px solid var(--color-vscode); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #60a5fa; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">PROVIDER SUPPORT</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Which extensions support which cloud providers and local inference.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">LEGEND</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        <span style="color: #6ee7b7;">A</span> = Azure OpenAI<br/>
+        <span style="color: #6ee7b7;">W</span> = AWS Bedrock<br/>
+        <span style="color: #6ee7b7;">V</span> = Vertex AI<br/>
+        <span style="color: #6ee7b7;">L</span> = Local (Ollama)
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">Choose based on your needs</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0;">BYOK SUPPORT BY EXTENSION</p>
+
+    <div class="row" style="gap: 8px; margin-bottom: 8px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #059669; padding: 10px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">Continue.dev</p>
+        <p style="color: #059669; font-size: 9px; font-weight: 600; margin: 0 0 4px 0;">A W V L</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0;">Open source, most flexible</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #059669; padding: 10px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">Cline</p>
+        <p style="color: #059669; font-size: 9px; font-weight: 600; margin: 0 0 4px 0;">A W V L</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0;">Agentic, takes actions</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 8px; margin-bottom: 8px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-vscode); padding: 10px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">Cody</p>
+        <p style="color: var(--color-vscode); font-size: 9px; font-weight: 600; margin: 0 0 4px 0;">A W V</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0;">Large codebases</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--theme-accent); padding: 10px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">Tabnine</p>
+        <p style="color: var(--theme-accent); font-size: 9px; font-weight: 600; margin: 0 0 4px 0;">L only</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0;">Self-hosted, air-gapped</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 8px; margin-bottom: 10px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-vscode); padding: 10px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">CodeGPT</p>
+        <p style="color: var(--color-vscode); font-size: 9px; font-weight: 600; margin: 0 0 4px 0;">A L</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0;">Budget-friendly</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #6e40c9; padding: 10px;">
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">Copilot Enterprise</p>
+        <p style="color: #6e40c9; font-size: 9px; font-weight: 600; margin: 0 0 4px 0;">A L</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0;">GitHub ecosystem</p>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 8px 0;">RECOMMENDATION</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.5;">
+        <span style="color: #6ee7b7;">Continue.dev</span> — Maximum flexibility, any provider<br/>
+        <span style="color: #6ee7b7;">Cline</span> — Agentic automation with file/terminal access<br/>
+        <span style="color: #6ee7b7;">Copilot Enterprise</span> — Best for Azure-first organizations
+      </p>
+    </div>
+  </div>
+</body>
+</html>

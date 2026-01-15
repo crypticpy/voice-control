@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Takeaways</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-claude: #d97706;
+      --color-success: #059669;
+      --color-info: #3b82f6;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 24px 28px;">
+    <div style="background: var(--theme-accent); padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">SUMMARY</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Key<br/>Takeaways</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 12px 0;"></div>
+
+    <div style="background: rgba(201,162,39,0.15); border-left: 3px solid var(--theme-accent); padding: 10px; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">THE BIG IDEA</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.4;">Claude Code is more than a coding assistant — it's customizable AI infrastructure.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">CORE FEATURES</p>
+      <p style="color: rgba(255,255,255,0.5); font-size: 8px; margin: 0; line-height: 1.7;">
+        Models (Opus/Sonnet/Haiku)<br/>
+        Slash Commands<br/>
+        Planning Mode<br/>
+        Sub-Agents
+      </p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px;">
+      <p style="color: rgba(255,255,255,0.5); font-size: 8px; margin: 0; line-height: 1.7;">
+        Skills (auto-discovery)<br/>
+        MCP Servers<br/>
+        Hooks (enterprise)<br/>
+        Plugins (distribution)
+      </p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">ESSENTIAL PRACTICES</p>
+
+    <div class="row" style="gap: 10px; margin-bottom: 10px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--theme-accent); padding: 12px;">
+        <p style="color: var(--theme-accent); font-size: 20px; font-weight: 700; margin: 0;">1</p>
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 5px 0 3px 0;">Plan Before Code</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Use /plan for PRs. Think first, implement second.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--theme-accent); padding: 12px;">
+        <p style="color: var(--theme-accent); font-size: 20px; font-weight: 700; margin: 0;">2</p>
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 5px 0 3px 0;">Manage Context</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Use sub-agents for exploration. Keep main thread for changes.</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 10px; margin-bottom: 12px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--theme-accent); padding: 12px;">
+        <p style="color: var(--theme-accent); font-size: 20px; font-weight: 700; margin: 0;">3</p>
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 5px 0 3px 0;">Customize Your Setup</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Add skills for domain patterns. Share via .claude/ folder.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--theme-accent); padding: 12px;">
+        <p style="color: var(--theme-accent); font-size: 20px; font-weight: 700; margin: 0;">4</p>
+        <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 5px 0 3px 0;">Match Model to Task</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Haiku for speed, Sonnet for balance, Opus for complexity.</p>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px; text-align: center;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 6px 0;">VOICE + CLAUDE CODE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">SuperWhisper voice input → structured prompts → Claude Code execution<br/>The complete voice-driven development stack.</p>
+    </div>
+  </div>
+</body>
+</html>

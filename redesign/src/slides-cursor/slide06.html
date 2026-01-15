@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure AI Foundry</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cursor: #22c55e;
+      --color-azure: #0078d4;
+      --color-purple: #7c3aed;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-purple); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">AI FOUNDRY</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Azure AI<br/>Foundry</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(124,58,237,0.15); border-left: 3px solid var(--color-purple); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #a78bfa; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">WHAT IT IS</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Microsoft's unified platform for deploying foundation models — GPT, Claude, Llama, Mistral, and more.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">AVAILABLE MODELS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.5;">
+        OpenAI (GPT-4o, GPT-4)<br/>
+        Anthropic Claude<br/>
+        Meta Llama<br/>
+        Mistral AI
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">ai.azure.com</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0;">CONNECTING FOUNDRY TO CURSOR</p>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px; margin-bottom: 10px;">
+      <p style="color: var(--color-purple); font-size: 11px; font-weight: 700; margin: 0 0 8px 0;">OPENAI-COMPATIBLE MODELS</p>
+      <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">Models deployed via Azure OpenAI Service (GPT-4, GPT-4o) work with the standard Azure configuration. Use the same setup as Azure OpenAI.</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px; margin-bottom: 10px;">
+      <p style="color: var(--color-purple); font-size: 11px; font-weight: 700; margin: 0 0 8px 0;">OTHER FOUNDRY MODELS</p>
+      <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">Claude, Llama, and Mistral deployed via Foundry require checking the specific endpoint format. Some may need OpenAI-compatible API wrapper.</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 12px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 6px 0;">FOUNDRY MODEL ENDPOINT FORMAT</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.5;">
+        <span style="color: #9ca3af;"># Check your Foundry deployment for:</span><br/>
+        Endpoint URL: <span style="color: #6ee7b7;">https://&lt;project&gt;.&lt;region&gt;.inference.ml.azure.com/</span><br/>
+        API Key: <span style="color: #6ee7b7;">[from Foundry portal]</span>
+      </p>
+    </div>
+
+    <div class="row" style="gap: 8px;">
+      <div style="flex: 1; background: var(--color-success-bg); border-left: 3px solid var(--color-success); padding: 10px;">
+        <p style="color: var(--color-success-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">BEST APPROACH</p>
+        <p style="color: var(--color-success-text); font-size: 8px; margin: 0; line-height: 1.4;">For Cursor, deploy models via Azure OpenAI Service — seamless integration</p>
+      </div>
+      <div style="flex: 1; background: var(--color-warning-bg); border-left: 3px solid var(--color-warning); padding: 10px;">
+        <p style="color: var(--color-warning-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">LIMITATION</p>
+        <p style="color: var(--color-warning-text); font-size: 8px; margin: 0; line-height: 1.4;">Not all Foundry endpoints are OpenAI-compatible — test first</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Copilot + Azure</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-vscode: #007acc;
+      --color-azure: #0078d4;
+      --color-copilot: #6e40c9;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-copilot); padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">NATIVE</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">GitHub Copilot<br/>+ Azure</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(110,64,201,0.2); border-left: 3px solid var(--color-copilot); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #a78bfa; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">ENTERPRISE TIER</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Route Copilot through Azure OpenAI for compliance & data residency.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">REQUIREMENTS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        Copilot Enterprise<br/>
+        Azure OpenAI resource<br/>
+        GitHub Enterprise Cloud
+      </p>
+    </div>
+
+    <div style="background: var(--color-azure); padding: 10px; margin-top: auto;">
+      <p style="color: white; font-size: 9px; font-weight: 600; margin: 0; text-align: center;">$39/user/month + Azure usage</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">AZURE INTEGRATION SETUP</p>
+
+    <div style="background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 14px; margin-bottom: 10px;">
+      <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">STEP 1: AZURE OPENAI RESOURCE</p>
+      <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">Create Azure OpenAI resource in compliant region. Deploy GPT-4o or GPT-4 Turbo model. Note endpoint URL and deployment name.</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 14px; margin-bottom: 10px;">
+      <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">STEP 2: GITHUB ENTERPRISE SETTINGS</p>
+      <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">In GitHub Enterprise → Settings → Copilot → Azure connection. Enter Azure tenant ID, subscription ID, resource group, and deployment.</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 14px; margin-bottom: 12px;">
+      <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">STEP 3: MANAGED IDENTITY</p>
+      <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">Configure Azure AD app registration. Grant "Cognitive Services OpenAI User" role. No API keys stored in GitHub.</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 8px 0;">ENTERPRISE BENEFITS</p>
+      <div class="row" style="gap: 12px;">
+        <div style="flex: 1;">
+          <p style="color: #6ee7b7; font-size: 9px; margin: 0;">✓ Data stays in your tenant</p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: #6ee7b7; font-size: 9px; margin: 0;">✓ Compliance controls</p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: #6ee7b7; font-size: 9px; margin: 0;">✓ Usage monitoring</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

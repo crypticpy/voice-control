@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation & Setup</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cursor: #22c55e;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-cursor); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">GETTING STARTED</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Installation<br/>& Setup</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(34,197,94,0.15); border-left: 3px solid var(--color-cursor); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #86efac; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">WHAT IS CURSOR</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">AI-native code editor built on VS Code. Same interface, AI superpowers built in.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">REQUIREMENTS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.5;">
+        Windows 10+ / macOS 10.15+ / Linux<br/>
+        4GB RAM minimum<br/>
+        Internet connection<br/>
+        Azure subscription (for BYOK)
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">Downloads at cursor.com</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">INSTALLATION BY PLATFORM</p>
+
+    <div class="row" style="gap: 8px; margin-bottom: 12px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+        <p style="color: var(--color-cursor); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">WINDOWS</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+          Download .exe installer<br/>
+          Run setup wizard<br/>
+          Follow prompts
+        </p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+        <p style="color: var(--color-cursor); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">MACOS</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+          Download .dmg file<br/>
+          Drag to Applications<br/>
+          Allow in Security prefs
+        </p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+        <p style="color: var(--color-cursor); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">LINUX</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+          Download .AppImage<br/>
+          chmod +x cursor.AppImage<br/>
+          Run directly
+        </p>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 12px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 9px; margin: 0 0 6px 0;">FIRST LAUNCH OPTIONS</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.6;">
+        <span style="color: #6ee7b7;">Import from VS Code?</span> → Extensions, themes, keybindings<br/>
+        <span style="color: #6ee7b7;">Sign in?</span> → Optional for free tier, required for Pro
+      </p>
+    </div>
+
+    <div class="row" style="gap: 8px;">
+      <div style="flex: 1; background: var(--color-success-bg); border-left: 3px solid var(--color-success); padding: 10px;">
+        <p style="color: var(--color-success-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">VS CODE USERS</p>
+        <p style="color: var(--color-success-text); font-size: 8px; margin: 0; line-height: 1.4;">Same keybindings, same extensions. Feels immediately familiar.</p>
+      </div>
+      <div style="flex: 1; background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 10px;">
+        <p style="color: var(--color-info-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">SETTINGS LOCATION</p>
+        <p style="color: var(--color-info-text); font-size: 8px; margin: 0; line-height: 1.4;">Cmd+, (macOS) / Ctrl+, (Windows) → Cursor Settings</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

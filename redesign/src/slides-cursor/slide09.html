@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Best Practices</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cursor: #22c55e;
+      --color-azure: #0078d4;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-azure); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">ENTERPRISE</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Best<br/>Practices</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(0,120,212,0.15); border-left: 3px solid var(--color-azure); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #60a5fa; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">FOR ORGANIZATIONS</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Security, cost management, and team consistency when using Azure with Cursor.</p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">Plan for scale from day one</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0;">ENTERPRISE RECOMMENDATIONS</p>
+
+    <div class="row" style="gap: 8px; margin-bottom: 8px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 12px;">
+        <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">KEY MANAGEMENT</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Use Azure Key Vault. Distribute keys securely. Rotate regularly. Never commit to git.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 12px;">
+        <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">COST CONTROL</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Monitor via Azure Portal. Set usage alerts. Consider reserved capacity for predictable usage.</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 8px; margin-bottom: 10px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 12px;">
+        <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">TEAM CONSISTENCY</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Share .cursor/rules/ via git. Standard patterns across team. Document setup process.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-azure); padding: 12px;">
+        <p style="color: var(--color-azure); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">MODEL SELECTION</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">GPT-4o for most tasks. Test models for your workload. Different models per feature.</p>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 12px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 6px 0;">ONBOARDING CHECKLIST</p>
+      <ul style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; padding-left: 14px; line-height: 1.6; list-style: none;">
+        <li style="margin-bottom: 2px;"><span style="color: #6ee7b7;">1.</span> Create shared Azure OpenAI resource</li>
+        <li style="margin-bottom: 2px;"><span style="color: #6ee7b7;">2.</span> Document endpoint/key distribution process</li>
+        <li style="margin-bottom: 2px;"><span style="color: #6ee7b7;">3.</span> Commit .cursor/rules/ to project repos</li>
+        <li><span style="color: #6ee7b7;">4.</span> Test configuration with non-prod resource first</li>
+      </ul>
+    </div>
+
+    <div style="background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 10px;">
+      <p style="color: var(--color-info-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">COST ADVANTAGE</p>
+      <p style="color: var(--color-info-text); font-size: 8px; margin: 0; line-height: 1.4;">Azure OpenAI typically costs less per token than Cursor's built-in models — monitor and compare</p>
+    </div>
+  </div>
+</body>
+</html>

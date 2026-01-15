@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continue.dev</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-continue: #ff4785;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-continue); padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">OPEN SOURCE</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Continue.dev</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(255,71,133,0.15); border-left: 3px solid var(--color-continue); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #f9a8d4; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">MOST FLEXIBLE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Open-source Copilot alternative with the broadest provider support.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">SUPPORTED PROVIDERS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        Azure OpenAI ✓<br/>
+        AWS Bedrock ✓<br/>
+        Google Vertex AI ✓<br/>
+        Ollama / LM Studio ✓
+      </p>
+    </div>
+
+    <div style="background: #059669; padding: 10px; margin-top: auto;">
+      <p style="color: white; font-size: 9px; font-weight: 600; margin: 0; text-align: center;">Apache 2.0 • 100% Free</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">CONFIGURATION EXAMPLE</p>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 6px 0;">~/.continue/config.json (Azure)</p>
+      <pre style="color: rgba(255,255,255,0.85); font-size: 9px; margin: 0; line-height: 1.5; white-space: pre-wrap;">{
+  "models": [{
+    "provider": "azure",
+    "model": "gpt-4o",
+    "apiBase": "https://your.openai.azure.com",
+    "apiKey": "your-azure-key",
+    "deployment": "gpt-4o-deployment"
+  }]
+}</pre>
+    </div>
+
+    <div class="row" style="gap: 10px; margin-bottom: 10px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-continue); padding: 12px;">
+        <p style="color: var(--color-continue); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">CHAT</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Cmd+L for chat sidebar. Reference files with @file. Full codebase context.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-continue); padding: 12px;">
+        <p style="color: var(--color-continue); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">AUTOCOMPLETE</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Tab completion using any model. Configure separate fast model for speed.</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 10px; margin-bottom: 12px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-continue); padding: 12px;">
+        <p style="color: var(--color-continue); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">EDIT</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Cmd+I for inline edits. Highlight code, describe changes.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--color-continue); padding: 12px;">
+        <p style="color: var(--color-continue); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">AGENTS</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">@codebase for semantic search. Slash commands for workflows.</p>
+      </div>
+    </div>
+
+    <div style="background: #dcfce7; border-left: 3px solid #059669; padding: 10px;">
+      <p style="color: #166534; font-size: 9px; font-weight: 700; margin: 0 0 3px 0;">WHY CONTINUE</p>
+      <p style="color: #166534; font-size: 8px; margin: 0;">Best for teams who want full control over their AI stack. Supports 50+ model providers including all major clouds.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cline (Claude Dev)</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cline: #d97706;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-cline); padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">AGENTIC</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Cline</h1>
+    <p style="color: rgba(255,255,255,0.5); font-size: 11px; margin: 0 0 10px 0;">Formerly Claude Dev</p>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(217,119,6,0.15); border-left: 3px solid var(--color-cline); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #fbbf24; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">AUTONOMOUS AGENT</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">AI that can create files, run commands, and browse the web — with approval.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">CAPABILITIES</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        File creation/editing<br/>
+        Terminal commands<br/>
+        Browser automation<br/>
+        Multi-step tasks
+      </p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">PROVIDER SUPPORT</p>
+
+    <div class="row" style="gap: 10px; margin-bottom: 10px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #0078d4; padding: 12px;">
+        <p style="color: #0078d4; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">AZURE OPENAI</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Full support via API key. Enter endpoint, deployment name, API version.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #ff9900; padding: 12px;">
+        <p style="color: #ff9900; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">AWS BEDROCK</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Supports Claude models via Bedrock. Configure with AWS credentials.</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 10px; margin-bottom: 12px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #4285f4; padding: 12px;">
+        <p style="color: #4285f4; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">VERTEX AI</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Google Cloud integration. Use Claude or Gemini models via Vertex.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #8b5cf6; padding: 12px;">
+        <p style="color: #8b5cf6; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">LOCAL / OLLAMA</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">OpenAI-compatible endpoint. Point to localhost:11434 for Ollama.</p>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 8px 0;">SAFETY MODEL</p>
+      <div class="row" style="gap: 12px;">
+        <div style="flex: 1;">
+          <p style="color: rgba(255,255,255,0.6); font-size: 8px; margin: 0 0 3px 0;">Human-in-Loop</p>
+          <p style="color: var(--theme-text-inverse); font-size: 9px; margin: 0;">Approve each action</p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: rgba(255,255,255,0.6); font-size: 8px; margin: 0 0 3px 0;">Auto-Approve</p>
+          <p style="color: var(--theme-text-inverse); font-size: 9px; margin: 0;">For trusted operations</p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: rgba(255,255,255,0.6); font-size: 8px; margin: 0 0 3px 0;">Cost Tracking</p>
+          <p style="color: var(--theme-text-inverse); font-size: 9px; margin: 0;">Real-time token usage</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #fef3c7; border-left: 3px solid #f59e0b; padding: 10px;">
+      <p style="color: #92400e; font-size: 9px; font-weight: 700; margin: 0 0 3px 0;">BEST FOR</p>
+      <p style="color: #92400e; font-size: 8px; margin: 0;">Complex multi-step tasks where you want AI to take actions. Higher cost but more capable than chat-only tools.</p>
+    </div>
+  </div>
+</body>
+</html>

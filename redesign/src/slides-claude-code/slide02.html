@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation & Setup</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-claude: #d97706;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-claude); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">GETTING STARTED</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Installation<br/>& Setup</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(217,119,6,0.15); border-left: 3px solid var(--color-claude); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #fbbf24; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">PREREQUISITES</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">macOS, Linux, or Windows<br/>Anthropic API key or<br/>Claude Pro/Max subscription</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">SUPPORTED PLATFORMS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.5;">
+        Terminal (standalone CLI)<br/>
+        VS Code extension<br/>
+        JetBrains IDEs<br/>
+        Any terminal emulator
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">5-minute setup process</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">INSTALLATION STEPS</p>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 9px; margin: 0 0 8px 0;">MACOS / LINUX</p>
+      <p style="color: rgba(255,255,255,0.9); font-size: 11px; margin: 0; line-height: 1.6;">
+        <span style="color: #9ca3af;"># Install via npm (Node.js 18+ required)</span><br/>
+        npm install -g @anthropic-ai/claude-code<br/><br/>
+        <span style="color: #9ca3af;"># Or use the official installer</span><br/>
+        curl -fsSL https://claude.ai/install.sh | sh
+      </p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 12px;">
+      <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 8px 0;">FIRST RUN</p>
+      <div class="row" style="gap: 12px;">
+        <div style="flex: 1;">
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+            <strong style="color: var(--theme-text-primary);">1.</strong> Run <span style="background: #f3f4f6; padding: 1px 4px; font-family: monospace;">claude</span> in terminal<br/>
+            <strong style="color: var(--theme-text-primary);">2.</strong> Authenticate via browser<br/>
+            <strong style="color: var(--theme-text-primary);">3.</strong> Select your model
+          </p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+            <strong style="color: var(--theme-text-primary);">4.</strong> Navigate to project folder<br/>
+            <strong style="color: var(--theme-text-primary);">5.</strong> Start coding with voice!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 8px;">
+      <div style="flex: 1; background: var(--color-success-bg); border-left: 3px solid var(--color-success); padding: 10px;">
+        <p style="color: var(--color-success-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">VERIFY INSTALL</p>
+        <p style="color: var(--color-success-text); font-size: 8px; margin: 0; font-family: monospace;">claude --version</p>
+      </div>
+      <div style="flex: 1; background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 10px;">
+        <p style="color: var(--color-info-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">GET HELP</p>
+        <p style="color: var(--color-info-text); font-size: 8px; margin: 0; font-family: monospace;">claude --help</p>
+      </div>
+      <div style="flex: 1; background: var(--color-warning-bg); border-left: 3px solid var(--color-warning); padding: 10px;">
+        <p style="color: var(--color-warning-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">UPDATE</p>
+        <p style="color: var(--color-warning-text); font-size: 8px; margin: 0; font-family: monospace;">npm update -g</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

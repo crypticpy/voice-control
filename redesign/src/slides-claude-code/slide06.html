@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-Agents</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-claude: #d97706;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+      --color-purple: #7c3aed;
+      --color-purple-bg: #ede9fe;
+      --color-purple-text: #5b21b6;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-claude); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">PARALLEL WORK</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Sub-Agents</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(217,119,6,0.15); border-left: 3px solid var(--color-claude); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #fbbf24; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">WHAT THEY ARE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Specialized agents that work in parallel, each with their own context window.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">WHY USE THEM</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        Keep main context clean<br/>
+        Parallel task execution<br/>
+        Specialized capabilities<br/>
+        Different models per task
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">Context management is key</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">BUILT-IN SUB-AGENTS</p>
+
+    <div class="row" style="gap: 8px; margin-bottom: 12px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+        <p style="color: var(--color-claude); font-size: 12px; font-weight: 700; margin: 0 0 4px 0;">Explore</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Fast codebase scanning. Uses Haiku for speed. Returns findings to main thread.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+        <p style="color: var(--color-claude); font-size: 12px; font-weight: 700; margin: 0 0 4px 0;">Plan</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Architecture planning. Reads full context. Designs implementation approach.</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+        <p style="color: var(--color-claude); font-size: 12px; font-weight: 700; margin: 0 0 4px 0;">Bash</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">Command execution. Runs shell commands. Reports results back.</p>
+      </div>
+    </div>
+
+    <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 8px 0;">CUSTOM SUB-AGENTS</p>
+
+    <div style="background: var(--theme-primary); padding: 12px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 6px 0;">CREATE IN .claude/agents/</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.6;">
+        .claude/agents/my-agent.md<br/><br/>
+        <span style="color: #9ca3af;"># Define: name, description, model,</span><br/>
+        <span style="color: #9ca3af;"># available tools, and instructions</span>
+      </p>
+    </div>
+
+    <div class="row" style="gap: 8px;">
+      <div style="flex: 1; background: var(--color-purple-bg); border-left: 3px solid var(--color-purple); padding: 10px;">
+        <p style="color: var(--color-purple-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">MODEL STRATEGY</p>
+        <p style="color: var(--color-purple-text); font-size: 8px; margin: 0; line-height: 1.4;">Haiku for exploration, Sonnet for coding, Opus for architecture</p>
+      </div>
+      <div style="flex: 1; background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 10px;">
+        <p style="color: var(--color-info-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">CONTEXT TIP</p>
+        <p style="color: var(--color-info-text); font-size: 8px; margin: 0; line-height: 1.4;">Offload exploration to sub-agents — save main context for actual changes</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

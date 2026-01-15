@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configure Cursor for Azure</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cursor: #22c55e;
+      --color-azure: #0078d4;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-cursor); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">CONFIGURATION</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Configure<br/>Cursor</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(34,197,94,0.15); border-left: 3px solid var(--color-cursor); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #86efac; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">SETTINGS PATH</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Cursor Settings → Models → API Keys → Azure OpenAI</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">QUICK ACCESS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6; font-family: monospace;">
+        Cmd+, (macOS)<br/>
+        Ctrl+, (Windows)<br/>
+        → Cursor Settings
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">Always click "Verify" after entering</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0;">STEP-BY-STEP SETUP</p>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 9px; margin: 0 0 8px 0;">IN CURSOR SETTINGS → MODELS → API KEYS</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.8;">
+        <span style="color: #9ca3af;">1.</span> Click <span style="color: #6ee7b7;">"Add Model"</span> or select <span style="color: #6ee7b7;">"Azure"</span><br/>
+        <span style="color: #9ca3af;">2.</span> Enter Base URL: <span style="color: #6ee7b7;">https://yourorg.openai.azure.com/</span><br/>
+        <span style="color: #9ca3af;">3.</span> Enter Deployment Name: <span style="color: #6ee7b7;">gpt-4o-deployment</span><br/>
+        <span style="color: #9ca3af;">4.</span> Enter API Key: <span style="color: #6ee7b7;">[paste your key]</span><br/>
+        <span style="color: #9ca3af;">5.</span> Click <span style="color: #6ee7b7;">"Verify"</span> to test connection<br/>
+        <span style="color: #9ca3af;">6.</span> Enable for Chat, Cmd+K, and Composer
+      </p>
+    </div>
+
+    <div class="row" style="gap: 8px; margin-bottom: 10px;">
+      <div style="flex: 1; background: var(--color-success-bg); border-left: 3px solid var(--color-success); padding: 10px;">
+        <p style="color: var(--color-success-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">SUCCESS CHECK</p>
+        <p style="color: var(--color-success-text); font-size: 8px; margin: 0; line-height: 1.4;">Green checkmark after "Verify" means you're connected to Azure</p>
+      </div>
+      <div style="flex: 1; background: var(--color-warning-bg); border-left: 3px solid var(--color-warning); padding: 10px;">
+        <p style="color: var(--color-warning-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">COMMON ERROR</p>
+        <p style="color: var(--color-warning-text); font-size: 8px; margin: 0; line-height: 1.4;">Deployment name must exactly match Azure — case sensitive!</p>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px;">
+      <p style="color: var(--theme-text-primary); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">ENABLE FOR FEATURES</p>
+      <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">After adding Azure, check the boxes to enable it for: <strong>Chat</strong> (Cmd+L), <strong>Cmd+K</strong> (inline), and <strong>Composer</strong> (Cmd+I). Each can use different models.</p>
+    </div>
+  </div>
+</body>
+</html>

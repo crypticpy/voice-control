@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Model Setup</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-ollama: #ffffff;
+      --color-lmstudio: #4f46e5;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: #8b5cf6; padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">LOCAL</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Local Model<br/>Setup</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(139,92,246,0.15); border-left: 3px solid #8b5cf6; padding: 12px; margin-bottom: 14px;">
+      <p style="color: #c4b5fd; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">AIR-GAPPED READY</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Run models locally for maximum privacy. No data leaves your machine.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">OPTIONS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        Ollama (CLI-first)<br/>
+        LM Studio (GUI)<br/>
+        GPT4All (Simple)<br/>
+        Foundry Local (MS)
+      </p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">OLLAMA + VS CODE SETUP</p>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 8px 0;">1. INSTALL OLLAMA</p>
+      <p style="color: #6ee7b7; font-size: 10px; margin: 0 0 4px 0;">$ curl -fsSL https://ollama.com/install.sh | sh</p>
+      <p style="color: rgba(255,255,255,0.5); font-size: 8px; margin: 0;">or download from ollama.com</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 8px 0;">2. PULL A MODEL</p>
+      <p style="color: #6ee7b7; font-size: 10px; margin: 0 0 4px 0;">$ ollama pull codellama:13b</p>
+      <p style="color: rgba(255,255,255,0.5); font-size: 8px; margin: 0;">or: deepseek-coder, qwen2.5-coder, starcoder2</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 8px 0;">3. CONFIGURE EXTENSION</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 9px; margin: 0; line-height: 1.5;">
+        In Continue/Cline/CodeGPT settings:<br/>
+        <span style="color: #6ee7b7;">Provider:</span> Ollama<br/>
+        <span style="color: #6ee7b7;">Base URL:</span> http://localhost:11434<br/>
+        <span style="color: #6ee7b7;">Model:</span> codellama:13b
+      </p>
+    </div>
+
+    <div class="row" style="gap: 10px;">
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid var(--theme-accent); padding: 10px;">
+        <p style="color: var(--theme-accent); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">RECOMMENDED MODELS</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.5;">
+          codellama:13b (balanced)<br/>
+          deepseek-coder:6.7b (fast)<br/>
+          qwen2.5-coder:14b (capable)
+        </p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border-left: 3px solid #8b5cf6; padding: 10px;">
+        <p style="color: #8b5cf6; font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">HARDWARE NEEDS</p>
+        <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.5;">
+          7B: 8GB VRAM<br/>
+          13B: 16GB VRAM<br/>
+          33B+: 24GB+ VRAM
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cody & Tabnine</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cody: #ff5543;
+      --color-tabnine: #6b5ce7;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--theme-accent); padding: 4px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">ENTERPRISE</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Cody &<br/>Tabnine</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(201,162,39,0.15); border-left: 3px solid var(--theme-accent); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">ENTERPRISE-FOCUSED</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Both offer enterprise tiers with BYOK and self-hosted deployment options.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">KEY DIFFERENCE</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        Cody: Sourcegraph integration<br/>
+        Tabnine: Training on your code
+      </p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <div class="row" style="gap: 12px; margin-bottom: 12px;">
+      <div style="flex: 1;">
+        <div style="background: var(--color-cody); padding: 8px 12px; margin-bottom: 8px;">
+          <p style="color: white; font-size: 11px; font-weight: 700; margin: 0;">CODY (SOURCEGRAPH)</p>
+        </div>
+        <div style="background: var(--theme-surface-white); padding: 12px; border-left: 3px solid var(--color-cody);">
+          <p style="color: var(--theme-text-primary); font-size: 9px; font-weight: 700; margin: 0 0 6px 0;">BYOK PROVIDERS</p>
+          <ul style="color: var(--theme-text-secondary); font-size: 8px; margin: 0 0 8px 0; padding-left: 12px; line-height: 1.4;">
+            <li>Azure OpenAI</li>
+            <li>AWS Bedrock</li>
+            <li>Google Vertex</li>
+          </ul>
+          <p style="color: var(--theme-text-primary); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">STRENGTHS</p>
+          <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">
+            Code graph understanding<br/>
+            Enterprise codebase search<br/>
+            Self-hosted Sourcegraph
+          </p>
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <div style="background: var(--color-tabnine); padding: 8px 12px; margin-bottom: 8px;">
+          <p style="color: white; font-size: 11px; font-weight: 700; margin: 0;">TABNINE</p>
+        </div>
+        <div style="background: var(--theme-surface-white); padding: 12px; border-left: 3px solid var(--color-tabnine);">
+          <p style="color: var(--theme-text-primary); font-size: 9px; font-weight: 700; margin: 0 0 6px 0;">DEPLOYMENT OPTIONS</p>
+          <ul style="color: var(--theme-text-secondary); font-size: 8px; margin: 0 0 8px 0; padding-left: 12px; line-height: 1.4;">
+            <li>SaaS (cloud)</li>
+            <li>Self-hosted (VPC)</li>
+            <li>Air-gapped (on-prem)</li>
+          </ul>
+          <p style="color: var(--theme-text-primary); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">STRENGTHS</p>
+          <p style="color: var(--theme-text-secondary); font-size: 8px; margin: 0; line-height: 1.4;">
+            Train on your codebase<br/>
+            Privacy-first approach<br/>
+            Team personalization
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 8px 0;">PRICING COMPARISON</p>
+      <div class="row" style="gap: 16px;">
+        <div style="flex: 1;">
+          <p style="color: rgba(255,255,255,0.6); font-size: 8px; margin: 0 0 3px 0;">CODY ENTERPRISE</p>
+          <p style="color: var(--theme-text-inverse); font-size: 9px; margin: 0;">$19/user/month + BYOK costs</p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: rgba(255,255,255,0.6); font-size: 8px; margin: 0 0 3px 0;">TABNINE ENTERPRISE</p>
+          <p style="color: var(--theme-text-inverse); font-size: 9px; margin: 0;">$39/user/month (all-inclusive)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

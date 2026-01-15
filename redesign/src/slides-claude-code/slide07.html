@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-claude: #d97706;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-claude); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">AUTO-DISCOVERY</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Skills</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(217,119,6,0.15); border-left: 3px solid var(--color-claude); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #fbbf24; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">THE KEY DIFFERENCE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Unlike slash commands, skills activate <em>automatically</em> when task context matches.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">HOW THEY WORK</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.6;">
+        1. You give a task<br/>
+        2. Claude reviews skill descriptions<br/>
+        3. Matching skills auto-load<br/>
+        4. Instructions apply automatically
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">No manual invocation needed</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0;">SKILLS VS SLASH COMMANDS</p>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 12px;">
+      <div class="row" style="gap: 16px;">
+        <div style="flex: 1; border-right: 1px solid var(--theme-border-light); padding-right: 16px;">
+          <p style="color: var(--color-claude); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">SLASH COMMANDS</p>
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+            Manual invocation<br/>
+            You type /command<br/>
+            Explicit workflow triggers<br/>
+            Best for: specific actions
+          </p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: var(--color-claude); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">SKILLS</p>
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.5;">
+            Automatic activation<br/>
+            Context-based matching<br/>
+            Always-on capabilities<br/>
+            Best for: domain expertise
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 12px; font-family: monospace; margin-bottom: 10px;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 6px 0;">SKILL FILE STRUCTURE</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.6;">
+        .claude/skills/react-patterns.md<br/><br/>
+        <span style="color: #9ca3af;"># Description (for matching)</span><br/>
+        <span style="color: #6ee7b7;">"Use for React component development"</span><br/><br/>
+        <span style="color: #9ca3af;"># Instructions (loaded when matched)</span><br/>
+        <span style="color: #6ee7b7;">"Follow these patterns..."</span>
+      </p>
+    </div>
+
+    <div class="row" style="gap: 8px;">
+      <div style="flex: 1; background: var(--color-success-bg); border-left: 3px solid var(--color-success); padding: 10px;">
+        <p style="color: var(--color-success-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">USE CASE</p>
+        <p style="color: var(--color-success-text); font-size: 8px; margin: 0; line-height: 1.4;">Domain-specific patterns, coding standards, framework guidelines</p>
+      </div>
+      <div style="flex: 1; background: var(--color-info-bg); border-left: 3px solid var(--color-info); padding: 10px;">
+        <p style="color: var(--color-info-text); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">TEAM BENEFIT</p>
+        <p style="color: var(--color-info-text); font-size: 8px; margin: 0; line-height: 1.4;">Commit to git — entire team gets consistent AI behavior</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

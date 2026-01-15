@@ -8,6 +8,9 @@
     "build:core": "./scripts/build.sh --core-only",
     "build:full": "./scripts/build.sh --full-only",
     "build:workflow": "node scripts/convert-workflow.js",
+    "build:claude-code": "node scripts/convert-claude-code.js",
+    "build:cursor": "node scripts/convert-cursor.js",
+    "build:vscode": "node scripts/convert-vscode.js",
     "build:pdfs": "./scripts/build.sh --pdfs-only",
     "clean": "./scripts/build.sh --clean"
   },

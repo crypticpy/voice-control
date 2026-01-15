@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure OpenAI Setup</title>
+  <style>
+    :root {
+      --theme-primary: #1a1f2e;
+      --theme-accent: #c9a227;
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+      --color-cursor: #22c55e;
+      --color-azure: #0078d4;
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <div class="col" style="width: 38%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: var(--color-azure); padding: 5px 10px; width: fit-content; margin-bottom: 10px;">
+      <p style="color: white; font-size: 8px; font-weight: 700; margin: 0; letter-spacing: 1px;">AZURE OPENAI</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 10px 0; line-height: 1.2;">Getting Azure<br/>Credentials</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 14px 0;"></div>
+
+    <div style="background: rgba(0,120,212,0.15); border-left: 3px solid var(--color-azure); padding: 12px; margin-bottom: 14px;">
+      <p style="color: #60a5fa; font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">WHAT YOU NEED</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5;">Three values from Azure Portal to connect Cursor to your organization's models.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">REQUIRED VALUES</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.7;">
+        1. Base URL (endpoint)<br/>
+        2. Deployment name<br/>
+        3. API key
+      </p>
+    </div>
+
+    <div style="background: var(--theme-accent); padding: 10px; margin-top: auto;">
+      <p style="color: var(--theme-primary); font-size: 9px; font-weight: 600; margin: 0; text-align: center;">portal.azure.com</p>
+    </div>
+  </div>
+
+  <div class="col" style="width: 62%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0;">FINDING YOUR AZURE CREDENTIALS</p>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px; margin-bottom: 10px;">
+      <div class="row" style="gap: 12px; align-items: flex-start;">
+        <div style="width: 24px; height: 24px; background: var(--color-azure); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+          <span style="color: white; font-size: 11px; font-weight: 700;">1</span>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">Navigate to Azure OpenAI Resource</p>
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.4;">Azure Portal → All Resources → Your Azure OpenAI Service</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px; margin-bottom: 10px;">
+      <div class="row" style="gap: 12px; align-items: flex-start;">
+        <div style="width: 24px; height: 24px; background: var(--color-azure); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+          <span style="color: white; font-size: 11px; font-weight: 700;">2</span>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">Copy Endpoint & Key</p>
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.4;">Keys and Endpoint → Copy KEY 1 and Endpoint URL</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px; margin-bottom: 10px;">
+      <div class="row" style="gap: 12px; align-items: flex-start;">
+        <div style="width: 24px; height: 24px; background: var(--color-azure); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+          <span style="color: white; font-size: 11px; font-weight: 700;">3</span>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">Get Deployment Name</p>
+          <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; line-height: 1.4;">Model deployments → Copy exact deployment name (e.g., gpt-4o-deployment)</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 10px; font-family: monospace;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 4px 0;">EXAMPLE VALUES</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 9px; margin: 0; line-height: 1.5;">
+        Base URL: <span style="color: #6ee7b7;">https://myorg.openai.azure.com/</span><br/>
+        Deployment: <span style="color: #6ee7b7;">gpt-4o-deployment</span><br/>
+        API Key: <span style="color: #6ee7b7;">abc123...</span>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
