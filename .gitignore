@@ -1,13 +1,46 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Build outputs
+dist/
+build.log
+
 # OS files
 .DS_Store
+._*
 Thumbs.db
-
-# Temporary Office files
-~$*
 
 # Editor/IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # Claude Code
 .claude/
+
+# Temporary files
+*.tmp
+*~
+
+# Office temp files
+~$*.pptx
+~$*.docx
+~$*
+
+# Preview images
+preview-*.jpg
+preview-*.png
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env.local
+
+# Lock files (keep package-lock.json)
+yarn.lock
