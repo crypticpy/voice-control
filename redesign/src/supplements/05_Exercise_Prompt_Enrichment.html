@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3: Prompt Enrichment Mode — Voice AI Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Custom Properties (Design Tokens) ===== */
+    :root {
+      /* Colors - Primary */
+      --color-primary: #1a1f2e;
+      --color-accent: #c9a227;
+
+      /* Colors - Semantic */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-info: #2563eb;
+      --color-info-bg: #dbeafe;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fef2f2;
+
+      /* Colors - Difficulty Levels */
+      --color-beginner: #059669;
+      --color-intermediate: #6366f1;
+      --color-advanced: #8b5cf6;
+
+      /* Colors - Neutral */
+      --color-background: #f7f8fa;
+      --color-surface: #ffffff;
+      --color-border: #e4e7ed;
+      --color-text: #1a1f2e;
+      --color-text-muted: #6b7280;
+
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+
+      /* Font Sizes */
+      --text-xs: 11px;
+      --text-sm: 13px;
+      --text-base: 14px;
+      --text-lg: 16px;
+      --text-xl: 18px;
+      --text-2xl: 22px;
+
+      /* Font Weights */
+      --font-normal: 400;
+      --font-medium: 500;
+      --font-semibold: 600;
+      --font-bold: 700;
+
+      /* Spacing */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+
+      /* Border Radius */
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+    }
+
+    /* ===== Reset & Base ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-background);
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: var(--space-8);
+    }
+
+    /* ===== Document Header ===== */
+    .doc-header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2d3548 100%);
+      color: white;
+      padding: var(--space-6);
+      margin: calc(var(--space-8) * -1) calc(var(--space-8) * -1) var(--space-6) calc(var(--space-8) * -1);
+    }
+
+    .doc-header__eyebrow {
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+
+    .doc-header__title {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-1);
+    }
+
+    .doc-header__subtitle {
+      font-size: var(--text-base);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .doc-header__meta {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    /* ===== Badges ===== */
+    .badge {
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+    }
+
+    .badge--time {
+      background: var(--color-accent);
+      color: var(--color-primary);
+    }
+
+    .badge--local {
+      background: var(--color-success);
+      color: white;
+    }
+
+    .badge--intermediate {
+      background: var(--color-intermediate);
+      color: white;
+    }
+
+    /* ===== Typography ===== */
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+      margin: var(--space-8) 0 var(--space-4) 0;
+      padding-bottom: var(--space-2);
+      border-bottom: 2px solid var(--color-accent);
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+      margin: var(--space-6) 0 var(--space-3) 0;
+    }
+
+    p {
+      margin-bottom: var(--space-4);
+      max-width: 65ch;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      background: var(--color-background);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+    }
+
+    /* ===== Key Insight Box ===== */
+    .key-insight {
+      background: linear-gradient(135deg, var(--color-warning-bg) 0%, #fde68a 100%);
+      border-left: 4px solid var(--color-accent);
+      padding: var(--space-5);
+      margin-bottom: var(--space-6);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    .key-insight__title {
+      font-weight: var(--font-semibold);
+      color: #92400e;
+      margin-bottom: var(--space-2);
+    }
+
+    .key-insight p {
+      margin: 0;
+      color: #78350f;
+      font-size: var(--text-base);
+    }
+
+    /* ===== Objective Box ===== */
+    .objective-box {
+      background: linear-gradient(135deg, var(--color-success-bg) 0%, #bbf7d0 100%);
+      border-left: 4px solid var(--color-success);
+      padding: var(--space-5);
+      margin-bottom: var(--space-6);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    .objective-box__title {
+      font-weight: var(--font-semibold);
+      color: #166534;
+      margin-bottom: var(--space-2);
+    }
+
+    .objective-box p {
+      margin: 0;
+      color: #14532d;
+    }
+
+    /* ===== Flow Diagram ===== */
+    .flow-diagram {
+      background: var(--color-background);
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      margin: var(--space-5) 0;
+    }
+
+    .flow-diagram__title {
+      font-weight: var(--font-semibold);
+      text-align: center;
+      margin-bottom: var(--space-4);
+      color: var(--color-primary);
+    }
+
+    .flow-steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .flow-step {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+    }
+
+    .flow-step--highlight {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-primary);
+      font-weight: var(--font-semibold);
+    }
+
+    .flow-arrow {
+      color: var(--color-text-muted);
+      font-size: var(--text-lg);
+    }
+
+    /* ===== Comparison Grid ===== */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin: var(--space-5) 0;
+    }
+
+    .comparison-card {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+    }
+
+    .comparison-card--before {
+      background: var(--color-danger-bg);
+      border-left: 4px solid var(--color-danger);
+    }
+
+    .comparison-card--after {
+      background: var(--color-success-bg);
+      border-left: 4px solid var(--color-success);
+    }
+
+    .comparison-card__title {
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-3);
+      font-size: var(--text-sm);
+    }
+
+    .comparison-card--before .comparison-card__title { color: var(--color-danger); }
+    .comparison-card--after .comparison-card__title { color: var(--color-success); }
+
+    .comparison-card__content {
+      font-style: italic;
+      color: var(--color-text-muted);
+    }
+
+    .comparison-card--after .comparison-card__content {
+      font-style: normal;
+      color: var(--color-text);
+    }
+
+    /* ===== Benefits Grid ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      margin: var(--space-5) 0;
+    }
+
+    .benefit-card {
+      background: var(--color-background);
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      border-left: 3px solid var(--color-advanced);
+    }
+
+    .benefit-card__icon {
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-2);
+    }
+
+    .benefit-card__title {
+      font-weight: var(--font-semibold);
+      font-size: var(--text-base);
+      color: var(--color-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .benefit-card__description {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* ===== Steps ===== */
+    .step {
+      display: flex;
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-5);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .step:last-of-type {
+      border-bottom: none;
+    }
+
+    .step__number {
+      background: var(--color-intermediate);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: var(--font-bold);
+      font-size: var(--text-lg);
+      flex-shrink: 0;
+      margin-right: var(--space-4);
+    }
+
+    .step__content {
+      flex: 1;
+    }
+
+    .step__title {
+      font-weight: var(--font-semibold);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+      color: var(--color-primary);
+    }
+
+    .step__description {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .step__action {
+      background: var(--color-background);
+      padding: var(--space-3) var(--space-4);
+      border-left: 3px solid var(--color-intermediate);
+      font-size: var(--text-sm);
+      margin-top: var(--space-3);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .step__action strong {
+      color: var(--color-primary);
+    }
+
+    /* ===== Code Block ===== */
+    .code-block {
+      background: var(--color-primary);
+      color: #f1f5f9;
+      padding: var(--space-5);
+      margin: var(--space-4) 0;
+      border-radius: var(--radius-lg);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .code-block .tag {
+      color: var(--color-accent);
+    }
+
+    .code-block .content {
+      color: #a5d6ff;
+    }
+
+    .code-block .comment {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    /* ===== Callout Boxes ===== */
+    .callout {
+      padding: var(--space-4) var(--space-5);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin: var(--space-5) 0;
+      border-left: 4px solid;
+    }
+
+    .callout--warning {
+      background: var(--color-warning-bg);
+      border-color: var(--color-warning);
+    }
+
+    .callout--success {
+      background: var(--color-success-bg);
+      border-color: var(--color-success);
+    }
+
+    .callout--info {
+      background: var(--color-info-bg);
+      border-color: var(--color-info);
+    }
+
+    .callout__title {
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-1);
+    }
+
+    .callout--warning .callout__title { color: #92400e; }
+    .callout--success .callout__title { color: #166534; }
+    .callout--info .callout__title { color: #1e40af; }
+
+    .callout__content {
+      font-size: var(--text-sm);
+    }
+
+    /* ===== Test Section ===== */
+    .test-section {
+      background: var(--color-background);
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      margin: var(--space-5) 0;
+    }
+
+    .test-section__title {
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-4);
+      color: var(--color-primary);
+    }
+
+    .test-section__description {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+    }
+
+    /* ===== Experiment Box ===== */
+    .experiment-box {
+      background: var(--color-surface);
+      border: 2px dashed var(--color-advanced);
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      margin: var(--space-6) 0;
+    }
+
+    .experiment-box__title {
+      font-weight: var(--font-semibold);
+      color: var(--color-advanced);
+      margin-bottom: var(--space-2);
+    }
+
+    .experiment-box p {
+      margin: 0 0 var(--space-2) 0;
+      color: var(--color-text);
+      font-size: var(--text-sm);
+    }
+
+    .experiment-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== Pro Tip ===== */
+    .pro-tip {
+      background: var(--color-primary);
+      color: white;
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      margin: var(--space-6) 0;
+    }
+
+    .pro-tip__title {
+      color: var(--color-accent);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-2);
+    }
+
+    .pro-tip p {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ===== Checklist ===== */
+    .checklist {
+      margin: var(--space-5) 0;
+    }
+
+    .checklist__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: var(--text-sm);
+    }
+
+    .checklist__item:last-child {
+      border-bottom: none;
+    }
+
+    .checklist__checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--color-intermediate);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===== Next Steps ===== */
+    .next-steps {
+      background: linear-gradient(135deg, #f0fdf4 0%, var(--color-success-bg) 100%);
+      border: 1px solid var(--color-success);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      margin: var(--space-6) 0;
+    }
+
+    .next-steps__title {
+      font-weight: var(--font-semibold);
+      color: #166534;
+      margin-bottom: var(--space-3);
+    }
+
+    .next-steps p {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: #14532d;
+    }
+
+    /* ===== Footer ===== */
+    .doc-footer {
+      margin-top: var(--space-8);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-border);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    .doc-footer__line {
+      margin-top: var(--space-1);
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        max-width: none;
+      }
+
+      .doc-header {
+        margin: 0 0 var(--space-6) 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .callout,
+      .step,
+      .test-section,
+      .experiment-box,
+      .pro-tip,
+      .next-steps,
+      .key-insight,
+      .objective-box,
+      .benefit-card,
+      .comparison-card,
+      .code-block {
+        break-inside: avoid;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      .comparison-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="doc-header">
+    <p class="doc-header__eyebrow">Hands-On Exercise • SuperWhisper Workshop</p>
+    <h1 class="doc-header__title">Exercise 3: Prompt Enrichment Mode</h1>
+    <p class="doc-header__subtitle">Turn rambling speech into clear, structured prompts for any AI tool</p>
+    <div class="doc-header__meta">
+      <span class="badge badge--time">15-20 min</span>
+      <span class="badge badge--intermediate">Intermediate</span>
+      <span class="badge badge--local">Local Processing</span>
+    </div>
+  </header>
+
+  <div class="key-insight">
+    <p class="key-insight__title">The Key Insight: SuperWhisper Is an INPUT METHOD</p>
+    <p>SuperWhisper doesn't write your code or answer your questions. It <strong>prepares your prompts</strong> for another AI to execute. Think of it as a "prompt editor" that cleans up your spoken thoughts before you paste them into Claude, ChatGPT, Cursor, or any other AI tool. This distinction matters—and this exercise will make it click.</p>
+  </div>
+
+  <div class="objective-box">
+    <p class="objective-box__title">What You'll Build</p>
+    <p>A mode that transforms messy, rambling dictation into clean, well-structured prompts—ready to paste into any AI tool. You'll speak naturally, and SuperWhisper will do the "prompt engineering" for you.</p>
+  </div>
+
+  <h2>The Workflow</h2>
+
+  <p>Understanding this flow is the whole point of this exercise:</p>
+
+  <div class="flow-diagram">
+    <p class="flow-diagram__title">From Rambling to Results</p>
+    <div class="flow-steps">
+      <div class="flow-step">Speak naturally</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step flow-step--highlight">SuperWhisper enriches</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">Paste to AI tool</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">AI executes</div>
+    </div>
+  </div>
+
+  <p>Notice what's happening: you're using one AI (SuperWhisper's local model) to prepare input for another AI (Claude, ChatGPT, Cursor, etc.). It's AI helping you talk to AI. Meta? Yes. Useful? Extremely.</p>
+
+  <h2>Before vs. After: See the Difference</h2>
+
+  <p>This is what prompt enrichment actually does:</p>
+
+  <div class="comparison-grid">
+    <div class="comparison-card comparison-card--before">
+      <p class="comparison-card__title">RAW DICTATION (what you said)</p>
+      <p class="comparison-card__content">"okay so um I need like a function that takes a list of users and um filters them by like active status and then sorts them by you know last login date and also we should probably handle the case where the list is empty"</p>
+    </div>
+    <div class="comparison-card comparison-card--after">
+      <p class="comparison-card__title">ENRICHED PROMPT (what gets pasted)</p>
+      <p class="comparison-card__content">Create a function that:<br>1. Takes a list of users<br>2. Filters to only active users<br>3. Sorts by last login date (most recent first)<br>4. Handles the empty list edge case gracefully</p>
+    </div>
+  </div>
+
+  <p>Same intent. Same requirements. But the enriched version will get you a better response from whatever AI you paste it into. Prompt quality directly affects output quality.</p>
+
+  <h2>Why Bother?</h2>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-card__icon">🎯</div>
+      <p class="benefit-card__title">Better AI Responses</p>
+      <p class="benefit-card__description">Clear prompts get clear answers. Structured requests get structured solutions.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-card__icon">🧠</div>
+      <p class="benefit-card__title">Think Naturally</p>
+      <p class="benefit-card__description">You don't have to mentally structure your request. Just say what you need.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-card__icon">⚡</div>
+      <p class="benefit-card__title">Faster Iteration</p>
+      <p class="benefit-card__description">Less time editing prompts, more time reviewing results.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-card__icon">🔒</div>
+      <p class="benefit-card__title">Still PHI-Safe</p>
+      <p class="benefit-card__description">Local processing means your raw thoughts never leave your device.</p>
+    </div>
+  </div>
+
+  <h2>Step-by-Step: Build the Mode</h2>
+
+  <div class="step">
+    <div class="step__number">1</div>
+    <div class="step__content">
+      <h3 class="step__title">Create New Custom Mode</h3>
+      <p class="step__description">Settings → Modes → Add Mode. This mode sits between you and your AI tools.</p>
+      <div class="step__action">
+        <strong>Name:</strong> "Prompt Enrichment" or "AI Input Prep"<br>
+        Keep it descriptive—you'll know exactly what this mode does when you see its name.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">2</div>
+    <div class="step__content">
+      <h3 class="step__title">Select Local Models</h3>
+      <p class="step__description">Your raw thoughts might contain work-related context. Keep it local.</p>
+      <div class="step__action">
+        <strong>Voice Model:</strong> Fast or Standard (LOCAL)<br>
+        <strong>Language Model:</strong> Any LOCAL model available<br><br>
+        Even though the enriched prompt might go to a cloud AI afterward, the initial processing stays on your device.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">3</div>
+    <div class="step__content">
+      <h3 class="step__title">Set Up Auto-Activation (Optional)</h3>
+      <p class="step__description">You might want this mode available everywhere you interact with AI tools. Or you might prefer to trigger it manually with a keyboard shortcut.</p>
+      <div class="step__action">
+        <strong>Options for auto-activation:</strong><br>
+        ✓ Chrome/Safari (for ChatGPT, Claude.ai)<br>
+        ✓ Cursor (AI input fields)<br>
+        ✓ VS Code (Copilot Chat panel)<br>
+        ✓ Terminal apps (for Claude Code)<br><br>
+        <strong>Or:</strong> Skip auto-activation and just assign a keyboard shortcut like ⌘+Shift+P.
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">4</div>
+    <div class="step__content">
+      <h3 class="step__title">Enable Context Types</h3>
+      <p class="step__description">Context helps SuperWhisper understand what you're working on.</p>
+      <div class="step__action">
+        <strong>☑ Application Context</strong> — Knows which AI tool you're targeting<br>
+        <strong>☑ Selected Text Context</strong> — Include highlighted code as part of your request<br>
+        <strong>☐ Clipboard Context</strong> — Optional, enable if you often copy reference material
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">5</div>
+    <div class="step__content">
+      <h3 class="step__title">Enter AI Instructions</h3>
+      <p class="step__description">This is the prompt that teaches SuperWhisper to be your prompt engineer. Pay attention to the key instruction: output a prompt, NOT an answer.</p>
+    </div>
+  </div>
+
+  <div class="code-block"><span class="comment"># Prompt Enrichment Mode</span>
+
+<span class="tag">&lt;role&gt;</span>
+<span class="content">You are a prompt engineer preparing input for AI assistants.
+Your job is to clean up and structure dictated speech into effective prompts.</span>
+<span class="tag">&lt;/role&gt;</span>
+
+<span class="tag">&lt;critical&gt;</span>
+<span class="content">Do NOT answer the user's question or generate code yourself.
+Output ONLY the reformatted prompt, ready to paste into another AI tool.
+You are preparing input, not providing output.</span>
+<span class="tag">&lt;/critical&gt;</span>
+
+<span class="tag">&lt;instructions&gt;</span>
+<span class="content">The User Message is raw dictated speech that will be sent to an AI tool.
+Transform it into a clear, effective prompt:
+
+1. Remove filler words (um, like, you know, okay so)
+2. Clarify intent and scope
+3. Add structure (numbered steps for multi-part requests)
+4. Preserve technical terms exactly as spoken
+5. Keep the user's voice and intent
+6. If Selected Text is provided, reference it appropriately</span>
+<span class="tag">&lt;/instructions&gt;</span>
+
+<span class="tag">&lt;style&gt;</span>
+<span class="content">- Direct and clear
+- Structured with numbers or bullets when listing requirements
+- Specific about expected output format when relevant
+- Appropriate length (don't over-explain simple requests)</span>
+<span class="tag">&lt;/style&gt;</span>
+
+<span class="tag">&lt;example&gt;</span>
+<span class="content">Input: "okay so um can you help me figure out why this API call is failing it's like returning a 500 error and I think it might be the auth headers"
+
+Output: Debug this API call that's returning a 500 error. The issue might be related to authentication headers. Please identify the likely cause and suggest a fix.</span>
+<span class="tag">&lt;/example&gt;</span></div>
+
+  <div class="callout callout--warning">
+    <p class="callout__title">The Critical Distinction</p>
+    <p class="callout__content">Notice the <code>&lt;critical&gt;</code> section. Without it, the AI might try to answer your question instead of reformatting it. This is the most common mistake when building this mode. The output should be a <em>prompt</em> you'll paste elsewhere—not an answer.</p>
+  </div>
+
+  <div class="step">
+    <div class="step__number">6</div>
+    <div class="step__content">
+      <h3 class="step__title">Save and Test</h3>
+      <p class="step__description">Save your mode and let's see it in action.</p>
+    </div>
+  </div>
+
+  <h2>Test Your Prompt Enrichment Mode</h2>
+
+  <p>Open ChatGPT, Claude.ai, or any AI chat interface. We'll test whether your mode produces prompts (correct) or answers (wrong).</p>
+
+  <div class="test-section">
+    <h3 class="test-section__title">Test 1: Technical Request</h3>
+    <p class="test-section__description">Dictate something messy and see how it gets cleaned up:</p>
+    <div class="comparison-grid">
+      <div class="comparison-card comparison-card--before">
+        <p class="comparison-card__title">Say this (rambling):</p>
+        <p class="comparison-card__content">"can you like write me a Python script that um downloads all the images from a webpage and saves them to a folder and also like skips any that are too small"</p>
+      </div>
+      <div class="comparison-card comparison-card--after">
+        <p class="comparison-card__title">Expect something like:</p>
+        <p class="comparison-card__content">Write a Python script that:<br>1. Downloads all images from a given webpage<br>2. Saves them to a specified folder<br>3. Skips images below a minimum size threshold</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h3 class="test-section__title">Test 2: Debugging Request</h3>
+    <p class="test-section__description">Try something exploratory:</p>
+    <div class="comparison-grid">
+      <div class="comparison-card comparison-card--before">
+        <p class="comparison-card__title">Say this (uncertain):</p>
+        <p class="comparison-card__content">"so I have this React component and it's re-rendering too much and I think it's because of the useEffect dependencies but I'm not sure which ones to include"</p>
+      </div>
+      <div class="comparison-card comparison-card--after">
+        <p class="comparison-card__title">Expect something like:</p>
+        <p class="comparison-card__content">My React component is re-rendering excessively. I suspect the issue is with useEffect dependencies. Help me identify which dependencies are causing unnecessary re-renders and suggest the correct dependency array.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout--success">
+    <p class="callout__title">Success Check</p>
+    <p class="callout__content">If the output is a <em>question or request</em> ready to paste into another AI—success! If the output is Python code or a React explanation—your mode is trying to answer instead of enrich. Go back and make sure the <code>&lt;critical&gt;</code> section is in your prompt.</p>
+  </div>
+
+  <div class="experiment-box">
+    <p class="experiment-box__title">Try Something Challenging</p>
+    <p>Dictate a truly messy stream-of-consciousness request: "okay so um I need to... wait no, let me think... actually I want a function that... hmm, it should take some data and like transform it somehow... maybe sort it? Or filter it? Yeah, filter by date and then also maybe group things..."</p>
+    <p>See if your mode can extract a coherent prompt from that chaos. If it can, you've got a powerful tool.</p>
+  </div>
+
+  <h2>The Complete Flow in Practice</h2>
+
+  <p>Here's what using this mode looks like in real life:</p>
+
+  <div class="flow-diagram">
+    <p class="flow-diagram__title">Real-World Example</p>
+    <div class="flow-steps">
+      <div class="flow-step">You ramble into mic</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step flow-step--highlight">Enriched prompt appears</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">Cmd+C to copy</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">Cmd+V into Claude</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">Better answer</div>
+    </div>
+  </div>
+
+  <p>The extra step of enrichment isn't overhead—it's leverage. You're trading a few seconds of processing for significantly better AI responses.</p>
+
+  <div class="pro-tip">
+    <p class="pro-tip__title">Combine with Selected Text</p>
+    <p>The real power comes when you highlight some code, then dictate: "refactor this to use async await and add error handling." The enriched prompt will reference the selected code and structure your request clearly. You're giving the target AI everything it needs in one clean package.</p>
+  </div>
+
+  <h2>Completion Checklist</h2>
+
+  <div class="checklist">
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Created "Prompt Enrichment" mode with LOCAL models</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Set up auto-activation or keyboard shortcut</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Enabled Application and Selected Text context</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Pasted prompt with the critical "don't answer" instruction</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Tested with messy dictation → clean prompt output</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Verified output is a prompt (not an answer)</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox" class="checklist__checkbox">
+      <span>Tested the complete flow: dictate → enrich → paste → execute</span>
+    </label>
+  </div>
+
+  <div class="next-steps">
+    <p class="next-steps__title">What's Next?</p>
+    <p>Now that you understand the "input method" concept, <strong>Exercise 4: Teams Chat Mode</strong> will apply it to workplace messaging—where tone and brevity matter even more than accuracy. Then we'll explore custom vocabulary and agentic workflows.</p>
+  </div>
+
+  <footer class="doc-footer">
+    Austin Public Health • Voice-Driven AI Development Workshop • Part 1 of 3
+    <div class="doc-footer__line">Exercise 3 of 6 • Prompt Enrichment</div>
+  </footer>
+</body>
+</html>

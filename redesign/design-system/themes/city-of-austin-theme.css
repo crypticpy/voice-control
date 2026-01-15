@@ -1,0 +1,97 @@
+/**
+ * ============================================================================
+ * CITY OF AUSTIN THEME OVERRIDE
+ * ============================================================================
+ *
+ * Example theme file showing how to rebrand the presentation system.
+ *
+ * USAGE:
+ * In your HTML file, import base CSS first, then this override:
+ *
+ *   <link rel="stylesheet" href="../design-system/slide-base.css">
+ *   <link rel="stylesheet" href="../design-system/themes/city-of-austin-theme.css">
+ *
+ * Or in JavaScript/build system:
+ *   @import 'slide-base.css';
+ *   @import 'themes/city-of-austin-theme.css';
+ *
+ * NOTE: These are EXAMPLE values. Replace with actual City of Austin
+ * brand colors from their official style guide when available.
+ *
+ * ============================================================================
+ */
+
+:root {
+  /* =========================================================================
+     PRIMARY BRAND COLORS — City of Austin (Example)
+     =========================================================================
+     Replace these with actual COA brand colors from style guide
+     ========================================================================= */
+
+  /* Primary teal (placeholder - verify with COA brand guide) */
+  --theme-primary: #00454a;
+  --theme-primary-light: #006d75;
+  --theme-primary-dark: #003033;
+
+  /* Accent orange (placeholder - verify with COA brand guide) */
+  --theme-accent: #f5a623;
+  --theme-accent-light: #ffbd4a;
+  --theme-accent-muted: rgba(245, 166, 35, 0.15);
+
+  /* =========================================================================
+     SECONDARY COLORS
+     ========================================================================= */
+
+  /* These may remain similar or be adjusted per COA guidelines */
+  --theme-secondary-blue: #2563eb;
+  --theme-secondary-purple: #7c3aed;
+
+  /* =========================================================================
+     SURFACE COLORS
+     =========================================================================
+     These typically stay neutral but can be adjusted for brand feel
+     ========================================================================= */
+
+  /* Keep neutral or adjust slightly for brand warmth/coolness */
+  --theme-surface-light: #f5f7f7;
+  --theme-surface-white: #ffffff;
+  --theme-surface-dark: #1a3a3d;
+
+  /* =========================================================================
+     TEXT COLORS
+     ========================================================================= */
+
+  /* Match primary for consistency */
+  --theme-text-primary: #00454a;
+  --theme-text-secondary: #4a6d70;
+  --theme-text-tertiary: #7a9a9d;
+  --theme-text-inverse: #ffffff;
+
+  /* =========================================================================
+     BORDER COLORS
+     ========================================================================= */
+
+  --theme-border-light: #d5e0e1;
+  --theme-border-strong: #a8c0c2;
+}
+
+
+/**
+ * ============================================================================
+ * OPTIONAL: Override semantic colors if needed
+ * ============================================================================
+ * Generally, semantic colors (success, warning, danger, info) should remain
+ * consistent across themes for accessibility and recognition. Only override
+ * if the brand requires specific status colors.
+ *
+ * Example (commented out):
+ *
+ * :root {
+ *   --color-success: #2e7d32;
+ *   --color-warning: #ed6c02;
+ *   --color-danger: #d32f2f;
+ *   --color-info: #0288d1;
+ * }
+ *
+ * ============================================================================
+ */

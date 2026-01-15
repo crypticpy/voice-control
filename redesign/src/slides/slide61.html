@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Mistakes to Avoid</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-primary);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--color-danger); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">WARNINGS</p>
+    <h1 style="color: var(--theme-text-inverse); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Common Mistakes to Avoid</h1>
+  </div>
+  <div class="row fill-height" style="padding: 20px 48px 32px 48px; gap: 16px;">
+    <!-- Don't Column -->
+    <div class="col" style="flex: 1; background: #fef2f2; padding: 20px;">
+      <p style="color: var(--color-danger); font-size: 13px; font-weight: 700; margin: 0 0 14px 0;">NEVER DO THIS</p>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-danger-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Paste PHI into public AI tools</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">ChatGPT, Claude.ai free tier, etc.</p>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-danger-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Include real patient data in prompts</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Even for "testing" purposes</p>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-danger-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Use cloud dictation for PHI</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Default OS dictation sends to cloud</p>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-danger-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Share API keys or credentials</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">In code, prompts, or conversations</p>
+      </div>
+
+      <div>
+        <p style="color: var(--color-danger-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Assume "private" means compliant</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Verify with IT/compliance first</p>
+      </div>
+    </div>
+
+    <!-- Do Column -->
+    <div class="col" style="flex: 1; background: var(--color-success-bg); padding: 20px;">
+      <p style="color: var(--color-success); font-size: 13px; font-weight: 700; margin: 0 0 14px 0;">DO THIS INSTEAD</p>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-success-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Use approved enterprise tools</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Azure OpenAI, Azure AI Foundry</p>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-success-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Use synthetic or anonymized data</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">For testing and development</p>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-success-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Use local voice transcription</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">SuperWhisper, WhisperFlow</p>
+      </div>
+
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--color-success-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Use environment variables</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Never hardcode credentials</p>
+      </div>
+
+      <div>
+        <p style="color: var(--color-success-text); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Verify compliance before use</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Check with IT security team</p>
+      </div>
+    </div>
+
+    <!-- Key Point -->
+    <div class="col" style="flex: 0.8; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 13px; font-weight: 700; margin: 0 0 16px 0;">REMEMBER</p>
+
+      <div style="background: var(--theme-primary); padding: 16px; margin-bottom: 16px;">
+        <p style="color: var(--theme-text-inverse); font-size: 14px; font-family: Georgia, serif; margin: 0; line-height: 1.5;">"If you wouldn't print it and leave it on a public printer, don't paste it into a public AI."</p>
+      </div>
+
+      <p style="color: rgba(255,255,255,0.6); font-size: 11px; margin: 0; line-height: 1.6;">The convenience of AI tools doesn't change our responsibility to protect sensitive data.</p>
+
+      <div style="margin-top: auto; padding-top: 16px;">
+        <p style="color: var(--theme-accent); font-size: 11px; margin: 0;">When in doubt, ask IT Security</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

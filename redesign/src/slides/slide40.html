@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Government Cloud</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 32px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">COMPLIANCE</p>
+    <h1 style="color: var(--theme-primary); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Azure Government Cloud</h1>
+    <p style="color: var(--theme-text-secondary); font-size: 14px; font-family: Arial, sans-serif; margin: 8px 0 0 0;">Understanding GCC vs GCC-High environments</p>
+  </div>
+  <div class="row fill-height" style="padding: 24px 48px 40px 48px; gap: 24px;">
+    <!-- GCC -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 24px;">
+      <div style="background: var(--theme-accent); padding: 8px 12px; display: inline-block; margin-bottom: 16px;">
+        <p style="color: var(--theme-primary); font-size: 10px; font-weight: 700; margin: 0; letter-spacing: 1px;">MOST COMMON</p>
+      </div>
+      <p style="color: var(--theme-primary); font-size: 20px; font-family: Georgia, serif; margin: 0 0 12px 0;">GCC (Government Community Cloud)</p>
+      <p style="color: var(--theme-text-secondary); font-size: 12px; font-family: Arial, sans-serif; margin: 0 0 16px 0; line-height: 1.8;">FedRAMP Moderate<br/>State/Local government<br/>Standard .azure.com endpoints<br/>Most AI features available</p>
+      <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--theme-border-light);">
+        <p style="color: var(--color-success); font-size: 11px; font-weight: 700; margin: 0;">Recommended for Austin Public Health</p>
+      </div>
+    </div>
+
+    <!-- GCC-High -->
+    <div class="col" style="flex: 1; background: var(--theme-primary); padding: 24px;">
+      <p style="color: var(--theme-text-inverse); font-size: 20px; font-family: Georgia, serif; margin: 0 0 12px 0;">GCC-High</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 12px; font-family: Arial, sans-serif; margin: 0 0 16px 0; line-height: 1.8;">FedRAMP High<br/>IL4/IL5 workloads<br/>Uses .azure.us endpoints<br/>Limited AI feature availability</p>
+      <div style="background: var(--theme-surface-dark); padding: 14px; margin-top: 16px;">
+        <p style="color: var(--theme-accent); font-size: 11px; margin: 0;">Required for: DoD, ITAR, CUI</p>
+      </div>
+      <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #333;">
+        <p style="color: var(--color-warning); font-size: 11px; margin: 0;">Check with IT for specific requirements</p>
+      </div>
+    </div>
+
+    <!-- Key Differences -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 24px;">
+      <p style="color: var(--theme-primary); font-size: 14px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 16px 0;">Key Differences</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Endpoints</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; font-family: monospace;">.azure.com vs .azure.us</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Personnel</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">GCC-High: US citizens only</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Data Location</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Both: US datacenters only</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Cost</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">GCC-High: ~20% premium</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>End-to-End Workflow</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">WORKFLOW</p>
+    <h1 style="color: var(--theme-text-primary); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">End-to-End Voice Development Flow</h1>
+  </div>
+  <div class="col fill-height" style="padding: 24px 48px 32px 48px;">
+    <!-- Flow Diagram -->
+    <div class="row items-center" style="justify-content: space-between; margin-bottom: 24px;">
+      <!-- Step 1 -->
+      <div class="col center" style="flex: 1;">
+        <div style="width: 64px; height: 64px; background: var(--theme-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <p style="color: var(--theme-accent); font-size: 24px; font-family: Georgia, serif; margin: 0;">1</p>
+        </div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0; text-align: center;">Speak</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; text-align: center;">Voice command</p>
+      </div>
+      <div style="width: 40px; height: 2px; background: var(--theme-accent);"></div>
+      <!-- Step 2 -->
+      <div class="col center" style="flex: 1;">
+        <div style="width: 64px; height: 64px; background: var(--theme-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <p style="color: var(--theme-accent); font-size: 24px; font-family: Georgia, serif; margin: 0;">2</p>
+        </div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0; text-align: center;">Transcribe</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; text-align: center;">Local Whisper</p>
+      </div>
+      <div style="width: 40px; height: 2px; background: var(--theme-accent);"></div>
+      <!-- Step 3 -->
+      <div class="col center" style="flex: 1;">
+        <div style="width: 64px; height: 64px; background: var(--theme-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <p style="color: var(--theme-accent); font-size: 24px; font-family: Georgia, serif; margin: 0;">3</p>
+        </div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0; text-align: center;">Paste</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; text-align: center;">Into CLI/Editor</p>
+      </div>
+      <div style="width: 40px; height: 2px; background: var(--theme-accent);"></div>
+      <!-- Step 4 -->
+      <div class="col center" style="flex: 1;">
+        <div style="width: 64px; height: 64px; background: var(--theme-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <p style="color: var(--theme-accent); font-size: 24px; font-family: Georgia, serif; margin: 0;">4</p>
+        </div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0; text-align: center;">Process</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; text-align: center;">AI reasoning</p>
+      </div>
+      <div style="width: 40px; height: 2px; background: var(--theme-accent);"></div>
+      <!-- Step 5 -->
+      <div class="col center" style="flex: 1;">
+        <div style="width: 64px; height: 64px; background: var(--theme-accent); display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+          <p style="color: var(--theme-text-primary); font-size: 24px; font-family: Georgia, serif; margin: 0;">5</p>
+        </div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0; text-align: center;">Execute</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; text-align: center;">Code changes</p>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 20px; margin-bottom: 16px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 12px 0;">EXAMPLE WORKFLOW</p>
+      <div class="row" style="gap: 20px;">
+        <div style="flex: 1;">
+          <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">You say:</p>
+          <p style="color: var(--theme-text-secondary); font-size: 12px; margin: 0; font-style: italic;">"Add input validation to the user registration form and show helpful error messages"</p>
+        </div>
+        <div style="flex: 1;">
+          <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Claude does:</p>
+          <p style="color: var(--theme-text-secondary); font-size: 12px; margin: 0;">Finds form, adds validation rules, creates error messages, updates UI, runs tests</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 16px;">
+      <p style="color: var(--theme-accent); font-size: 13px; font-family: Arial, sans-serif; margin: 0; text-align: center; font-weight: 600;">Total time: seconds to speak, minutes for AI to complete what would take hours manually</p>
+    </div>
+  </div>
+</body>
+</html>

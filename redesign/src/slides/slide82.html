@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Handoff Mode</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left: Overview -->
+  <div class="col" style="width: 40%; height: 100%; background: var(--theme-primary); padding: 28px;">
+    <div style="background: #8b5cf6; padding: 8px 12px; width: fit-content; margin-bottom: 12px;">
+      <p style="color: var(--theme-text-inverse); font-size: 9px; font-weight: 700; margin: 0; letter-spacing: 1px;">ADVANCED PATTERN</p>
+    </div>
+    <h1 style="color: var(--theme-text-inverse); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 12px 0; line-height: 1.2;">Agentic Handoff<br/>Mode</h1>
+    <div style="width: 40px; height: 2px; background: var(--theme-accent); margin: 0 0 16px 0;"></div>
+
+    <div style="background: rgba(201,162,39,0.15); border-left: 3px solid var(--theme-accent); padding: 12px; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 4px 0;">USE CASE</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 9px; margin: 0; line-height: 1.4;">Prepare structured task handoffs for autonomous AI coding agents like Claude Code, Aider, or Cursor Agent.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px; margin-bottom: 12px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">THE PATTERN</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.5;">
+        Raw speech describing a task<br/>
+        ↓<br/>
+        Structured task specification<br/>
+        ↓<br/>
+        AI agent executes autonomously
+      </p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 12px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0 0 6px 0;">CONTEXT SETTINGS</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 9px; margin: 0; line-height: 1.5;">
+        ✓ Application Context<br/>
+        ✓ Selected Text (file/code context)<br/>
+        ✓ Clipboard (errors, references)
+      </p>
+    </div>
+  </div>
+
+  <!-- Right: Prompt -->
+  <div class="col" style="width: 60%; height: 100%; background: var(--theme-surface-light); padding: 24px 28px;">
+    <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 12px 0;">SAMPLE AI INSTRUCTIONS</p>
+
+    <div style="background: var(--theme-primary); padding: 14px; font-family: monospace; margin-bottom: 10px; overflow: hidden;">
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 4px 0;">&lt;role&gt;</p>
+      <p style="color: rgba(255,255,255,0.85); font-size: 8px; margin: 0 0 4px 0; padding-left: 8px;">You prepare task specifications for AI coding agents</p>
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 4px 0;">&lt;/role&gt;</p>
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 4px 0;">&lt;instructions&gt;</p>
+      <p style="color: rgba(255,255,255,0.85); font-size: 8px; margin: 0 0 4px 0; padding-left: 8px; line-height: 1.4;">
+        Convert the User Message into a structured task.<br/>
+        Include: objective, scope, constraints, success criteria.
+      </p>
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 4px 0;">&lt;/instructions&gt;</p>
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 0 0 4px 0;">&lt;requirements&gt;</p>
+      <p style="color: rgba(255,255,255,0.85); font-size: 8px; margin: 0; padding-left: 8px; line-height: 1.4;">
+        Clear, actionable objective<br/>
+        Reference files from Selected Text if provided<br/>
+        Include Clipboard context if relevant<br/>
+        Specify what NOT to change if mentioned
+      </p>
+      <p style="color: var(--theme-accent); font-size: 8px; margin: 4px 0 0 0;">&lt;/requirements&gt;</p>
+    </div>
+
+    <div class="row" style="gap: 8px; margin-bottom: 8px;">
+      <div style="flex: 1; background: #ede9fe; border-left: 3px solid #8b5cf6; padding: 8px;">
+        <p style="color: #5b21b6; font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">RAW SPEECH</p>
+        <p style="color: #5b21b6; font-size: 7px; margin: 0; line-height: 1.4;">"okay so there's a bug in the user dashboard where the charts aren't loading and I think it's something to do with the API call timing and we need to fix it but don't touch the CSS because design just approved that"</p>
+      </div>
+      <div style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 8px;">
+        <p style="color: var(--theme-primary); font-size: 9px; font-weight: 700; margin: 0 0 4px 0;">STRUCTURED HANDOFF</p>
+        <p style="color: var(--theme-text-secondary); font-size: 7px; margin: 0; line-height: 1.4;"><strong>Objective:</strong> Fix chart loading bug in user dashboard<br/><strong>Likely cause:</strong> API call timing issue<br/><strong>Scope:</strong> JS/API logic only<br/><strong>Constraint:</strong> Do NOT modify CSS<br/><strong>Success:</strong> Charts load correctly</p>
+      </div>
+    </div>
+
+    <div class="row" style="gap: 8px;">
+      <div style="flex: 1; background: var(--color-success-bg); border-left: 3px solid var(--color-success); padding: 8px;">
+        <p style="color: var(--color-success-text); font-size: 9px; font-weight: 700; margin: 0 0 2px 0;">WHY THIS MATTERS</p>
+        <p style="color: var(--color-success-text); font-size: 8px; margin: 0; line-height: 1.4;">AI agents work better with structured tasks than rambling instructions.</p>
+      </div>
+      <div style="flex: 1; background: var(--color-warning-bg); border-left: 3px solid var(--color-warning); padding: 8px;">
+        <p style="color: var(--color-warning-text); font-size: 9px; font-weight: 700; margin: 0 0 2px 0;">WORKFLOW</p>
+        <p style="color: var(--color-warning-text); font-size: 8px; margin: 0; line-height: 1.4;">Select relevant code → Dictate task → Paste to Claude Code → Agent executes</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

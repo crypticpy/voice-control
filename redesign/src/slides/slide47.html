@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hooks System</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left content -->
+  <div class="col" style="width: 55%; height: 100%; background: var(--theme-surface-light); padding: 32px 36px;">
+    <div class="row items-center" style="margin-bottom: 6px;">
+      <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0; font-family: Arial, sans-serif;">AUTOMATION</p>
+    </div>
+    <h1 style="color: var(--theme-text-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 6px 0;">Hooks System</h1>
+    <p style="color: var(--theme-text-secondary); font-size: 13px; font-family: Arial, sans-serif; margin: 0 0 16px 0;">Run scripts at key points in Claude's workflow</p>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 8px;">
+      <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 700; margin: 0 0 4px 0;">PreToolUse</p>
+      <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Run before Claude executes a tool (read, write, bash)</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 8px;">
+      <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 700; margin: 0 0 4px 0;">PostToolUse</p>
+      <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Run after a tool completes (log actions, format code)</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 8px;">
+      <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 700; margin: 0 0 4px 0;">Notification</p>
+      <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Handle Claude notifications (Slack, email, etc.)</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 12px 14px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-family: Arial, sans-serif; margin: 0;"><strong>Use case:</strong> Auto-format code before commits, log all file writes</p>
+    </div>
+  </div>
+
+  <!-- Right code example -->
+  <div class="col" style="width: 45%; height: 100%; background: var(--theme-primary); padding: 36px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 2px; margin: 0 0 14px 0; font-family: Arial, sans-serif;">EXAMPLE HOOK</p>
+    <div style="background: var(--theme-surface-dark); padding: 14px; font-family: monospace; font-size: 10px; line-height: 1.6;">
+      <p style="color: var(--theme-text-secondary); margin: 0;">// settings.json</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">{</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">  "hooks": {</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">    "PostToolUse": [{</p>
+      <p style="color: var(--theme-accent); margin: 0;">      "matcher": "Write",</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">      "hooks": [{</p>
+      <p style="color: var(--theme-accent); margin: 0;">        "type": "command",</p>
+      <p style="color: var(--theme-accent); margin: 0;">        "command": "prettier --write"</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">      }]</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">    }]</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">  }</p>
+      <p style="color: var(--theme-text-inverse); margin: 0;">}</p>
+    </div>
+    <div style="margin-top: 16px; background: var(--theme-surface-dark); padding: 12px;">
+      <p style="color: rgba(255,255,255,0.7); font-size: 10px; margin: 0; text-align: center;">Auto-format files after Claude writes them</p>
+    </div>
+  </div>
+</body>
+</html>

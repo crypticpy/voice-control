@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety Features</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">SAFETY</p>
+    <h1 style="color: var(--theme-text-primary); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Permission and Safety Controls</h1>
+  </div>
+  <div class="row fill-height" style="padding: 20px 48px 32px 48px; gap: 16px;">
+    <!-- Permission Levels -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0;">Permission Modes</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 600; margin: 0 0 4px 0;">Ask Mode (Default)</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5;">Claude asks permission before file writes and bash commands</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 600; margin: 0 0 4px 0;">Auto-Accept Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5;">Skip confirmations (use with caution)</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 600; margin: 0 0 4px 0;">Tool Restrictions</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5;">--allowedTools to limit capabilities</p>
+      </div>
+    </div>
+
+    <!-- Safety Features -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0;">Built-in Safety</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 600; margin: 0 0 4px 0;">Sandbox Execution</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5;">Commands run in isolated environment when possible</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 600; margin: 0 0 4px 0;">Destructive Command Detection</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5;">Extra confirmation for rm, git push --force, etc.</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 600; margin: 0 0 4px 0;">Git Integration</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5;">Changes visible in git diff for review</p>
+      </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="col" style="flex: 1; background: var(--theme-primary); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0;">Best Practices</p>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; margin: 0;">1. Start in Ask Mode</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 4px 0 0 0;">Learn what Claude does</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; margin: 0;">2. Use Git Branches</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 4px 0 0 0;">Easy to revert changes</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; margin: 0;">3. Review Diffs</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 4px 0 0 0;">Check before committing</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 12px; margin: 0;">4. Test Changes</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 4px 0 0 0;">Run tests after edits</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

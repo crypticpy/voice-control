@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} — Voice AI Workshop</title>
+
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="../course-base.css">
+</head>
+<body>
+  <div class="document">
+
+    <!-- ================================================================
+         DOCUMENT HEADER
+         ================================================================ -->
+    <header class="doc-header">
+      <p class="doc-header__eyebrow">Hands-On Exercise • SuperWhisper Workshop</p>
+      <h1 class="doc-header__title">{{TITLE}}</h1>
+      <div class="doc-header__meta">
+        <span class="badge badge--time">⏱ {{TIME}}</span>
+        <span class="badge badge--{{DIFFICULTY_CLASS}}">{{DIFFICULTY}}</span>
+        <span class="badge badge--local">LOCAL • PHI-Safe</span>
+      </div>
+    </header>
+
+    <!-- ================================================================
+         LEARNING OBJECTIVE
+         ================================================================ -->
+    <div class="objective-box">
+      <h2 class="objective-box__title">Learning Objective</h2>
+      <p class="objective-box__content">
+        {{OBJECTIVE}}
+      </p>
+    </div>
+
+    <!-- ================================================================
+         PREREQUISITES (optional — remove if not needed)
+         ================================================================ -->
+    <div class="prerequisites">
+      <h2 class="prerequisites__title">Prerequisites</h2>
+      <div class="prerequisites__list">
+        <div class="prerequisites__item">☑ SuperWhisper installed and running</div>
+        <div class="prerequisites__item">☑ Completed Exercise 1 (Local Email Mode)</div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         KEY CONCEPT (optional — use for exercises introducing new ideas)
+         ================================================================ -->
+    <div class="concept-box">
+      <h2 class="concept-box__title">Key Insight: {{CONCEPT_TITLE}}</h2>
+      <p class="concept-box__content">
+        {{CONCEPT_DESCRIPTION}}
+      </p>
+    </div>
+
+    <!-- ================================================================
+         WHAT YOU'LL LEARN (optional — good for longer exercises)
+         ================================================================ -->
+    <div class="learning-outcomes">
+      <h2 class="learning-outcomes__title">What You'll Learn</h2>
+      <div class="learning-outcomes__list">
+        <div class="learning-outcomes__item">
+          <span class="learning-outcomes__icon">✓</span>
+          <span>How to create custom modes</span>
+        </div>
+        <div class="learning-outcomes__item">
+          <span class="learning-outcomes__icon">✓</span>
+          <span>Configure auto-activation rules</span>
+        </div>
+        <div class="learning-outcomes__item">
+          <span class="learning-outcomes__icon">✓</span>
+          <span>Write effective AI instructions</span>
+        </div>
+        <div class="learning-outcomes__item">
+          <span class="learning-outcomes__icon">✓</span>
+          <span>Test and validate output</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         WORKFLOW OVERVIEW (optional — use for process-heavy exercises)
+         ================================================================ -->
+    <h2>The Workflow</h2>
+
+    <div class="flow-diagram">
+      <span class="flow-diagram__step">Speak naturally</span>
+      <span class="flow-diagram__arrow">→</span>
+      <span class="flow-diagram__step flow-diagram__step--highlight">SuperWhisper processes</span>
+      <span class="flow-diagram__arrow">→</span>
+      <span class="flow-diagram__step">Formatted output</span>
+      <span class="flow-diagram__arrow">→</span>
+      <span class="flow-diagram__step">Paste to target</span>
+    </div>
+
+    <!-- ================================================================
+         STEP-BY-STEP INSTRUCTIONS
+         ================================================================ -->
+    <h2>Step-by-Step Instructions</h2>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">1</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Open SuperWhisper Settings</h3>
+          <span class="step-card__time">~1 min</span>
+        </div>
+        <p class="step-card__description">
+          Click the SuperWhisper icon in your menu bar (Mac) or system tray (Windows),
+          then click the gear icon or select "Settings".
+        </p>
+        <div class="step-card__checkpoint">
+          ✓ CHECKPOINT: You should see the Settings window with tabs on the left sidebar.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">2</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Navigate to Modes</h3>
+          <span class="step-card__time">~30 sec</span>
+        </div>
+        <p class="step-card__description">
+          In the Settings panel, find and click the "Modes" tab on the left sidebar.
+        </p>
+      </div>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">3</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Create New Custom Mode</h3>
+          <span class="step-card__time">~1 min</span>
+        </div>
+        <p class="step-card__description">
+          Click the "+ Create Custom Mode" button at the bottom of the modes list.
+        </p>
+        <div class="step-card__action">
+          <strong>Name your mode:</strong> "{{MODE_NAME}}" or similar descriptive name
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">4</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Select Your AI Models</h3>
+          <span class="step-card__time">~1 min</span>
+        </div>
+        <p class="step-card__description">
+          Scroll to the "Voice Model" and "Language Model" sections.
+        </p>
+        <div class="step-card__action">
+          <strong>Voice Model:</strong> Select <strong>Fast</strong> or <strong>Standard</strong> (LOCAL)<br>
+          <strong>Language Model:</strong> Select a LOCAL model (not cloud)
+        </div>
+      </div>
+    </div>
+
+    <!-- Callout after relevant step -->
+    <div class="callout callout--warning">
+      <h3 class="callout__title">⚠ Important</h3>
+      <p class="callout__content">
+        Make sure you select LOCAL models only. Look for "LOCAL" labels or avoid models
+        marked as "Cloud". This keeps your content on your device.
+      </p>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">5</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Configure Auto-Activation</h3>
+          <span class="step-card__time">~2 min</span>
+        </div>
+        <p class="step-card__description">
+          Scroll to "Auto-Activation Rules" and click "Add Rule".
+        </p>
+        <div class="step-card__action">
+          <strong>Application:</strong> Select "{{TARGET_APP}}"<br>
+          (Add additional apps as needed for your workflow)
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">6</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Enable Context Settings</h3>
+          <span class="step-card__time">~1 min</span>
+        </div>
+        <p class="step-card__description">
+          In the "Context" section, enable these toggles:
+        </p>
+        <div class="step-card__action">
+          ☑ <strong>Application Context</strong> — Knows which app you're in<br>
+          ☑ <strong>Selected Text Context</strong> — For responding to content
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">7</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Enter Your AI Instructions</h3>
+          <span class="step-card__time">~2 min</span>
+        </div>
+        <p class="step-card__description">
+          Scroll to the "AI Instructions" text area and paste the following prompt:
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         CODE BLOCK (AI Instructions)
+         ================================================================ -->
+    <div class="code-block">
+      <div class="code-block__header">
+        <span class="code-block__label">AI Instructions</span>
+        <button class="code-block__copy no-print">Copy</button>
+      </div>
+      <div class="code-block__content">
+<pre><span class="tag">&lt;role&gt;</span>
+You are a professional assistant for a government health department.
+<span class="tag">&lt;/role&gt;</span>
+
+<span class="tag">&lt;instructions&gt;</span>
+The User Message is dictated speech. Transform it into clear,
+professional output appropriate for the target application.
+<span class="tag">&lt;/instructions&gt;</span>
+
+<span class="tag">&lt;requirements&gt;</span>
+- Professional, appropriate tone
+- Clear, concise language
+- Appropriate for government workplace
+- Preserve technical terms exactly as spoken
+<span class="tag">&lt;/requirements&gt;</span></pre>
+      </div>
+    </div>
+
+    <div class="step-card step-card--beginner">
+      <div class="step-card__number">8</div>
+      <div class="step-card__content">
+        <div class="step-card__header">
+          <h3 class="step-card__title">Save Your Mode</h3>
+          <span class="step-card__time">~30 sec</span>
+        </div>
+        <p class="step-card__description">
+          Click "Save" or "Done" to save your new custom mode.
+        </p>
+        <div class="step-card__checkpoint">
+          ✓ CHECKPOINT: Your new mode should appear in the modes list.
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         BEFORE/AFTER COMPARISON
+         ================================================================ -->
+    <h2>Before vs. After</h2>
+
+    <div class="comparison">
+      <div class="comparison__box comparison__box--before">
+        <h3 class="comparison__label">✗ Raw Dictation</h3>
+        <p class="comparison__content">
+          <em>"okay so um I wanted to like follow up on our meeting from last week
+          and um ask if you had a chance to like review the proposal"</em>
+        </p>
+      </div>
+      <div class="comparison__box comparison__box--after">
+        <h3 class="comparison__label">✓ Processed Output</h3>
+        <p class="comparison__content">
+          I wanted to follow up on our meeting from last week and ask if you've
+          had a chance to review the proposal. Please let me know if you have
+          any questions.
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         TEST YOUR WORK
+         ================================================================ -->
+    <h2>Test Your New Mode</h2>
+
+    <div class="test-section">
+      <h3 class="test-section__title">Try This Test:</h3>
+      <p class="test-section__step">1. Open {{TARGET_APP}} (your mode should auto-activate)</p>
+      <p class="test-section__step">2. Start a new {{CONTENT_TYPE}}</p>
+      <p class="test-section__step">3. Hold your recording hotkey (<kbd>Option</kbd>+<kbd>Space</kbd> on Mac, <kbd>Alt</kbd>+<kbd>Space</kbd> on Windows)</p>
+      <p class="test-section__step">4. Say: <em>"{{SAMPLE_DICTATION}}"</em></p>
+      <p class="test-section__step">5. Release the hotkey</p>
+      <p class="test-section__result">
+        <strong>Expected result:</strong> {{EXPECTED_RESULT}}
+      </p>
+    </div>
+
+    <div class="callout callout--success">
+      <h3 class="callout__title">✓ Success Check</h3>
+      <p class="callout__content">
+        Your dictation should be transformed into properly formatted output,
+        not just raw text. If it looks polished and professional, you're done!
+      </p>
+    </div>
+
+    <!-- ================================================================
+         COMPLETION CHECKLIST
+         ================================================================ -->
+    <h2>Completion Checklist</h2>
+
+    <div class="checklist">
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Created a new custom mode named "{{MODE_NAME}}"</span>
+      </label>
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Selected LOCAL models only (for privacy)</span>
+      </label>
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Added auto-activation rule for {{TARGET_APP}}</span>
+      </label>
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Enabled Application and Selected Text context</span>
+      </label>
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Pasted the AI instructions prompt</span>
+      </label>
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Saved the mode</span>
+      </label>
+      <label class="checklist__item">
+        <input type="checkbox">
+        <span class="checklist__label">Tested with a sample dictation</span>
+      </label>
+    </div>
+
+    <!-- ================================================================
+         TROUBLESHOOTING
+         ================================================================ -->
+    <h2>Troubleshooting</h2>
+
+    <div class="card">
+      <h3 class="card__title">Mode doesn't auto-activate?</h3>
+      <p class="card__content">
+        Check that {{TARGET_APP}} is listed in your auto-activation rules and
+        that the rule is enabled. Try manually selecting the mode from the
+        menu bar to verify it works.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="card__title">Output looks like raw text?</h3>
+      <p class="card__content">
+        Make sure you selected a Language Model (AI model), not just a Voice Model.
+        The Language Model is what processes and formats your speech.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 class="card__title">Processing seems slow?</h3>
+      <p class="card__content">
+        Local models take a moment to load on first use. Try the "Fast" model
+        if Standard is too slow. Performance improves after the first use.
+      </p>
+    </div>
+
+    <!-- ================================================================
+         NEXT STEPS (optional)
+         ================================================================ -->
+    <div class="callout callout--tip">
+      <h3 class="callout__title">Next Exercise</h3>
+      <p class="callout__content">
+        Ready for more? Continue to <strong>Exercise {{NEXT_NUMBER}}: {{NEXT_TITLE}}</strong>
+        to learn {{NEXT_PREVIEW}}.
+      </p>
+    </div>
+
+    <!-- ================================================================
+         FOOTER
+         ================================================================ -->
+    <footer class="doc-footer">
+      Austin Public Health • Voice-Driven AI Development Workshop • Part 1 of 3
+    </footer>
+
+  </div>
+</body>
+</html>

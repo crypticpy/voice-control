@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wispr Flow Advanced Settings</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">CONFIGURATION</p>
+    <h1 style="color: var(--theme-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Wispr Flow Advanced Settings</h1>
+  </div>
+
+  <div class="row fill-height" style="padding: 20px 48px 28px 48px; gap: 20px;">
+    <!-- Left Column - Hotkeys -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-primary); padding: 16px; margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">HOTKEY OPTIONS</p>
+        <div style="margin-bottom: 10px;">
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">Push-to-Talk</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Hold key to record, release to transcribe</p>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">Toggle Mode</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Press once to start, again to stop</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">Voice Activation</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">"Hey Wispr" wake word (requires cloud)</p>
+        </div>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 14px;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 8px 0; font-family: Arial, sans-serif;">Recommended Shortcuts</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.7; font-family: Arial, sans-serif;">Mac: Fn (hold) or Cmd+Shift+Space<br/>Windows: Ctrl+Shift+Space<br/>Caps Lock (can remap)<br/>Dedicated macro key</p>
+      </div>
+    </div>
+
+    <!-- Middle Column - Auto Settings -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px; margin-bottom: 14px;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">AUTO-PUNCTUATION</p>
+        <div class="row items-center" style="gap: 8px; margin-bottom: 8px;">
+          <div style="width: 12px; height: 12px; background: var(--color-success); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Automatic periods at pauses</p>
+        </div>
+        <div class="row items-center" style="gap: 8px; margin-bottom: 8px;">
+          <div style="width: 12px; height: 12px; background: var(--color-success); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Question marks from intonation</p>
+        </div>
+        <div class="row items-center" style="gap: 8px;">
+          <div style="width: 12px; height: 12px; background: var(--color-success); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Comma insertion (configurable)</p>
+        </div>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">AUTO-CAPITALIZATION</p>
+        <div class="row items-center" style="gap: 8px; margin-bottom: 8px;">
+          <div style="width: 12px; height: 12px; background: var(--color-success); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Sentence starts</p>
+        </div>
+        <div class="row items-center" style="gap: 8px; margin-bottom: 8px;">
+          <div style="width: 12px; height: 12px; background: var(--color-success); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Proper nouns</p>
+        </div>
+        <div class="row items-center" style="gap: 8px;">
+          <div style="width: 12px; height: 12px; background: var(--color-success); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Acronyms (configurable)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column - Language -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-primary); padding: 16px; margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">LANGUAGE SETTINGS</p>
+        <div style="margin-bottom: 10px;">
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">Primary Language</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Set your main language for best accuracy</p>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">Auto-Detect</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Enable for multilingual dictation</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">Technical Vocabulary</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Add domain-specific terms</p>
+        </div>
+      </div>
+
+      <div style="background: var(--color-warning-bg); border-left: 4px solid var(--color-warning); padding: 14px;">
+        <p style="color: var(--color-warning-text); font-size: 11px; font-weight: 700; margin: 0 0 6px 0; font-family: Arial, sans-serif;">PRIVACY REMINDER</p>
+        <p style="color: var(--color-warning-text); font-size: 10px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">Voice activation and some auto features require cloud. Keep disabled for local-only use.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

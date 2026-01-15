@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slash Commands Reference</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-primary);">
+  <div style="padding: 32px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">QUICK ACTIONS</p>
+    <h1 style="color: var(--theme-text-inverse); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Slash Commands Reference</h1>
+    <p style="color: rgba(255,255,255,0.6); font-size: 14px; font-family: Arial, sans-serif; margin: 8px 0 0 0;">Built-in shortcuts for common operations</p>
+  </div>
+  <div class="row fill-height" style="padding: 20px 48px 32px 48px; gap: 16px;">
+    <!-- Session Commands -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0; font-family: Arial, sans-serif;">Session</p>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/clear</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Reset conversation</p>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/compact</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Summarize context</p>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/resume</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Continue last session</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/config</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">View/edit settings</p>
+      </div>
+    </div>
+
+    <!-- Information Commands -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0; font-family: Arial, sans-serif;">Information</p>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/help</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Show all commands</p>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/cost</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Show token usage</p>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/status</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Current session info</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/doctor</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Diagnose issues</p>
+      </div>
+    </div>
+
+    <!-- Action Commands -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0; font-family: Arial, sans-serif;">Actions</p>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/init</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Create CLAUDE.md</p>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/add-dir</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Add folder to context</p>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/bug</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Report a bug</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-family: monospace; margin: 0 0 3px 0;">/login</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Re-authenticate</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

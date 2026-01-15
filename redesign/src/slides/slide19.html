@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wispr Flow Privacy Mode</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left - Warning/Info -->
+  <div class="col" style="width: 45%; height: 100%; background: var(--color-warning); padding: 28px 32px;">
+    <div class="col fill-height">
+      <div style="width: 50px; height: 50px; background: var(--theme-surface-white); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+        <p style="color: var(--color-warning); font-size: 30px; font-weight: 700; margin: 0; font-family: Georgia, serif;">!</p>
+      </div>
+      <p style="color: var(--theme-primary); font-size: 10px; letter-spacing: 3px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">IMPORTANT LIMITATION</p>
+      <h1 style="color: var(--theme-primary); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 12px 0; line-height: 1.2;">Wispr Flow is Cloud-Only</h1>
+      <p style="color: rgba(26,31,46,0.9); font-size: 12px; font-family: Arial, sans-serif; margin: 0 0 16px 0; line-height: 1.5;">Unlike SuperWhisper, Wispr Flow does NOT offer local/on-device processing. All audio is sent to cloud servers.</p>
+
+      <div style="background: rgba(255,255,255,0.3); padding: 12px; margin-top: auto;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">What This Means:</p>
+        <p style="color: rgba(26,31,46,0.9); font-size: 10px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">Audio always leaves your device<br/>Requires internet connection<br/>Not suitable for air-gapped environments</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right - Privacy Mode Explanation -->
+  <div class="col" style="width: 55%; height: 100%; background: var(--theme-surface-light); padding: 28px 32px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">WHAT PRIVACY MODE ACTUALLY DOES</p>
+    <h2 style="color: var(--theme-text-primary); font-size: 20px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 14px 0;">Zero Data Retention</h2>
+
+    <div style="background: var(--color-success-bg); border-left: 4px solid var(--color-success); padding: 12px; margin-bottom: 12px;">
+      <p style="color: var(--color-success-text); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">With Privacy Mode ON:</p>
+      <p style="color: var(--color-success-text); font-size: 10px; margin: 0; line-height: 1.6; font-family: Arial, sans-serif;">Audio/transcripts NOT stored on servers<br/>Data NOT used for model training<br/>Processed then immediately deleted</p>
+    </div>
+
+    <div style="background: var(--color-danger-bg); border-left: 4px solid var(--color-danger); padding: 12px; margin-bottom: 12px;">
+      <p style="color: var(--color-danger-text); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">With Privacy Mode OFF (default):</p>
+      <p style="color: var(--color-danger-text); font-size: 10px; margin: 0; line-height: 1.6; font-family: Arial, sans-serif;">Audio/transcripts may be stored<br/>Data may be used for AI training<br/>History accessible in your account</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 14px; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 6px 0; font-family: Arial, sans-serif;">FOR GOVERNMENT/PHI USE:</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">Wispr Flow's Privacy Mode provides zero retention but audio still goes to cloud. For true local processing where audio never leaves your device, use <strong style="color: var(--theme-accent);">SuperWhisper with local models</strong> instead.</p>
+    </div>
+
+    <div style="background: var(--color-info-bg); border: 1px solid var(--color-info); padding: 10px;">
+      <p style="color: var(--color-info-text); font-size: 10px; margin: 0; font-family: Arial, sans-serif;"><strong>Wispr Compliance:</strong> SOC 2 Type II, HIPAA-ready, ISO 27001 certified</p>
+    </div>
+  </div>
+</body>
+</html>

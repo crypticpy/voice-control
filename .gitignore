@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary Office files
+~$*
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/

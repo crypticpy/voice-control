@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperWhisper Modes</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 32px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">OPERATING MODES</p>
+    <h1 style="color: var(--theme-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">SuperWhisper Modes</h1>
+    <p style="color: var(--theme-text-secondary); font-size: 12px; font-family: Arial, sans-serif; margin: 6px 0 0 0;">Choose how your speech is processed and formatted</p>
+  </div>
+
+  <div class="row fill-height" style="padding: 16px 48px 36px 48px; gap: 16px;">
+    <!-- Built-in Modes -->
+    <div class="col" style="flex: 1;">
+      <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">BUILT-IN MODES</p>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px; margin-bottom: 8px;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Voice Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Pure transcription - what you say becomes text. No AI processing.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px; margin-bottom: 8px;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Super Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Adapts output based on active app. Different formatting for code editors vs email.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px; margin-bottom: 8px;">
+        <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Note Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Structures speech into lists and key points. Great for brainstorming and meeting notes.</p>
+      </div>
+
+      <div style="background: var(--color-success-bg); border-left: 4px solid var(--color-success); padding: 10px; margin-top: auto;">
+        <p style="color: var(--color-success-text); font-size: 10px; margin: 0; font-family: Arial, sans-serif;"><strong>Voice Mode + Local Model</strong> = Complete on-device privacy</p>
+      </div>
+    </div>
+
+    <!-- Custom Modes -->
+    <div class="col" style="flex: 1; background: var(--theme-primary); padding: 16px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">CUSTOM MODES</p>
+
+      <p style="color: rgba(255,255,255,0.7); font-size: 11px; margin: 0 0 12px 0; line-height: 1.5; font-family: Arial, sans-serif;">Create your own modes with natural language prompts. Define exactly how text should be processed.</p>
+
+      <div style="background: var(--theme-surface-dark); padding: 12px; margin-bottom: 10px;">
+        <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 6px 0; font-family: Arial, sans-serif;">EXAMPLE: Email Mode</p>
+        <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif; font-style: italic;">"Format my dictation as a professional email. Add greeting and sign-off."</p>
+      </div>
+
+      <div style="background: var(--theme-surface-dark); padding: 12px; margin-bottom: 10px;">
+        <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 6px 0; font-family: Arial, sans-serif;">EXAMPLE: Code Mode</p>
+        <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif; font-style: italic;">"Convert my description into a Python function with docstring."</p>
+      </div>
+
+      <div style="background: rgba(201,162,39,0.2); padding: 10px; margin-top: auto;">
+        <p style="color: var(--theme-accent); font-size: 10px; margin: 0; font-family: Arial, sans-serif;"><strong>Free:</strong> 3 custom modes | <strong>Pro:</strong> Unlimited modes</p>
+      </div>
+    </div>
+
+    <!-- Mode Switching -->
+    <div class="col" style="flex: 0.8;">
+      <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">SWITCHING MODES</p>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 8px;">
+        <p style="color: var(--theme-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Menu Bar</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; font-family: Arial, sans-serif;">Click icon > Select mode</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px; margin-bottom: 8px;">
+        <p style="color: var(--theme-primary); font-size: 10px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Keyboard</p>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; font-family: Arial, sans-serif;">Switch modes directly via shortcuts</p>
+      </div>
+
+      <div style="background: var(--color-warning-bg); border-left: 4px solid var(--color-warning); padding: 10px; margin-top: auto;">
+        <p style="color: var(--color-warning-text); font-size: 9px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;"><strong>Note:</strong> Custom/AI modes may use cloud processing. Check settings for local-only options.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

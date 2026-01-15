@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Key Commands</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">ESSENTIAL COMMANDS</p>
+    <h1 style="color: var(--theme-primary); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Claude Code Key Commands</h1>
+  </div>
+  <div class="row fill-height" style="padding: 20px 48px 32px 48px; gap: 16px;">
+    <!-- Session Management -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 20px;">
+      <p style="color: var(--theme-primary); font-size: 14px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 16px 0;">Session Management</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/clear</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Reset conversation history. Start fresh without restarting Claude.</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/compact</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Summarize context to reduce token usage while preserving key info.</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/resume</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Continue a previous session where you left off.</p>
+      </div>
+    </div>
+
+    <!-- Information -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 20px;">
+      <p style="color: var(--theme-primary); font-size: 14px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 16px 0;">Information</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/help</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Display all available commands and their descriptions.</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/cost</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Show token usage and estimated cost for current session.</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/status</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">View current session info, model, and context window usage.</p>
+      </div>
+    </div>
+
+    <!-- Project Setup -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 20px;">
+      <p style="color: var(--theme-primary); font-size: 14px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 16px 0;">Project Setup</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/init</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Create a CLAUDE.md file with project context and conventions.</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/config</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">View or modify Claude Code settings and preferences.</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-accent); font-size: 14px; font-family: monospace; font-weight: 700; margin: 0 0 4px 0;">/add-dir</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0;">Add additional directories to the current context.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code CLAUDE.md</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left side - Info -->
+  <div class="col" style="width: 45%; height: 100%; background: var(--theme-surface-light); padding: 32px 28px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">PROJECT CONTEXT</p>
+    <h1 style="color: var(--theme-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 12px 0;">CLAUDE.md</h1>
+    <p style="color: var(--theme-text-secondary); font-size: 12px; font-family: Arial, sans-serif; margin: 0 0 20px 0; line-height: 1.5;">A markdown file at your project root that gives Claude persistent context about your codebase.</p>
+
+    <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">What to Include</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.6;">Project overview and purpose<br/>Tech stack and dependencies<br/>Code conventions and patterns<br/>File structure explanations<br/>Common tasks and workflows</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border-left: 4px solid var(--color-success); padding: 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">Benefits</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.6;">Claude remembers across sessions<br/>Consistent code style<br/>Faster onboarding for new tasks</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 10px 12px;">
+      <p style="color: var(--theme-accent); font-size: 10px; margin: 0;"><strong>Tip:</strong> Run /init to auto-generate</p>
+    </div>
+  </div>
+
+  <!-- Right side - Example -->
+  <div class="col" style="width: 55%; height: 100%; background: var(--theme-primary); padding: 28px 32px 36px 32px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 2px; margin: 0 0 10px 0; font-family: Arial, sans-serif;">EXAMPLE</p>
+    <div style="background: var(--theme-surface-dark); padding: 14px; font-family: monospace; font-size: 9px; line-height: 1.6; overflow: hidden;">
+      <p style="color: var(--theme-accent); margin: 0;"># CLAUDE.md</p>
+      <p style="color: rgba(255,255,255,0.5); margin: 4px 0 0 0;">## Project Overview</p>
+      <p style="color: rgba(255,255,255,0.8); margin: 0;">Austin Public Health patient portal</p>
+      <p style="color: rgba(255,255,255,0.8); margin: 0;">React frontend + FastAPI backend</p>
+      <p style="color: rgba(255,255,255,0.5); margin: 8px 0 0 0;">## Conventions</p>
+      <p style="color: rgba(255,255,255,0.8); margin: 0;">TypeScript strict mode</p>
+      <p style="color: rgba(255,255,255,0.8); margin: 0;">Components in PascalCase</p>
+      <p style="color: rgba(255,255,255,0.5); margin: 8px 0 0 0;">## Security Notes</p>
+      <p style="color: var(--color-danger); margin: 0;">Never log PHI to console</p>
+      <p style="color: var(--color-danger); margin: 0;">All endpoints require auth</p>
+    </div>
+    <p style="color: rgba(255,255,255,0.4); font-size: 9px; font-family: Arial, sans-serif; margin: 8px 0 0 0;">Claude reads this file automatically when you start a session</p>
+  </div>
+</body>
+</html>

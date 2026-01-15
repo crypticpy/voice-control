@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Practices Summary</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-primary);">
+  <div style="padding: 28px 40px 0 40px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">SUMMARY</p>
+    <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">CLI Tools Best Practices</h1>
+  </div>
+  <div class="row fill-height" style="padding: 20px 40px 32px 40px; gap: 14px;">
+    <!-- Getting Started -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 14px 0;">Getting Started</p>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Create CLAUDE.md first</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Run /init in your project root</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Start in Ask Mode</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Understand Claude's actions</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Use git branches</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Easy rollback if needed</p>
+      </div>
+    </div>
+
+    <!-- Voice Workflow Tips -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 14px 0;">Voice Workflow Tips</p>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Think high-level</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">"Add validation" not "type if statement"</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Be specific about scope</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">"In the user module" helps focus</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Iterate naturally</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">"Actually, make it a dropdown"</p>
+      </div>
+    </div>
+
+    <!-- Advanced Usage -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 14px 0;">Advanced Usage</p>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Set up hooks</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Auto-format, auto-lint</p>
+      </div>
+      <div style="margin-bottom: 12px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Configure MCP servers</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Extend capabilities</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 0 0 3px 0;">Use /compact regularly</p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 10px; margin: 0;">Manage context window</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

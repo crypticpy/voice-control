@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Reference by Role</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">QUICK REFERENCE</p>
+    <h1 style="color: var(--theme-text-primary); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Tools by Role</h1>
+  </div>
+  <div class="row fill-height" style="padding: 20px 48px 32px 48px; gap: 16px;">
+    <!-- Developers -->
+    <div class="col" style="flex: 1; background: var(--theme-primary); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0;">DEVELOPERS</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Primary Tools</p>
+        <p style="color: rgba(255,255,255,0.6); font-size: 11px; margin: 0; line-height: 1.6;">Claude Code + SuperWhisper/WhisperFlow</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Best For</p>
+        <p style="color: rgba(255,255,255,0.6); font-size: 11px; margin: 0; line-height: 1.6;">Refactoring, testing, debugging, documentation</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Voice Example</p>
+        <p style="color: rgba(255,255,255,0.6); font-size: 11px; margin: 0; font-style: italic;">"Add unit tests for the auth module"</p>
+      </div>
+    </div>
+
+    <!-- Data Analysts -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0;">DATA ANALYSTS</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Primary Tools</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.6;">VS Code + Continue.dev or Cursor</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Best For</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.6;">SQL queries, Python scripts, data pipelines</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Voice Example</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; font-style: italic;">"Write a query to aggregate monthly stats"</p>
+      </div>
+    </div>
+
+    <!-- IT/DevOps -->
+    <div class="col" style="flex: 1; background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 12px; font-weight: 700; margin: 0 0 14px 0;">IT / DEVOPS</p>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Primary Tools</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.6;">Claude Code + MCP servers</p>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Best For</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.6;">Scripts, configs, automation, troubleshooting</p>
+      </div>
+      <div>
+        <p style="color: var(--theme-text-primary); font-size: 12px; font-weight: 600; margin: 0 0 4px 0;">Voice Example</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; font-style: italic;">"Create a script to rotate log files"</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin: 0 48px 32px 48px; background: var(--theme-accent); padding: 14px;">
+    <p style="color: var(--theme-text-primary); font-size: 12px; font-family: Arial, sans-serif; margin: 0; text-align: center; font-weight: 600;">All roles benefit from local voice transcription for speed and privacy</p>
+  </div>
+</body>
+</html>

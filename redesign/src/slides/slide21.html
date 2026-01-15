@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wispr Flow with Cursor/VS Code</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left content -->
+  <div class="col" style="width: 55%; height: 100%; background: var(--theme-surface-light); padding: 28px 32px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 4px 0; font-family: Arial, sans-serif;">IDE INTEGRATION</p>
+    <h1 style="color: var(--theme-primary); font-size: 24px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 4px 0;">Wispr Flow + Code Editors</h1>
+    <p style="color: var(--theme-text-secondary); font-size: 11px; font-family: Arial, sans-serif; margin: 0 0 14px 0;">Special features for VS Code, Cursor, and other IDEs</p>
+
+    <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 10px 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Automatic Code Formatting</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Wispr detects when you're in a code file and automatically formats variable names as camelCase, adds proper syntax, and handles special characters.</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 10px 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Language-Aware Dictation</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Recognizes file type (.py, .js, .tsx) and adjusts output. Say "string" in Python, get quotes; in TypeScript, get proper typing.</p>
+    </div>
+
+    <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 10px 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Comment Dictation</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Say "comment" before dictating and Wispr adds appropriate comment syntax (// for JS, # for Python, etc.)</p>
+    </div>
+
+    <div style="background: var(--theme-primary); padding: 10px 12px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 3px 0; font-family: Arial, sans-serif;">CURSOR + WISPR FLOW</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Combine voice dictation with Cursor's AI. Dictate prompts to Cursor's composer with your voice for hands-free AI coding.</p>
+    </div>
+  </div>
+
+  <!-- Right - Configuration -->
+  <div class="col" style="width: 45%; height: 100%; background: var(--theme-primary); padding: 28px 32px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 2px; margin: 0 0 12px 0; font-family: Arial, sans-serif;">CONFIGURATION TIPS</p>
+
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Hotkey Setup</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Avoid conflicts with IDE shortcuts. Use Cmd/Ctrl+Shift+D or a dedicated key like Caps Lock.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Enable IDE Mode</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Settings > Applications > Enable "Developer Mode" for enhanced code formatting.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; margin-bottom: 10px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Custom Vocabulary</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.4; font-family: Arial, sans-serif;">Add your project's function names, variables, and technical terms for better recognition.</p>
+    </div>
+
+    <div style="background: rgba(201,162,39,0.2); border: 1px solid rgba(201,162,39,0.4); padding: 12px;">
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">WORKFLOW EXAMPLE</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 10px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">1. Open Cursor/VS Code<br/>2. Position cursor where you want code<br/>3. Hold hotkey and describe function<br/>4. Release to insert formatted code</p>
+    </div>
+
+    <div style="margin-top: auto; padding-top: 10px;">
+      <p style="color: rgba(255,255,255,0.4); font-size: 9px; margin: 0; font-family: Arial, sans-serif;">Works with any text-based IDE: JetBrains, Vim, Emacs, etc.</p>
+    </div>
+  </div>
+</body>
+</html>

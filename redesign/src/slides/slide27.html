@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Stack Overview</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 32px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 8px 0; font-family: Arial, sans-serif;">ARCHITECTURE</p>
+    <h1 style="color: var(--theme-primary); font-size: 32px; font-family: Georgia, serif; font-weight: 400; margin: 0;">The AI Development Stack</h1>
+  </div>
+  <div class="col fill-height center" style="padding: 24px 48px 40px 48px;">
+    <!-- Flow Diagram -->
+    <div class="row items-center" style="gap: 0;">
+      <!-- Voice Input -->
+      <div class="col items-center" style="width: 160px;">
+        <div style="width: 100px; height: 100px; background: var(--theme-primary); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <p style="color: var(--theme-accent); font-size: 24px; margin: 0;">1</p>
+          <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 4px 0 0 0;">VOICE</p>
+        </div>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 10px 0 0 0; text-align: center;">SuperWhisper<br/>Wispr Flow</p>
+      </div>
+      <!-- Arrow -->
+      <div style="width: 40px; height: 2px; background: var(--theme-accent); position: relative;">
+        <div style="position: absolute; right: -6px; top: -4px; width: 0; height: 0; border-left: 10px solid var(--theme-accent); border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+      </div>
+      <!-- Transcription -->
+      <div class="col items-center" style="width: 160px;">
+        <div style="width: 100px; height: 100px; background: var(--theme-surface-dark); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <p style="color: var(--theme-accent); font-size: 24px; margin: 0;">2</p>
+          <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 4px 0 0 0;">TRANSCRIBE</p>
+        </div>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 10px 0 0 0; text-align: center;">Whisper Model<br/>(Local or Cloud)</p>
+      </div>
+      <!-- Arrow -->
+      <div style="width: 40px; height: 2px; background: var(--theme-accent); position: relative;">
+        <div style="position: absolute; right: -6px; top: -4px; width: 0; height: 0; border-left: 10px solid var(--theme-accent); border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+      </div>
+      <!-- AI Assistant -->
+      <div class="col items-center" style="width: 160px;">
+        <div style="width: 100px; height: 100px; background: var(--theme-accent); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <p style="color: var(--theme-primary); font-size: 24px; margin: 0; font-weight: 700;">3</p>
+          <p style="color: var(--theme-primary); font-size: 11px; margin: 4px 0 0 0; font-weight: 600;">REASON</p>
+        </div>
+        <p style="color: var(--theme-primary); font-size: 11px; margin: 10px 0 0 0; text-align: center; font-weight: 600;">Claude Code<br/>AI Assistant</p>
+      </div>
+      <!-- Arrow -->
+      <div style="width: 40px; height: 2px; background: var(--theme-accent); position: relative;">
+        <div style="position: absolute; right: -6px; top: -4px; width: 0; height: 0; border-left: 10px solid var(--theme-accent); border-top: 5px solid transparent; border-bottom: 5px solid transparent;"></div>
+      </div>
+      <!-- Code Output -->
+      <div class="col items-center" style="width: 160px;">
+        <div style="width: 100px; height: 100px; background: var(--color-success); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <p style="color: var(--theme-text-inverse); font-size: 24px; margin: 0;">4</p>
+          <p style="color: var(--theme-text-inverse); font-size: 11px; margin: 4px 0 0 0;">CODE</p>
+        </div>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 10px 0 0 0; text-align: center;">Files Created<br/>& Modified</p>
+      </div>
+    </div>
+    <!-- Description -->
+    <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 20px 32px; margin-top: 32px; max-width: 700px;">
+      <p style="color: var(--theme-primary); font-size: 13px; font-family: Arial, sans-serif; margin: 0; text-align: center; line-height: 1.7;">Voice becomes text, text becomes intent, intent becomes code. <span style="color: var(--theme-accent); font-weight: 600;">The AI assistant is the reasoning engine</span> that transforms your spoken instructions into working software.</p>
+    </div>
+  </div>
+</body>
+</html>

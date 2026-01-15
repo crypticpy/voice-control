@@ -1,0 +1,50 @@
+/* Voice-Driven AI Workflows - Premium Government Design */
+/* Design Direction: Luxury Tech Editorial */
+
+:root {
+  /* Primary palette - Deep slate with warmth */
+  --color-primary: #1a1f2e;
+  --color-primary-light: #252b3d;
+  --color-primary-dark: #0f1219;
+  --color-primary-foreground: #ffffff;
+
+  /* Accent - Refined gold */
+  --color-accent: #c9a227;
+  --color-accent-light: #e8c44a;
+  --color-accent-dark: #9a7b1c;
+  --color-accent-foreground: #1a1f2e;
+
+  /* Surface colors */
+  --color-surface: #f7f8fa;
+  --color-surface-foreground: #1a1f2e;
+  --color-surface-alt: #eef0f4;
+
+  /* Secondary - Warm gray */
+  --color-secondary: #64697a;
+  --color-secondary-foreground: #ffffff;
+
+  /* Muted tones */
+  --color-muted: #e4e7ed;
+  --color-muted-foreground: #6b7280;
+
+  /* Semantic colors */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  /* Border */
+  --color-border: #d1d5db;
+
+  /* Typography - Using web-safe fonts with character */
+  --font-family-display: Georgia, 'Times New Roman', serif;
+  --font-weight-display: 400;
+  --font-family-content: Arial, Helvetica, sans-serif;
+  --font-weight-content: 400;
+  --font-size-content: 14px;
+  --line-height-content: 1.5;
+
+  /* Spacing */
+  --spacing: 0.25rem;
+  --gap: 1rem;
+  --radius: 4px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VS Code with Azure OpenAI</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-primary);">
+  <div style="padding: 28px 40px 0 40px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">ENTERPRISE COMPLIANCE</p>
+    <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">VS Code with Azure OpenAI</h1>
+    <p style="color: rgba(255,255,255,0.6); font-size: 12px; font-family: Arial, sans-serif; margin: 6px 0 0 0;">Configuring Continue.dev for government-compliant AI</p>
+  </div>
+  <div class="row fill-height" style="padding: 14px 40px 44px 40px; gap: 20px;">
+    <!-- Configuration -->
+    <div class="col" style="flex: 1.2; background: var(--theme-surface-dark); padding: 20px;">
+      <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 2px; margin: 0 0 12px 0; font-family: Arial, sans-serif;">CONFIG.JSON</p>
+      <div style="font-family: monospace; font-size: 10px; line-height: 1.6;">
+        <p style="color: var(--theme-text-secondary); margin: 0;">// ~/.continue/config.json</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 4px 0 0 0;">{</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">  "models": [{</p>
+        <p style="color: var(--theme-accent); margin: 0;">    "provider": "azure",</p>
+        <p style="color: var(--theme-accent); margin: 0;">    "model": "gpt-4",</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">    "apiBase": "https://your-</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">      resource.openai.azure.com",</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">    "deployment": "your-deploy",</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">    "apiVersion": "2024-02-15"</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">  }]</p>
+        <p style="color: rgba(255,255,255,0.9); margin: 0;">}</p>
+      </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="col" style="flex: 1; gap: 10px;">
+      <div style="background: var(--color-success); padding: 14px;">
+        <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">Why This Matters</p>
+        <p style="color: rgba(255,255,255,0.9); font-size: 10px; margin: 0; line-height: 1.5;">Your code stays in your Azure tenant. FedRAMP compliant. Data not used for training.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-dark); padding: 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">Requirements</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 10px; margin: 0; line-height: 1.6;">1. Azure OpenAI access approved<br/>2. GPT-4 deployment created<br/>3. API key from Azure Portal<br/>4. Continue.dev extension installed</p>
+      </div>
+
+      <div style="background: var(--theme-surface-dark); padding: 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">Environment Variable</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 10px; margin: 0; font-family: monospace;">AZURE_OPENAI_API_KEY=your-key</p>
+      </div>
+
+      <div style="background: var(--color-warning-bg); padding: 12px;">
+        <p style="color: var(--color-warning-text); font-size: 10px; margin: 0;"><strong>Note:</strong> Keep API keys secure - use env vars, not config files</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

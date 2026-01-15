@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating Custom Modes</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left: Overview -->
+  <div class="col" style="width: 42%; height: 100%; background: var(--theme-primary); padding: 32px;">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 12px 0; font-family: Arial, sans-serif;">CUSTOM MODES</p>
+    <h1 style="color: var(--theme-text-inverse); font-size: 26px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 16px 0; line-height: 1.2;">Creating Your<br/>First Custom Mode</h1>
+    <div style="width: 48px; height: 2px; background: var(--theme-accent); margin: 0 0 20px 0;"></div>
+
+    <div style="background: rgba(201,162,39,0.15); border: 1px solid rgba(201,162,39,0.3); padding: 14px; margin-bottom: 12px;">
+      <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">WHAT CUSTOM MODES DO</p>
+      <p style="color: rgba(255,255,255,0.7); font-size: 10px; margin: 0; line-height: 1.5;">Process your dictation through AI with specific instructions. Create specialized workflows for different tasks.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 14px; margin-bottom: 12px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">FREE TIER</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0;">3 custom modes included</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 14px;">
+      <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">PRO TIER</p>
+      <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0;">Unlimited custom modes</p>
+    </div>
+
+    <div style="background: var(--color-success); padding: 12px; margin-top: auto;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; margin: 0; text-align: center;">Local AI processing keeps your data on-device</p>
+    </div>
+  </div>
+
+  <!-- Right: Steps -->
+  <div class="col" style="width: 58%; height: 100%; background: var(--theme-surface-light); padding: 32px 32px;">
+    <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 700; margin: 0 0 12px 0;">STEP-BY-STEP CREATION</p>
+
+    <div class="col" style="gap: 10px;">
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">1. Access Mode Settings</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0;">Click menu bar icon → Modes → Create New Custom Mode</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">2. Name Your Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0;">Choose descriptive name (e.g., "Email Writer", "Code Commenter")</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">3. Write AI Instructions</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0;">Define how AI should process your dictation (see next slide)</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">4. Select Voice + Language Models</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0;">Choose local models for privacy, cloud for speed/accuracy</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">5. Configure Context (Optional)</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0;">Enable app context, clipboard context, selected text context</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 12px 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">6. Add Examples (Recommended)</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0;">2-3 input/output examples dramatically improve accuracy</p>
+      </div>
+
+      <div style="background: var(--theme-primary); padding: 12px 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 4px 0;">7. Assign Hotkey (Optional)</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 10px; margin: 0;">Quick-switch to this mode with a keyboard shortcut</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

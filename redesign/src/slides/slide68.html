@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initial Setup Walkthrough</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 40px 0 40px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">HANDS-ON</p>
+    <h1 style="color: var(--theme-text-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Initial Setup Walkthrough</h1>
+  </div>
+
+  <div class="row fill-height" style="padding: 20px 40px 32px 40px; gap: 20px;">
+    <!-- Left: Steps -->
+    <div class="col" style="flex: 1.1; gap: 8px;">
+      <div class="row items-center" style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px 16px;">
+        <div style="width: 28px; height: 28px; background: var(--color-success); display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+          <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 700; margin: 0;">1</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 12px; margin: 0; font-weight: 600;">First Launch - Grant Permissions</p>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 2px 0 0 0;">Microphone access + Accessibility (for paste)</p>
+        </div>
+      </div>
+
+      <div class="row items-center" style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px 16px;">
+        <div style="width: 28px; height: 28px; background: var(--color-success); display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+          <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 700; margin: 0;">2</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 12px; margin: 0; font-weight: 600;">Select Your Default Model</p>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 2px 0 0 0;">Start with "Fast" for quick testing (local, free)</p>
+        </div>
+      </div>
+
+      <div class="row items-center" style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px 16px;">
+        <div style="width: 28px; height: 28px; background: var(--color-success); display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+          <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 700; margin: 0;">3</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 12px; margin: 0; font-weight: 600;">Configure Recording Hotkey</p>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 2px 0 0 0;">Default: Option+Space (Mac) or Alt+Space (Win)</p>
+        </div>
+      </div>
+
+      <div class="row items-center" style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 12px 16px;">
+        <div style="width: 28px; height: 28px; background: var(--color-success); display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+          <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 700; margin: 0;">4</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 12px; margin: 0; font-weight: 600;">Test Your First Dictation</p>
+          <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 2px 0 0 0;">Open any text field, hold hotkey, speak, release</p>
+        </div>
+      </div>
+
+      <div class="row items-center" style="background: var(--theme-accent); padding: 12px 16px;">
+        <div style="width: 28px; height: 28px; background: var(--theme-primary); display: flex; align-items: center; justify-content: center; margin-right: 12px;">
+          <p style="color: var(--theme-text-inverse); font-size: 12px; font-weight: 700; margin: 0;">5</p>
+        </div>
+        <div>
+          <p style="color: var(--theme-text-primary); font-size: 12px; margin: 0; font-weight: 700;">Verify Local Processing</p>
+          <p style="color: rgba(26,31,46,0.7); font-size: 10px; margin: 2px 0 0 0;">Check Settings → confirm "Local" model selected</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Tips -->
+    <div class="col" style="flex: 0.9; gap: 10px;">
+      <div style="background: var(--theme-primary); padding: 16px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 8px 0;">HOTKEY OPTIONS</p>
+        <p style="color: rgba(255,255,255,0.8); font-size: 10px; margin: 0; line-height: 1.6;">
+          <strong>Hold-to-Record:</strong> Speak while holding<br/>
+          <strong>Toggle Mode:</strong> Press once to start/stop<br/>
+          <strong>Push-to-Talk:</strong> Classic PTT style
+        </p>
+      </div>
+
+      <div style="background: var(--color-success-bg); border-left: 4px solid var(--color-success); padding: 14px;">
+        <p style="color: var(--color-success-text); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">PRO TIP</p>
+        <p style="color: var(--color-success-text); font-size: 10px; margin: 0; line-height: 1.5;">Hold-to-Record gives you precise control. Release to instantly process and paste. Most natural for short commands.</p>
+      </div>
+
+      <div style="background: var(--color-warning-bg); border-left: 4px solid var(--color-warning); padding: 14px;">
+        <p style="color: var(--color-warning-text); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">FIRST MODEL DOWNLOAD</p>
+        <p style="color: var(--color-warning-text); font-size: 10px; margin: 0; line-height: 1.5;">Local models download on first use (~100-500MB). Wait for download to complete before testing.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 14px;">
+        <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 6px 0;">STATUS INDICATOR</p>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.5;">
+          Gray = Idle state<br/>
+          Red = Recording<br/>
+          Gold = Processing
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

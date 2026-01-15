@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Build outputs
+dist/
+build.log
+
+# macOS
+.DS_Store
+._*
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*~
+
+# Preview images (regenerate if needed)
+preview-*.jpg
+preview-*.png
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Lock files (keep package-lock.json)
+yarn.lock
+
+# Environment
+.env
+.env.local
+
+# Office temp files
+~$*.pptx
+~$*.docx

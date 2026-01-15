@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} — Voice AI Workshop</title>
+
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="../course-base.css">
+
+  <!-- Cheat Sheet specific overrides -->
+  <style>
+    /* Cheat sheets are denser - optimize for scanning */
+    .document {
+      font-size: var(--text-xs);
+    }
+
+    h2 {
+      font-size: var(--text-base);
+      margin-top: var(--space-5);
+      margin-bottom: var(--space-3);
+    }
+
+    /* Compact table for cheat sheets */
+    table {
+      font-size: var(--text-xs);
+    }
+
+    th, td {
+      padding: var(--space-2) var(--space-3);
+    }
+
+    /* Quick reference intro */
+    .intro {
+      background-color: var(--color-background);
+      border-left: var(--border-width-accent) solid var(--color-accent);
+      padding: var(--space-3);
+      margin-bottom: var(--space-5);
+      font-size: var(--text-sm);
+    }
+
+    /* Decision guide cards */
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-3);
+      margin: var(--space-4) 0;
+    }
+
+    .decision-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: var(--space-3);
+    }
+
+    .decision-card__situation {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-2);
+    }
+
+    .decision-card__recommendation {
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+    }
+
+    /* Inline badges for tables */
+    .badge-inline {
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: var(--font-semibold);
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .badge-inline--free {
+      background-color: var(--color-success-bg);
+      color: var(--color-success);
+    }
+
+    .badge-inline--pro {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
+    }
+
+    .badge-inline--local {
+      color: var(--color-success);
+      font-weight: var(--font-bold);
+    }
+
+    .badge-inline--cloud {
+      color: var(--color-danger);
+      font-weight: var(--font-bold);
+    }
+
+    /* Rating stars */
+    .rating {
+      white-space: nowrap;
+    }
+
+    .rating__stars {
+      color: var(--color-accent);
+      letter-spacing: -1px;
+    }
+
+    .rating__label {
+      display: block;
+      font-size: 10px;
+      color: var(--color-text-muted);
+    }
+
+    /* Print optimizations for cheat sheet */
+    @media print {
+      .document {
+        font-size: 10pt;
+      }
+
+      h2 {
+        font-size: 12pt;
+        margin-top: 1em;
+      }
+
+      table {
+        font-size: 9pt;
+      }
+
+      th, td {
+        padding: 4pt 6pt;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="document">
+
+    <!-- ================================================================
+         DOCUMENT HEADER
+         ================================================================ -->
+    <header class="doc-header">
+      <p class="doc-header__eyebrow">Austin Public Health • Voice AI Workshop</p>
+      <h1 class="doc-header__title">{{TITLE}}</h1>
+    </header>
+
+    <!-- ================================================================
+         INTRO/CONTEXT
+         ================================================================ -->
+    <div class="intro">
+      <strong>{{INTRO_TITLE}}</strong>
+      {{INTRO_CONTENT}}
+    </div>
+
+    <!-- ================================================================
+         MAIN CONTENT TABLE
+         Example: Model comparison
+         ================================================================ -->
+    <h2>{{SECTION_1_TITLE}}</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%">Model</th>
+            <th style="width: 12%">Type</th>
+            <th style="width: 15%">Speed</th>
+            <th style="width: 15%">Accuracy</th>
+            <th style="width: 40%">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Nano</strong>
+              <span class="badge-inline badge-inline--free">FREE</span>
+            </td>
+            <td><span class="badge-inline--local">LOCAL</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★★★</span>
+              <span class="rating__label">Instant</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★☆☆</span>
+              <span class="rating__label">~85%</span>
+            </td>
+            <td>Quick notes, casual dictation, testing. Smallest file size (~40MB).</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Fast</strong>
+              <span class="badge-inline badge-inline--free">FREE</span>
+            </td>
+            <td><span class="badge-inline--local">LOCAL</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★★☆</span>
+              <span class="rating__label">Very Fast</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★★☆</span>
+              <span class="rating__label">~88%</span>
+            </td>
+            <td>Daily dictation, emails, chat. Good balance. <strong>Recommended start.</strong></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Standard</strong>
+              <span class="badge-inline badge-inline--free">FREE</span>
+            </td>
+            <td><span class="badge-inline--local">LOCAL</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★☆☆</span>
+              <span class="rating__label">Medium</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★★☆</span>
+              <span class="rating__label">~90%</span>
+            </td>
+            <td>Professional content, documentation. Higher accuracy for important work.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout--success">
+      <h3 class="callout__title">✓ PHI Safe</h3>
+      <p class="callout__content">
+        All FREE tier models process audio entirely on your device. Your voice data
+        never leaves your machine. Safe for sensitive health information.
+      </p>
+    </div>
+
+    <!-- ================================================================
+         SECOND SECTION
+         ================================================================ -->
+    <h2>{{SECTION_2_TITLE}}</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%">Model</th>
+            <th style="width: 12%">Type</th>
+            <th style="width: 15%">Speed</th>
+            <th style="width: 15%">Accuracy</th>
+            <th style="width: 40%">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Pro</strong>
+              <span class="badge-inline badge-inline--pro">PRO</span>
+            </td>
+            <td><span class="badge-inline--local">LOCAL</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★☆☆</span>
+              <span class="rating__label">Medium</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★★☆</span>
+              <span class="rating__label">~92%</span>
+            </td>
+            <td>Professional transcription, technical terms. Better complex vocabulary.</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Ultra Turbo v3</strong>
+              <span class="badge-inline badge-inline--pro">PRO</span>
+            </td>
+            <td><span class="badge-inline--local">LOCAL</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★★☆</span>
+              <span class="rating__label">Fast</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★★★</span>
+              <span class="rating__label">~95%</span>
+            </td>
+            <td>Best local option. Excellent balance. <strong>Recommended for PRO.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ================================================================
+         THIRD SECTION (if needed)
+         ================================================================ -->
+    <h2>{{SECTION_3_TITLE}}</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%">Model</th>
+            <th style="width: 12%">Type</th>
+            <th style="width: 15%">Speed</th>
+            <th style="width: 15%">Accuracy</th>
+            <th style="width: 40%">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Ultra</strong>
+              <span class="badge-inline badge-inline--pro">PRO</span>
+            </td>
+            <td><span class="badge-inline--cloud">CLOUD</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★★★</span>
+              <span class="rating__label">Very Fast</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★★★</span>
+              <span class="rating__label">~97%</span>
+            </td>
+            <td>Short dictations, quick commands. Fastest cloud option. Requires internet.</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Nova</strong>
+              <span class="badge-inline badge-inline--pro">PRO</span>
+            </td>
+            <td><span class="badge-inline--cloud">CLOUD</span></td>
+            <td class="rating">
+              <span class="rating__stars">★★★★★</span>
+              <span class="rating__label">Very Fast</span>
+            </td>
+            <td class="rating">
+              <span class="rating__stars">★★★★★</span>
+              <span class="rating__label">~97%</span>
+            </td>
+            <td>Longer recordings, speaker separation. Best for meetings.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout--danger">
+      <h3 class="callout__title">⚠ Cloud Models Warning</h3>
+      <p class="callout__content">
+        Audio is sent to external servers for processing. Do NOT use for PHI, patient data,
+        or sensitive information. Use only for non-sensitive personal content.
+      </p>
+    </div>
+
+    <!-- ================================================================
+         QUICK DECISION GUIDE
+         ================================================================ -->
+    <h2>Quick Decision Guide</h2>
+
+    <div class="decision-grid">
+      <div class="decision-card">
+        <p class="decision-card__situation">Working with PHI or sensitive data</p>
+        <p class="decision-card__recommendation">→ Fast or Standard (FREE local)</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card__situation">Just getting started</p>
+        <p class="decision-card__recommendation">→ Fast (good balance, free)</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card__situation">Need best accuracy + privacy</p>
+        <p class="decision-card__recommendation">→ Ultra Turbo v3 (PRO local)</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card__situation">Non-sensitive, want speed</p>
+        <p class="decision-card__recommendation">→ Ultra or Nova (PRO cloud)</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card__situation">Older Mac / limited hardware</p>
+        <p class="decision-card__recommendation">→ Nano or Fast (lighter)</p>
+      </div>
+      <div class="decision-card">
+        <p class="decision-card__situation">Long meeting recordings</p>
+        <p class="decision-card__recommendation">→ Nova (if non-sensitive)</p>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         FOOTER
+         ================================================================ -->
+    <footer class="doc-footer">
+      Austin Public Health • Voice-Driven AI Development Workshop • Part 1 of 3
+    </footer>
+
+  </div>
+</body>
+</html>

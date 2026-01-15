@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHI Handling Guide</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left side -->
+  <div class="col" style="width: 45%; height: 100%; background: var(--color-danger); padding: 40px;">
+    <div class="col fill-height justify-center">
+      <div style="width: 80px; height: 80px; background: var(--theme-surface-white); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+        <p style="color: var(--color-danger); font-size: 48px; font-family: Georgia, serif; margin: 0; font-weight: 700;">!</p>
+      </div>
+      <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 16px 0; line-height: 1.2;">PHI Handling Guide</h1>
+      <div style="width: 48px; height: 2px; background: var(--theme-surface-white); margin: 0 0 16px 0;"></div>
+      <p style="color: rgba(255,255,255,0.9); font-size: 14px; font-family: Arial, sans-serif; margin: 0; line-height: 1.6;">Protected Health Information requires special handling. Know your boundaries.</p>
+    </div>
+  </div>
+
+  <!-- Right content -->
+  <div class="col" style="width: 55%; height: 100%; background: var(--theme-surface-light); padding: 36px 40px;">
+    <div class="col fill-height justify-center" style="gap: 12px;">
+      <div style="background: var(--color-success); padding: 16px;">
+        <p style="color: var(--theme-text-inverse); font-size: 13px; font-weight: 700; margin: 0 0 8px 0;">SAFE FOR PHI</p>
+        <p style="color: rgba(255,255,255,0.9); font-size: 12px; margin: 0; line-height: 1.7;">SuperWhisper with local models (FREE tier works!)<br/>Ollama with local models<br/>Azure OpenAI with BAA in place*<br/>Air-gapped systems</p>
+      </div>
+
+      <div style="background: #fef2f2; border-left: 4px solid var(--color-danger); padding: 16px;">
+        <p style="color: var(--color-danger-text); font-size: 13px; font-weight: 700; margin: 0 0 8px 0;">NOT SAFE FOR PHI (without approval)</p>
+        <p style="color: var(--color-danger-text); font-size: 12px; margin: 0; line-height: 1.7;">Wispr Flow (cloud-based, even with Privacy Mode)<br/>Direct OpenAI/Anthropic API calls<br/>Consumer AI tools (ChatGPT, Claude.ai free)<br/>Default OS cloud dictation</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 700; margin: 0 0 8px 0;">PHI INCLUDES</p>
+        <p style="color: var(--theme-text-secondary); font-size: 12px; margin: 0; line-height: 1.5;">Names, dates, addresses, SSN, medical record numbers, health conditions, test results, provider information, any data that could identify a patient</p>
+      </div>
+
+      <div style="background: var(--theme-primary); padding: 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-family: Arial, sans-serif; margin: 0; text-align: center;">*Always verify BAA status with your compliance team before use</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

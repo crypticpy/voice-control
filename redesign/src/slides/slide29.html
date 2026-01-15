@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Installation</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-primary);">
+  <div style="padding: 28px 40px 0 40px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 10px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">SETUP</p>
+    <h1 style="color: var(--theme-text-inverse); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Claude Code Installation</h1>
+  </div>
+  <div class="row fill-height" style="padding: 20px 40px 32px 40px; gap: 20px;">
+    <!-- Step 1 -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-accent); padding: 10px 14px; margin-bottom: 10px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0; font-family: Arial, sans-serif;">Step 1: Install via npm</p>
+      </div>
+      <div style="background: var(--theme-surface-dark); padding: 16px; margin-bottom: 10px;">
+        <p style="color: var(--theme-accent); font-family: monospace; font-size: 11px; margin: 0;">npm install -g @anthropic-ai/claude-code</p>
+      </div>
+      <p style="color: rgba(255,255,255,0.5); font-size: 10px; font-family: Arial, sans-serif; margin: 0;">Requires Node.js 18+ installed</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-accent); padding: 10px 14px; margin-bottom: 10px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0; font-family: Arial, sans-serif;">Step 2: Authenticate</p>
+      </div>
+      <div style="background: var(--theme-surface-dark); padding: 16px; margin-bottom: 10px;">
+        <p style="color: rgba(255,255,255,0.7); font-family: monospace; font-size: 10px; margin: 0 0 6px 0;"># Option A: OAuth (recommended)</p>
+        <p style="color: var(--theme-accent); font-family: monospace; font-size: 11px; margin: 0 0 10px 0;">claude</p>
+        <p style="color: rgba(255,255,255,0.7); font-family: monospace; font-size: 10px; margin: 0 0 6px 0;"># Option B: API Key</p>
+        <p style="color: var(--theme-accent); font-family: monospace; font-size: 11px; margin: 0;">export ANTHROPIC_API_KEY=sk-...</p>
+      </div>
+      <p style="color: rgba(255,255,255,0.5); font-size: 10px; font-family: Arial, sans-serif; margin: 0;">OAuth opens browser for login</p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-accent); padding: 10px 14px; margin-bottom: 10px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0; font-family: Arial, sans-serif;">Step 3: Start Using</p>
+      </div>
+      <div style="background: var(--theme-surface-dark); padding: 16px; margin-bottom: 10px;">
+        <p style="color: rgba(255,255,255,0.7); font-family: monospace; font-size: 10px; margin: 0 0 6px 0;"># Navigate to your project</p>
+        <p style="color: var(--theme-accent); font-family: monospace; font-size: 11px; margin: 0 0 10px 0;">cd ~/my-project</p>
+        <p style="color: rgba(255,255,255,0.7); font-family: monospace; font-size: 10px; margin: 0 0 6px 0;"># Launch Claude Code</p>
+        <p style="color: var(--theme-accent); font-family: monospace; font-size: 11px; margin: 0;">claude</p>
+      </div>
+      <p style="color: rgba(255,255,255,0.5); font-size: 10px; font-family: Arial, sans-serif; margin: 0;">Claude indexes your codebase</p>
+    </div>
+  </div>
+</body>
+</html>

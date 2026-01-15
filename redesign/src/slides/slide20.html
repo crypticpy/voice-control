@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wispr Flow Features</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">KEY CAPABILITIES</p>
+    <h1 style="color: var(--theme-text-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Wispr Flow Features</h1>
+  </div>
+
+  <div class="row fill-height" style="padding: 20px 48px 28px 48px; gap: 16px;">
+    <!-- Left Column -->
+    <div class="col" style="flex: 1; gap: 12px;">
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 6px 0;">Context Awareness</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; font-family: Arial, sans-serif; margin: 0; line-height: 1.5;">Automatically detects what app you're using. Formats output for code in VS Code, prose in Word, casual in Slack.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 6px 0;">Command Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; font-family: Arial, sans-serif; margin: 0; line-height: 1.5;">Say "Hey Wispr" to trigger commands. Edit, format, translate, or perform actions on selected text.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 6px 0;">Flow State Mode</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; font-family: Arial, sans-serif; margin: 0; line-height: 1.5;">Continuous dictation without holding keys. Start speaking when ready, pause naturally between sentences.</p>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col" style="flex: 1; gap: 12px;">
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 6px 0;">Smart Formatting</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; font-family: Arial, sans-serif; margin: 0; line-height: 1.5;">Auto-capitalizes sentences, adds punctuation intelligently, formats code blocks, and handles special characters.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 6px 0;">Multi-Language Support</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; font-family: Arial, sans-serif; margin: 0; line-height: 1.5;">Supports 30+ languages with automatic detection. Switch languages mid-dictation seamlessly.</p>
+      </div>
+
+      <div style="background: var(--theme-primary); padding: 16px;">
+        <p style="color: var(--theme-accent); font-size: 13px; font-family: Georgia, serif; font-weight: 600; margin: 0 0 6px 0;">Correction Mode</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-family: Arial, sans-serif; margin: 0; line-height: 1.5;">Say "correct that" or "change X to Y" to make inline edits without switching to keyboard.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom feature highlight -->
+  <div class="row" style="padding: 0 48px 28px 48px; gap: 16px;">
+    <div style="flex: 1; background: rgba(201,162,39,0.1); border: 1px solid var(--theme-accent); padding: 14px;">
+      <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">CODING CONTEXT EXAMPLE</p>
+      <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">Say: "create a function called calculate total that takes price and quantity"<br/>Output: <span style="font-family: monospace;">function calculateTotal(price, quantity)</span></p>
+    </div>
+    <div style="flex: 1; background: rgba(201,162,39,0.1); border: 1px solid var(--theme-accent); padding: 14px;">
+      <p style="color: var(--theme-text-primary); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">EMAIL CONTEXT EXAMPLE</p>
+      <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">Say: "hi john comma thanks for the meeting period looking forward to next steps"<br/>Output: Hi John, Thanks for the meeting. Looking forward to next steps.</p>
+    </div>
+  </div>
+</body>
+</html>

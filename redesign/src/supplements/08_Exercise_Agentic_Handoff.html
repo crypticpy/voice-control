@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6: Agentic Handoff Mode — Voice AI Workshop</title>
+
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       CSS CUSTOM PROPERTIES (Design Tokens)
+       ================================================================ */
+    :root {
+      /* Colors - Primary */
+      --color-primary: #1a1f2e;
+      --color-accent: #c9a227;
+
+      /* Colors - Semantic */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-info: #2563eb;
+      --color-info-bg: #dbeafe;
+      --color-intermediate: #6366f1;
+      --color-intermediate-bg: #eef2ff;
+      --color-advanced: #8b5cf6;
+      --color-advanced-bg: #ede9fe;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fef2f2;
+
+      /* Colors - Neutral */
+      --color-background: #f7f8fa;
+      --color-surface: #ffffff;
+      --color-border: #e4e7ed;
+      --color-text: #1a1f2e;
+      --color-text-muted: #6b7280;
+
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+
+      /* Font Sizes */
+      --text-xs: 12px;
+      --text-sm: 13px;
+      --text-base: 14px;
+      --text-lg: 16px;
+      --text-xl: 18px;
+      --text-2xl: 22px;
+
+      /* Font Weights */
+      --font-normal: 400;
+      --font-medium: 500;
+      --font-semibold: 600;
+      --font-bold: 700;
+
+      /* Spacing */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+
+      /* Border Radius */
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+    }
+
+    /* ================================================================
+       BASE STYLES
+       ================================================================ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      padding: var(--space-8);
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    /* ================================================================
+       DOCUMENT HEADER
+       ================================================================ */
+    .doc-header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2d3548 100%);
+      color: white;
+      padding: var(--space-6);
+      margin: calc(var(--space-8) * -1) calc(var(--space-8) * -1) var(--space-6) calc(var(--space-8) * -1);
+    }
+
+    .doc-header__eyebrow {
+      color: var(--color-accent);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+    }
+
+    .doc-header__title {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-3);
+    }
+
+    .doc-header__meta {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      border-radius: var(--radius-sm);
+    }
+
+    .badge--advanced {
+      background-color: var(--color-advanced);
+      color: white;
+    }
+
+    .badge--local {
+      background-color: var(--color-success);
+      color: white;
+    }
+
+    /* ================================================================
+       CONTEXT BOXES
+       ================================================================ */
+    .objective-box {
+      background: linear-gradient(135deg, var(--color-advanced-bg) 0%, #ddd6fe 100%);
+      border-left: 4px solid var(--color-advanced);
+      padding: var(--space-5);
+      margin-bottom: var(--space-5);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .objective-box__title {
+      color: var(--color-advanced);
+      font-size: var(--text-sm);
+      font-weight: var(--font-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--space-2);
+    }
+
+    .objective-box__content {
+      color: #5b21b6;
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+
+    .context-box {
+      background: linear-gradient(135deg, var(--color-success-bg) 0%, #a7f3d0 100%);
+      border-left: 4px solid var(--color-success);
+      padding: var(--space-5);
+      margin-bottom: var(--space-6);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .context-box__title {
+      color: var(--color-success);
+      font-size: var(--text-sm);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-2);
+    }
+
+    .context-box__content {
+      color: #166534;
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+
+    /* ================================================================
+       SECTION HEADINGS
+       ================================================================ */
+    h2 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+      margin: var(--space-6) 0 var(--space-4) 0;
+      padding-bottom: var(--space-2);
+      border-bottom: 2px solid var(--color-advanced);
+    }
+
+    h3 {
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    /* ================================================================
+       FLOW DIAGRAM
+       ================================================================ */
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      background: var(--color-background);
+      padding: var(--space-5);
+      border-radius: var(--radius-md);
+      margin: var(--space-5) 0;
+      flex-wrap: wrap;
+    }
+
+    .flow-step {
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md);
+      font-size: var(--text-xs);
+      font-weight: var(--font-semibold);
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .flow-step--highlight {
+      background: var(--color-advanced-bg);
+      border-color: var(--color-advanced);
+      color: #5b21b6;
+    }
+
+    .flow-arrow {
+      color: var(--color-text-muted);
+      font-size: 18px;
+    }
+
+    /* ================================================================
+       COMPARISON GRID
+       ================================================================ */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin: var(--space-5) 0;
+    }
+
+    .comparison-card {
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+    }
+
+    .comparison-card--before {
+      background: var(--color-advanced-bg);
+      border: 1px solid var(--color-advanced);
+    }
+
+    .comparison-card--after {
+      background: var(--color-success-bg);
+      border: 1px solid var(--color-success);
+    }
+
+    .comparison-card__title {
+      font-size: var(--text-xs);
+      font-weight: var(--font-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--space-3);
+    }
+
+    .comparison-card--before .comparison-card__title {
+      color: #5b21b6;
+    }
+
+    .comparison-card--after .comparison-card__title {
+      color: var(--color-success);
+    }
+
+    .comparison-card__content {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-3);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      line-height: 1.5;
+    }
+
+    .comparison-card--before .comparison-card__content {
+      font-style: italic;
+      color: var(--color-text-muted);
+    }
+
+    /* ================================================================
+       STEP-BY-STEP INSTRUCTIONS
+       ================================================================ */
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-5);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .step:last-of-type {
+      border-bottom: none;
+    }
+
+    .step__number {
+      background: var(--color-advanced);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: var(--font-bold);
+      font-size: var(--text-base);
+      flex-shrink: 0;
+    }
+
+    .step__content {
+      flex: 1;
+    }
+
+    .step__title {
+      font-size: var(--text-base);
+      font-weight: var(--font-semibold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .step__description {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .step__action {
+      background: var(--color-background);
+      border-left: 3px solid var(--color-advanced);
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-sm);
+    }
+
+    .step__action strong {
+      color: var(--color-primary);
+    }
+
+    /* ================================================================
+       CODE BLOCKS
+       ================================================================ */
+    .code-block {
+      background: var(--color-primary);
+      color: #f1f5f9;
+      padding: var(--space-5);
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      margin: var(--space-4) 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .code-block .tag {
+      color: var(--color-accent);
+    }
+
+    .code-block .content {
+      color: #a5d6ff;
+    }
+
+    /* ================================================================
+       OUTPUT FORMAT BOX
+       ================================================================ */
+    .format-box {
+      background: var(--color-background);
+      border: 2px solid var(--color-advanced);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      margin: var(--space-5) 0;
+    }
+
+    .format-box__title {
+      font-size: var(--text-sm);
+      font-weight: var(--font-bold);
+      color: var(--color-advanced);
+      margin-bottom: var(--space-3);
+    }
+
+    .format-box__content {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    .format-box__content strong {
+      color: var(--color-primary);
+    }
+
+    /* ================================================================
+       CALLOUT BOXES
+       ================================================================ */
+    .callout {
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      margin: var(--space-4) 0;
+      font-size: var(--text-sm);
+    }
+
+    .callout--warning {
+      background: var(--color-warning-bg);
+      border-left: 4px solid var(--color-warning);
+    }
+
+    .callout--success {
+      background: var(--color-success-bg);
+      border-left: 4px solid var(--color-success);
+    }
+
+    .callout--info {
+      background: var(--color-info-bg);
+      border-left: 4px solid var(--color-info);
+    }
+
+    .callout__title {
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-2);
+    }
+
+    /* ================================================================
+       PRO TIP
+       ================================================================ */
+    .pro-tip {
+      background: var(--color-primary);
+      color: white;
+      padding: var(--space-5);
+      border-radius: var(--radius-md);
+      margin: var(--space-5) 0;
+    }
+
+    .pro-tip__title {
+      color: var(--color-accent);
+      font-size: var(--text-sm);
+      font-weight: var(--font-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--space-3);
+    }
+
+    .pro-tip__content {
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+    }
+
+    /* ================================================================
+       EXPERIMENT BOX
+       ================================================================ */
+    .experiment-box {
+      background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+      border: 2px dashed #a855f7;
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      margin: var(--space-5) 0;
+    }
+
+    .experiment-box__title {
+      color: #7c3aed;
+      font-size: var(--text-base);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-3);
+    }
+
+    .experiment-box__content {
+      font-size: var(--text-sm);
+      color: #6b21a8;
+      line-height: 1.6;
+    }
+
+    .experiment-box__list {
+      list-style: none;
+      padding: 0;
+      margin-top: var(--space-3);
+    }
+
+    .experiment-box__list li {
+      padding: var(--space-2) 0;
+      padding-left: var(--space-5);
+      position: relative;
+    }
+
+    .experiment-box__list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #a855f7;
+      font-weight: var(--font-bold);
+    }
+
+    /* ================================================================
+       AGENT GRID
+       ================================================================ */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin: var(--space-4) 0;
+    }
+
+    .agent-card {
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      text-align: center;
+    }
+
+    .agent-card__icon {
+      font-size: 28px;
+      margin-bottom: var(--space-2);
+    }
+
+    .agent-card__name {
+      font-weight: var(--font-semibold);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-2);
+    }
+
+    .agent-card__type {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    /* ================================================================
+       WORKFLOW BOX
+       ================================================================ */
+    .workflow-box {
+      background: var(--color-background);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      margin: var(--space-4) 0;
+    }
+
+    .workflow-box__title {
+      font-size: var(--text-sm);
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .workflow-box__steps {
+      font-size: var(--text-sm);
+    }
+
+    .workflow-box__steps p {
+      margin-bottom: var(--space-2);
+      padding-left: var(--space-4);
+      position: relative;
+    }
+
+    .workflow-box__steps p::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      font-weight: var(--font-bold);
+      color: var(--color-advanced);
+    }
+
+    /* ================================================================
+       BENEFITS LIST
+       ================================================================ */
+    .benefits-list {
+      background: var(--color-background);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      margin: var(--space-5) 0;
+    }
+
+    .benefits-list__title {
+      font-size: var(--text-base);
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .benefits-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .benefits-list li {
+      padding: var(--space-2) 0;
+      padding-left: var(--space-5);
+      font-size: var(--text-sm);
+      position: relative;
+    }
+
+    .benefits-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-success);
+      font-weight: var(--font-bold);
+    }
+
+    /* ================================================================
+       COMPLETION CHECKLIST
+       ================================================================ */
+    .checklist {
+      background: var(--color-background);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      margin: var(--space-5) 0;
+    }
+
+    .checklist__title {
+      font-size: var(--text-base);
+      font-weight: var(--font-bold);
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .checklist__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-2) 0;
+      font-size: var(--text-sm);
+    }
+
+    .checklist__item input[type="checkbox"] {
+      margin-top: 2px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--color-advanced);
+    }
+
+    /* ================================================================
+       NEXT STEPS
+       ================================================================ */
+    .next-steps {
+      background: linear-gradient(135deg, var(--color-advanced-bg) 0%, #ddd6fe 100%);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      margin: var(--space-6) 0;
+    }
+
+    .next-steps__title {
+      font-size: var(--text-base);
+      font-weight: var(--font-bold);
+      color: #5b21b6;
+      margin-bottom: var(--space-3);
+    }
+
+    .next-steps__content {
+      font-size: var(--text-sm);
+      color: #6d28d9;
+      line-height: 1.6;
+    }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    .doc-footer {
+      margin-top: var(--space-8);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+
+    /* ================================================================
+       PRINT STYLES
+       ================================================================ */
+    @media print {
+      body {
+        padding: 0;
+        font-size: 11pt;
+      }
+
+      .doc-header {
+        margin: 0 0 20pt 0;
+        padding: 16pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .code-block,
+      .pro-tip {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .step,
+      .comparison-card,
+      .experiment-box,
+      .callout,
+      .checklist,
+      .format-box,
+      .benefits-list {
+        break-inside: avoid;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================================================================
+       DOCUMENT HEADER
+       ================================================================ -->
+  <header class="doc-header">
+    <p class="doc-header__eyebrow">Hands-On Exercise • SuperWhisper Workshop</p>
+    <h1 class="doc-header__title">Exercise 6: Agentic Handoff Mode</h1>
+    <div class="doc-header__meta">
+      <span class="badge badge--advanced">Advanced</span>
+      <span class="badge badge--local">LOCAL • PHI-Safe</span>
+      <span style="color: rgba(255,255,255,0.8); font-size: 12px;">⏱ 15–20 minutes</span>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       LEARNING OBJECTIVE
+       ================================================================ -->
+  <div class="objective-box">
+    <p class="objective-box__title">Learning Objective</p>
+    <p class="objective-box__content">
+      Create a custom mode that transforms rambling spoken descriptions into structured task specifications optimized for AI coding agents. This is an <em>advanced pattern</em> for developers who use tools like Claude Code, Cursor Agent, or GitHub Copilot's chat features.
+    </p>
+  </div>
+
+  <!-- ================================================================
+       KEY INSIGHT
+       ================================================================ -->
+  <div class="context-box">
+    <p class="context-box__title">Key Insight: Structure Matters for AI Agents</p>
+    <p class="context-box__content">
+      AI coding agents perform <strong>significantly better</strong> when given structured task specifications rather than stream-of-consciousness instructions. The difference isn't subtle—structured prompts lead to fewer clarifying questions, fewer wrong turns, and faster completion. This mode acts as an <strong>intermediary translator</strong> between how you naturally think out loud and what agents need to execute effectively.
+    </p>
+  </div>
+
+  <!-- ================================================================
+       THE AGENTIC HANDOFF PATTERN
+       ================================================================ -->
+  <h2>The Agentic Handoff Pattern</h2>
+
+  <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">
+    This mode creates a bridge between natural speech and agent-ready task specifications. The key is that SuperWhisper does the <em>structuring work</em>—you just think out loud.
+  </p>
+
+  <div class="flow-diagram">
+    <div class="flow-step">Rambling speech</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step flow-step--highlight">SuperWhisper<br/>structures</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Paste to agent</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Agent executes</div>
+  </div>
+
+  <p style="font-size: 13px; color: #6b7280; text-align: center; margin-bottom: 16px;">
+    <strong>Critical:</strong> The output is a <em>task specification</em>, not code. The AI agent then uses that specification to write code.
+  </p>
+
+  <!-- ================================================================
+       AI AGENTS THIS WORKS WITH
+       ================================================================ -->
+  <h2>AI Agents This Works With</h2>
+
+  <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">
+    Any AI agent that accepts natural language instructions benefits from structured input. Common examples:
+  </p>
+
+  <div class="agent-grid">
+    <div class="agent-card">
+      <div class="agent-card__icon">🤖</div>
+      <p class="agent-card__name">Claude Code</p>
+      <p class="agent-card__type">Terminal agent</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-card__icon">💻</div>
+      <p class="agent-card__name">Cursor Agent</p>
+      <p class="agent-card__type">IDE agent</p>
+    </div>
+    <div class="agent-card">
+      <div class="agent-card__icon">🔧</div>
+      <p class="agent-card__name">GitHub Copilot</p>
+      <p class="agent-card__type">Chat mode</p>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       BEFORE VS AFTER
+       ================================================================ -->
+  <h2>Before vs. After Structuring</h2>
+
+  <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">
+    Watch what happens when natural speech gets transformed into an agent-ready specification:
+  </p>
+
+  <div class="comparison-grid">
+    <div class="comparison-card comparison-card--before">
+      <p class="comparison-card__title">Raw Speech (Unstructured)</p>
+      <div class="comparison-card__content">
+        "okay so there's this bug in the user settings page where when you try to change your email it doesn't validate properly and it lets you save invalid emails and also the success message shows even when it fails and oh we need to keep the existing CSS because design just approved it and I think the issue is somewhere in the handleSubmit function"
+      </div>
+    </div>
+    <div class="comparison-card comparison-card--after">
+      <p class="comparison-card__title">Structured Handoff (Agent-Ready)</p>
+      <div class="comparison-card__content">
+        <strong>Objective:</strong> Fix email validation bug in user settings page<br/><br/>
+        <strong>Context:</strong> handleSubmit function in settings component<br/><br/>
+        <strong>Requirements:</strong><br/>
+        • Validate email format before saving<br/>
+        • Only show success message on actual success<br/><br/>
+        <strong>Constraints:</strong><br/>
+        • Do NOT modify CSS (design-approved)<br/><br/>
+        <strong>Success:</strong> Invalid emails rejected, correct messages shown
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 13px; color: #6b7280; margin-top: 12px;">
+    <strong>Same information. Different packaging.</strong> The structured version gives the agent clear objectives, constraints, and success criteria—dramatically reducing ambiguity.
+  </p>
+
+  <!-- ================================================================
+       STEP-BY-STEP SETUP
+       ================================================================ -->
+  <h2>Step-by-Step Setup</h2>
+
+  <div class="step">
+    <div class="step__number">1</div>
+    <div class="step__content">
+      <h3 class="step__title">Create New Custom Mode</h3>
+      <p class="step__description">Open SuperWhisper Settings → Modes → Create Custom Mode</p>
+      <div class="step__action">
+        <strong>Name:</strong> "Agentic Handoff" or "Task Structuring"<br/>
+        <em style="color: #6b7280;">This name should remind you the output goes TO an agent</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">2</div>
+    <div class="step__content">
+      <h3 class="step__title">Select Local Models (PHI-Safe)</h3>
+      <p class="step__description">Even developer work may reference sensitive data. Keep processing local.</p>
+      <div class="step__action">
+        <strong>Voice Model:</strong> Fast or Standard (LOCAL)<br/>
+        <strong>Language Model:</strong> Any LOCAL model<br/>
+        <em style="color: #6b7280;">Standard model provides better structuring quality</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">3</div>
+    <div class="step__content">
+      <h3 class="step__title">Configure Auto-Activation</h3>
+      <p class="step__description">Trigger this mode when you're in your development environment.</p>
+      <div class="step__action">
+        <strong>Recommended Applications:</strong><br/>
+        ☑ Terminal / iTerm / Command Prompt<br/>
+        ☑ VS Code (when Copilot Chat is active)<br/>
+        ☑ Cursor (AI chat panel)<br/>
+        <em style="color: #6b7280;">Anywhere you're giving instructions to an AI agent</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">4</div>
+    <div class="step__content">
+      <h3 class="step__title">Enable ALL Context Types</h3>
+      <p class="step__description">This mode benefits from maximum context—it needs to know what you're working on.</p>
+      <div class="step__action">
+        ☑ <strong>Application Context</strong> — knows which tool you're in<br/>
+        ☑ <strong>Selected Text</strong> — include highlighted code/files<br/>
+        ☑ <strong>Clipboard</strong> — include copied errors, references, file paths<br/>
+        <em style="color: #6b7280;">All three enabled = richer task specifications</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step__number">5</div>
+    <div class="step__content">
+      <h3 class="step__title">Enter AI Instructions</h3>
+      <p class="step__description">Copy and paste this prompt into the AI Instructions field:</p>
+    </div>
+  </div>
+
+  <div class="code-block"><span class="tag">&lt;role&gt;</span>
+<span class="content">You are a task specification writer for AI coding agents.</span>
+<span class="tag">&lt;/role&gt;</span>
+
+<span class="tag">&lt;instructions&gt;</span>
+<span class="content">The User Message is raw dictated speech describing a coding task.
+Convert it into a structured task specification that an AI agent
+can execute effectively. Output ONLY the structured task, not code.</span>
+<span class="tag">&lt;/instructions&gt;</span>
+
+<span class="tag">&lt;format&gt;</span>
+<span class="content">**Objective:** [One clear sentence describing the goal]
+
+**Context:** [Relevant files, components, or systems mentioned]
+
+**Requirements:**
+- [Specific requirement 1]
+- [Specific requirement 2]
+
+**Constraints:**
+- [What NOT to change or touch]
+- [Limitations to respect]
+
+**Success Criteria:**
+- [How to verify the task is complete]</span>
+<span class="tag">&lt;/format&gt;</span>
+
+<span class="tag">&lt;context_usage&gt;</span>
+<span class="content">- If Selected Text provided: Reference specific files/code in Context section
+- If Clipboard provided: Include error messages or references
+- If neither: Ask user to select relevant code first</span>
+<span class="tag">&lt;/context_usage&gt;</span></div>
+
+  <!-- ================================================================
+       OUTPUT FORMAT REFERENCE
+       ================================================================ -->
+  <h2>Output Format Reference</h2>
+
+  <div class="format-box">
+    <p class="format-box__title">Expected Output Structure</p>
+    <div class="format-box__content">
+<strong>Objective:</strong> [What you're trying to accomplish]
+
+<strong>Context:</strong> [Files, functions, systems involved]
+
+<strong>Requirements:</strong>
+- [Specific thing that must happen]
+- [Another specific thing]
+
+<strong>Constraints:</strong>
+- [What must NOT change]
+- [Boundaries to respect]
+
+<strong>Success Criteria:</strong>
+- [How you'll know it worked]
+    </div>
+  </div>
+
+  <div class="callout callout--success">
+    <p class="callout__title">Why This Format Works</p>
+    <p>This structure maps directly to how AI agents plan work: they need to know the <strong>goal</strong> (Objective), the <strong>scope</strong> (Context), the <strong>specifics</strong> (Requirements), the <strong>boundaries</strong> (Constraints), and how to <strong>verify completion</strong> (Success Criteria). Missing any of these leads to clarifying questions or wrong assumptions.</p>
+  </div>
+
+  <!-- ================================================================
+       TEST YOUR MODE
+       ================================================================ -->
+  <h2>Test Your Mode</h2>
+
+  <div class="workflow-box">
+    <p class="workflow-box__title">Test Workflow</p>
+    <div class="workflow-box__steps">
+      <p data-step="1.">Open your terminal (Claude Code) or VS Code (with Copilot)</p>
+      <p data-step="2."><strong>Select some relevant code</strong> in your editor (becomes Selected Text context)</p>
+      <p data-step="3."><strong>Copy an error message</strong> to clipboard if you have one</p>
+      <p data-step="4.">Hold your recording hotkey and <strong>describe the task naturally</strong></p>
+      <p data-step="5.">Release → SuperWhisper outputs structured specification</p>
+      <p data-step="6.">Paste the structured task into your AI agent</p>
+    </div>
+  </div>
+
+  <div class="comparison-grid">
+    <div class="comparison-card comparison-card--before">
+      <p class="comparison-card__title">Say This (Messy)</p>
+      <div class="comparison-card__content">
+        "so the API is returning a 500 error when users try to upload files larger than 5 megs and I need to add better error handling and also show a helpful message to the user and the error is in my clipboard"
+      </div>
+    </div>
+    <div class="comparison-card comparison-card--after">
+      <p class="comparison-card__title">Expect This (Structured)</p>
+      <div class="comparison-card__content">
+        <strong>Objective:</strong> Add error handling for large file uploads<br/><br/>
+        <strong>Context:</strong> File upload endpoint, [clipboard error]<br/><br/>
+        <strong>Requirements:</strong><br/>
+        • Handle 500 errors for files > 5MB<br/>
+        • Display user-friendly error message<br/><br/>
+        <strong>Success:</strong> Clear feedback on upload size limits
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       EXPERIMENT BOX
+       ================================================================ -->
+  <div class="experiment-box">
+    <p class="experiment-box__title">🧪 Experiment: Test Different Scenarios</p>
+    <p class="experiment-box__content">
+      Try the mode with different types of development tasks and notice how the structuring adapts:
+    </p>
+    <ul class="experiment-box__list">
+      <li><strong>Bug fix:</strong> "there's this weird bug where..." → structured debugging task</li>
+      <li><strong>New feature:</strong> "I need to add a button that..." → structured feature spec</li>
+      <li><strong>Refactoring:</strong> "this code is messy and needs to..." → structured refactor plan</li>
+      <li><strong>With error in clipboard:</strong> Results should reference the error message</li>
+    </ul>
+  </div>
+
+  <!-- ================================================================
+       WHY THIS PATTERN WORKS
+       ================================================================ -->
+  <h2>Why This Pattern Works</h2>
+
+  <div class="benefits-list">
+    <p class="benefits-list__title">Benefits of Structured Handoffs</p>
+    <ul>
+      <li><strong>Reduces ambiguity:</strong> Agents don't have to guess what you meant</li>
+      <li><strong>Preserves constraints:</strong> "Don't touch X" is explicit, not implied</li>
+      <li><strong>Enables verification:</strong> Clear success criteria let you know when it's done</li>
+      <li><strong>Leverages context:</strong> Selected code and clipboard errors are included automatically</li>
+      <li><strong>Faster iteration:</strong> Clear specs mean fewer back-and-forth clarifications</li>
+      <li><strong>Better results:</strong> Structured input produces more accurate agent output</li>
+    </ul>
+  </div>
+
+  <!-- ================================================================
+       PRO TIP
+       ================================================================ -->
+  <div class="pro-tip">
+    <p class="pro-tip__title">Pro Tip: Combine with Prompt Enrichment</p>
+    <p class="pro-tip__content">
+      Use <strong>Prompt Enrichment mode</strong> for general AI tools like ChatGPT and Claude web interface. Use <strong>Agentic Handoff mode</strong> specifically for coding agents that execute tasks autonomously. The difference: enrichment improves your question, handoff structures your instruction. Both are "input method" modes—neither generates final answers.
+    </p>
+  </div>
+
+  <!-- ================================================================
+       TROUBLESHOOTING
+       ================================================================ -->
+  <h2>Troubleshooting</h2>
+
+  <div class="callout callout--warning">
+    <p class="callout__title">Output Includes Code Instead of Specification?</p>
+    <p>The AI might be trying to solve the problem directly. Make sure your prompt includes: <code>Output ONLY the structured task, not code.</code> If it persists, add: <code>Never write implementation code. Only structure the task.</code></p>
+  </div>
+
+  <div class="callout callout--warning">
+    <p class="callout__title">Missing Context/Clipboard in Output?</p>
+    <p>Verify that Selected Text and Clipboard context are enabled in mode settings. Also check that you actually have text selected or clipboard content before dictating.</p>
+  </div>
+
+  <div class="callout callout--warning">
+    <p class="callout__title">Output Too Verbose?</p>
+    <p>Add this to your requirements: <code>Keep each section brief. Maximum 2 bullet points per section.</code></p>
+  </div>
+
+  <!-- ================================================================
+       COMPLETION CHECKLIST
+       ================================================================ -->
+  <div class="checklist">
+    <p class="checklist__title">✓ Completion Checklist</p>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Created "Agentic Handoff" mode with LOCAL models</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Added auto-activation for terminal/IDE apps</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Enabled ALL three context types (App, Selected, Clipboard)</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Pasted the task structuring instructions</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Tested with selected code + rambling description</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Verified output is structured spec, NOT code</span>
+    </label>
+    <label class="checklist__item">
+      <input type="checkbox"/>
+      <span>Successfully handed off to an AI agent</span>
+    </label>
+  </div>
+
+  <!-- ================================================================
+       NEXT STEPS
+       ================================================================ -->
+  <div class="next-steps">
+    <p class="next-steps__title">Congratulations! You've Completed Part 1</p>
+    <p class="next-steps__content">
+      You now have a comprehensive voice-driven AI toolkit: local and cloud email modes, chat modes, prompt enrichment, custom vocabulary, and agentic handoff. In <strong>Part 2</strong>, we'll explore advanced workflows—chaining modes together, building complex automations, and integrating SuperWhisper with other AI tools in your daily work.
+    </p>
+  </div>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="doc-footer">
+    Austin Public Health • Voice-Driven AI Development Workshop • Part 1 of 3
+  </footer>
+
+</body>
+</html>

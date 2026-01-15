@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-agents</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="row" style="width: 960px; height: 540px;">
+  <!-- Left side -->
+  <div class="col" style="width: 45%; height: 100%; background: var(--theme-primary); padding: 40px;">
+    <div class="col fill-height justify-center">
+      <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 16px 0; font-family: Arial, sans-serif;">PARALLEL WORK</p>
+      <h1 style="color: var(--theme-text-inverse); font-size: 36px; font-family: Georgia, serif; font-weight: 400; margin: 0 0 16px 0; line-height: 1.2;">Sub-agents</h1>
+      <div style="width: 48px; height: 2px; background: var(--theme-accent); margin: 0 0 20px 0;"></div>
+      <p style="color: rgba(255,255,255,0.7); font-size: 14px; font-family: Arial, sans-serif; margin: 0; line-height: 1.6;">Claude can spawn child agents to work on subtasks in parallel, then combine results.</p>
+    </div>
+  </div>
+
+  <!-- Right content -->
+  <div class="col" style="width: 55%; height: 100%; background: var(--theme-surface-light); padding: 36px 40px;">
+    <div class="col fill-height justify-center" style="gap: 12px;">
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 700; margin: 0 0 6px 0;">How It Works</p>
+        <p style="color: var(--theme-text-secondary); font-size: 12px; margin: 0; line-height: 1.5;">Main agent delegates complex tasks to specialized sub-agents. Each sub-agent handles a portion, returning results to the main agent.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 700; margin: 0 0 8px 0;">Example Use Cases</p>
+        <p style="color: var(--theme-text-secondary); font-size: 12px; margin: 0; line-height: 1.8;">"Refactor all API endpoints" - spawns agents per file<br/>"Add tests for each module" - parallel test generation<br/>"Research and implement" - one researches, one codes</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px;">
+        <p style="color: var(--theme-text-primary); font-size: 13px; font-weight: 700; margin: 0 0 8px 0;">Voice Command Example</p>
+        <p style="color: var(--theme-text-secondary); font-size: 12px; margin: 0; font-style: italic;">"Refactor all the API handlers to use async/await and add error handling to each one"</p>
+      </div>
+
+      <div style="background: var(--theme-primary); padding: 14px 16px;">
+        <p style="color: var(--theme-accent); font-size: 12px; font-family: Arial, sans-serif; margin: 0; text-align: center;"><strong>Benefit:</strong> Complex tasks complete faster with parallel execution</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

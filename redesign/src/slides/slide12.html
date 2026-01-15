@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperWhisper Interface Tour</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 28px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">USER INTERFACE</p>
+    <h1 style="color: var(--theme-primary); font-size: 30px; font-family: Georgia, serif; font-weight: 400; margin: 0;">SuperWhisper Interface Tour</h1>
+  </div>
+
+  <div class="row fill-height" style="padding: 20px 48px 28px 48px; gap: 20px;">
+    <!-- Left Column - Menu Bar & Tray -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-primary); padding: 16px; margin-bottom: 14px;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">MENU BAR / SYSTEM TRAY</p>
+        <div style="background: #3b4252; padding: 10px 14px; margin-bottom: 10px;">
+          <div class="row items-center" style="gap: 8px;">
+            <div style="width: 18px; height: 18px; background: var(--theme-accent); border-radius: 50%;"></div>
+            <p style="color: rgba(255,255,255,0.8); font-size: 11px; margin: 0; font-family: Arial, sans-serif;">SuperWhisper Icon</p>
+          </div>
+        </div>
+        <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.6; font-family: Arial, sans-serif;">Mac: Lives in menu bar (top right)<br/>Windows: Lives in system tray (bottom right)<br/>Click to open menu, right-click for options</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 14px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 8px 0; font-family: Arial, sans-serif;">Icon States</p>
+        <div class="row items-center" style="gap: 8px; margin-bottom: 6px;">
+          <div style="width: 14px; height: 14px; background: var(--theme-text-secondary); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; font-family: Arial, sans-serif;">Gray = Idle, ready to record</p>
+        </div>
+        <div class="row items-center" style="gap: 8px; margin-bottom: 6px;">
+          <div style="width: 14px; height: 14px; background: var(--color-danger); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; font-family: Arial, sans-serif;">Red = Recording in progress</p>
+        </div>
+        <div class="row items-center" style="gap: 8px;">
+          <div style="width: 14px; height: 14px; background: var(--theme-accent); border-radius: 50%;"></div>
+          <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; font-family: Arial, sans-serif;">Gold = Processing transcription</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Column - Recording Indicator -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-surface-white); border: 1px solid var(--theme-border-light); padding: 16px; margin-bottom: 14px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 10px 0; font-family: Arial, sans-serif;">Recording Overlay</p>
+        <div style="background: var(--color-danger-bg); border: 2px solid var(--color-danger); padding: 12px; text-align: center; margin-bottom: 10px;">
+          <div class="row items-center justify-center" style="gap: 8px;">
+            <div style="width: 10px; height: 10px; background: var(--color-danger); border-radius: 50%;"></div>
+            <p style="color: var(--color-danger); font-size: 11px; font-weight: 700; margin: 0; font-family: Arial, sans-serif;">RECORDING</p>
+          </div>
+        </div>
+        <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">Visual indicator appears when recording. Can be positioned or hidden in settings.</p>
+      </div>
+
+      <div style="background: var(--theme-surface-white); border-left: 4px solid var(--theme-accent); padding: 14px;">
+        <p style="color: var(--theme-primary); font-size: 12px; font-weight: 700; margin: 0 0 8px 0; font-family: Arial, sans-serif;">Output Behavior</p>
+        <p style="color: var(--theme-text-secondary); font-size: 11px; margin: 0; line-height: 1.6; font-family: Arial, sans-serif;">Text is typed directly into the active application at cursor position. Works in any text field.</p>
+      </div>
+    </div>
+
+    <!-- Right Column - Settings -->
+    <div class="col" style="flex: 1;">
+      <div style="background: var(--theme-primary); padding: 16px; height: 100%;">
+        <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 12px 0; font-family: Arial, sans-serif;">SETTINGS ACCESS</p>
+
+        <div style="background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 10px;">
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Quick Access</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; font-family: Arial, sans-serif;">Click icon > Preferences</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 10px;">
+          <p style="color: var(--theme-text-inverse); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">Key Settings</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.6; font-family: Arial, sans-serif;">Hotkey configuration<br/>Model selection<br/>Language settings<br/>Output formatting</p>
+        </div>
+
+        <div style="background: rgba(201,162,39,0.2); padding: 10px;">
+          <p style="color: var(--theme-accent); font-size: 11px; font-weight: 700; margin: 0 0 4px 0; font-family: Arial, sans-serif;">History Panel</p>
+          <p style="color: rgba(255,255,255,0.6); font-size: 10px; margin: 0; line-height: 1.5; font-family: Arial, sans-serif;">View recent transcriptions, copy text, replay audio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

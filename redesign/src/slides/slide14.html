@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperWhisper Voice Models</title>
+  <style>
+    :root {
+      /* Theme Layer - Hot-Swappable */
+      --theme-primary: #1a1f2e;
+      --theme-primary-light: #2d3548;
+      --theme-accent: #c9a227;
+      --theme-accent-muted: rgba(201, 162, 39, 0.15);
+      --theme-surface-light: #f7f8fa;
+      --theme-surface-white: #ffffff;
+      --theme-surface-dark: #252b3d;
+      --theme-text-primary: #1a1f2e;
+      --theme-text-secondary: #6b7280;
+      --theme-text-tertiary: #9ca3af;
+      --theme-text-inverse: #ffffff;
+      --theme-border-light: #e4e7ed;
+
+      /* Semantic Layer - Fixed */
+      --color-success: #059669;
+      --color-success-bg: #dcfce7;
+      --color-success-text: #166534;
+      --color-warning: #f59e0b;
+      --color-warning-bg: #fef3c7;
+      --color-warning-text: #92400e;
+      --color-danger: #dc2626;
+      --color-danger-bg: #fee2e2;
+      --color-danger-text: #991b1b;
+      --color-info: #3b82f6;
+      --color-info-bg: #dbeafe;
+      --color-info-text: #1e40af;
+    }
+  </style>
+</head>
+<body class="col" style="width: 960px; height: 540px; background: var(--theme-surface-light);">
+  <div style="padding: 32px 48px 0 48px;" class="fit">
+    <p style="color: var(--theme-accent); font-size: 11px; letter-spacing: 3px; margin: 0 0 6px 0; font-family: Arial, sans-serif;">CONFIGURATION</p>
+    <h1 style="color: var(--theme-primary); font-size: 28px; font-family: Georgia, serif; font-weight: 400; margin: 0;">Voice Model Selection</h1>
+    <p style="color: var(--theme-text-secondary); font-size: 12px; font-family: Arial, sans-serif; margin: 6px 0 0 0;">Choose based on speed, accuracy, and privacy needs</p>
+  </div>
+
+  <div class="col fill-height" style="padding: 14px 48px 32px 48px;">
+    <!-- Model comparison table -->
+    <div class="row" style="background: var(--theme-primary); padding: 8px 14px; margin-bottom: 2px;">
+      <p style="color: var(--theme-text-inverse); font-size: 10px; font-weight: 700; margin: 0; width: 18%; font-family: Arial, sans-serif;">Model</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center; font-family: Arial, sans-serif;">Type</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center; font-family: Arial, sans-serif;">Speed</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center; font-family: Arial, sans-serif;">Accuracy</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center; font-family: Arial, sans-serif;">Plan</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 22%; text-align: center; font-family: Arial, sans-serif;">Best For</p>
+    </div>
+
+    <!-- Free tier models -->
+    <div class="row" style="background: var(--color-success-bg); padding: 8px 14px; border-bottom: 1px solid var(--theme-border-light);">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Nano</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 14%; text-align: center;">Local</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 16%; text-align: center;">Fastest</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 16%; text-align: center;">Basic</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">FREE</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 22%; text-align: center;">Quick notes, speed priority</p>
+    </div>
+
+    <div class="row" style="background: var(--color-success-bg); padding: 8px 14px; border-bottom: 1px solid var(--theme-border-light);">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Fast</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 14%; text-align: center;">Local</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 16%; text-align: center;">Very Fast</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 16%; text-align: center;">Good</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">FREE</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 22%; text-align: center;">Daily dictation</p>
+    </div>
+
+    <div class="row" style="background: var(--color-success-bg); padding: 8px 14px; border-bottom: 1px solid var(--theme-border-light);">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Standard</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 14%; text-align: center;">Local</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 16%; text-align: center;">Moderate</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 16%; text-align: center;">Very Good</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">FREE</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 22%; text-align: center;">Balanced choice</p>
+    </div>
+
+    <!-- Pro tier models -->
+    <div class="row" style="background: var(--color-warning-bg); padding: 8px 14px; border-bottom: 1px solid var(--theme-border-light);">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Pro</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 14%; text-align: center;">Local</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 16%; text-align: center;">Slower</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center;">Excellent</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">PRO</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 22%; text-align: center;">Technical content</p>
+    </div>
+
+    <div class="row" style="background: var(--color-warning-bg); padding: 8px 14px; border-bottom: 1px solid var(--theme-border-light);">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Ultra Turbo V3</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">Local</p>
+      <p style="color: var(--color-success); font-size: 10px; margin: 0; width: 16%; text-align: center;">Fast</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center;">Best</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">PRO</p>
+      <p style="color: var(--color-success-text); font-size: 10px; font-weight: 700; margin: 0; width: 22%; text-align: center;">RECOMMENDED</p>
+    </div>
+
+    <div class="row" style="background: var(--color-info-bg); padding: 8px 14px; border-bottom: 1px solid var(--theme-border-light);">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Ultra (Cloud)</p>
+      <p style="color: var(--color-info); font-size: 10px; margin: 0; width: 14%; text-align: center;">Cloud</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center;">Fastest</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center;">Best</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">PRO</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 22%; text-align: center;">Speed + accuracy</p>
+    </div>
+
+    <div class="row" style="background: var(--color-info-bg); padding: 8px 14px;">
+      <p style="color: var(--theme-primary); font-size: 10px; font-weight: 600; margin: 0; width: 18%;">Nova (Cloud)</p>
+      <p style="color: var(--color-info); font-size: 10px; margin: 0; width: 14%; text-align: center;">Cloud</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 16%; text-align: center;">Moderate</p>
+      <p style="color: var(--color-success); font-size: 10px; font-weight: 700; margin: 0; width: 16%; text-align: center;">Best</p>
+      <p style="color: var(--theme-accent); font-size: 10px; font-weight: 700; margin: 0; width: 14%; text-align: center;">PRO</p>
+      <p style="color: var(--theme-text-secondary); font-size: 10px; margin: 0; width: 22%; text-align: center;">Long recordings</p>
+    </div>
+
+    <!-- Legend -->
+    <div class="row" style="gap: 16px; margin-top: 12px;">
+      <div class="row items-center" style="gap: 6px;">
+        <div style="width: 12px; height: 12px; background: var(--color-success-bg); border: 1px solid var(--color-success);"></div>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; font-family: Arial, sans-serif;">Free tier (local, privacy-safe)</p>
+      </div>
+      <div class="row items-center" style="gap: 6px;">
+        <div style="width: 12px; height: 12px; background: var(--color-warning-bg); border: 1px solid var(--theme-accent);"></div>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; font-family: Arial, sans-serif;">Pro tier (local, privacy-safe)</p>
+      </div>
+      <div class="row items-center" style="gap: 6px;">
+        <div style="width: 12px; height: 12px; background: var(--color-info-bg); border: 1px solid var(--color-info);"></div>
+        <p style="color: var(--theme-text-secondary); font-size: 9px; margin: 0; font-family: Arial, sans-serif;">Pro tier (cloud - data leaves device)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
